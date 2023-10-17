@@ -1,0 +1,26 @@
+﻿
+            @using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+<!doctype html>
+<html>
+
+    <!-- await Html.PartialAsync("") / head goes here -->
+
+<body class="frontpage theme-font-standard theme-color-water">
+
+    <!-- @await Html.PartialAsync("") / header goes here -->
+    <!-- @await Html.PartialAsync("") / meny goes here -->
+
+    <main>
+
+        @RenderBody()
+
+    </main>
+
+    <!-- @await Html.PartialAsync("") / footer goes here -->
+</body>
+</html>
