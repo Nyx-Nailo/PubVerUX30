@@ -1,0 +1,14 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+<section id="newsItem">
+    <header style="padding: 1rem; background-color: #ccc">
+        <h1>@Model.Value("newsTitle")</h1>
+    </header>
+    <main style="padding: 1rem;">
+        <p>@Model.Value("newsContent")</p>
+    </main>
+</section>
