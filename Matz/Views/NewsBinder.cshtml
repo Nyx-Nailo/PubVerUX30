@@ -1,0 +1,30 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsBinder>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+<section id="news">
+    <header style="padding: 1rem; background-color: #ccc">
+        <h1>@Model.Value("newsTitle")</h1>
+    </header>
+    <main>
+    @{
+	    var selection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
+        .ChildrenOfType("newsItem")
+        .Where(x => x.IsVisible())
+        .OrderByDescending(x => x.CreateDate);
+    }
+        <div style="padding: 1rem; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));">
+        @foreach (var item in selection)
+	    {
+		    <div style="display: flex; flex-direction: column;">
+			    <h3>@item.Name()</h3>
+			    @item.CreateDate
+			    @Html.Truncate(item.Value("newsContent").ToString(), 220, true)
+			    <a href="@item.Url()">Fortsätt läsa...</a>
+		    </div>
+	    }
+        </div>
+    </main>
+</section>
