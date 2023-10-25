@@ -13,7 +13,7 @@
 	<ul>
 		@foreach (var child in menyChildren)
 		{
-			<li><a href="${@child.Name}">@child.Name</a></li>
+			<li><a href="${@child.Url()}">@child.Name</a></li>
 		}
 	</ul>
 </div>
