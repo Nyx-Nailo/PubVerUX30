@@ -3,10 +3,17 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "Master.cshtml";
+	var menyChildren = Model.Children();
 }
 
 <div>
 	<h1>
 		Home!
 	</h1>
+	<ul>
+		@foreach (var child in menyChildren)
+		{
+			<li><a href="${@child.Name}">@child.Name</a></li>
+		}
+	</ul>
 </div>
