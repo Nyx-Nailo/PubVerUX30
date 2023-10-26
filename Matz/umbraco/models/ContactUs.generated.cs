@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Contact Us</summary>
 	[PublishedModel("contactUs")]
-	public partial class ContactUs : PublishedContentModel, IFooter, IHeader, ITitleBox
+	public partial class ContactUs : PublishedContentModel, ITitleBox
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -64,46 +64,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("contactForm")]
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ContactForm => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "contactForm");
-
-		///<summary>
-		/// Company Name
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("companyName")]
-		public virtual string CompanyName => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetCompanyName(this, _publishedValueFallback);
-
-		///<summary>
-		/// E-Mail
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("eMail")]
-		public virtual string EMail => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetEMail(this, _publishedValueFallback);
-
-		///<summary>
-		/// Phone Number
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("phoneNumber")]
-		public virtual string PhoneNumber => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetPhoneNumber(this, _publishedValueFallback);
-
-		///<summary>
-		/// Header Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("headerImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops HeaderImage => global::Umbraco.Cms.Web.Common.PublishedModels.Header.GetHeaderImage(this, _publishedValueFallback);
-
-		///<summary>
-		/// Header Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("headerTitle")]
-		public virtual string HeaderTitle => global::Umbraco.Cms.Web.Common.PublishedModels.Header.GetHeaderTitle(this, _publishedValueFallback);
 
 		///<summary>
 		/// SubTitle

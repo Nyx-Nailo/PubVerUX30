@@ -74,6 +74,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string PhoneNumber => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetPhoneNumber(this, _publishedValueFallback);
 
 		///<summary>
+		/// Socials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("socials")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.SocialLink> Socials => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetSocials(this, _publishedValueFallback);
+
+		///<summary>
 		/// Header Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
