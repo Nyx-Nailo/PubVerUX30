@@ -9,6 +9,7 @@
     <PackageReference Include="Umbraco.Cms" Version="12.2.0" />
     <PackageReference Include="Umbraco.Forms" Version="12.1.1" />
     <PackageReference Include="uSync" Version="12.2.0" />
+    <PackageReference Include="uSync.Forms" Version="12.0.0" />
   </ItemGroup>
 
   <ItemGroup>
