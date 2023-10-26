@@ -21,10 +21,12 @@
 				instruments += " " + instrument;
 			}
 			<div>
-				<img src="@person?.Portrait?.Url()" />
+				<a href="@person.Url()"><img src="@person?.Portrait?.Url()" /></a>
 				<span>@person?.PersonName</span>
 				<br/>
 				<span>@instruments</span>
+				<br/>
+				<a href="@person?.Url()">Läs mer..</a>
 			</div>
 		}
 	</div>
