@@ -4,4 +4,22 @@
 	Layout = null;
 }
 
+@{
+	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+    .Children()
+    .Where(x => x.IsVisible());
+}
+
+<div>
+	<ul>
+	    <li><a href="./">Startsida</a></li>
+        @foreach (var item in selection)
+        {
+		    <li>
+			    <a href="@item.Url()">@item.Name()</a>
+		    </li>
+        }
+	</ul>
+</div>
+
 @RenderBody()
