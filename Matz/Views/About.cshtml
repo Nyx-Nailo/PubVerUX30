@@ -3,4 +3,29 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = null;
+	var aboutPage = Model.AncestorOrSelf<About>();
+	var info = aboutPage?.Description;
+	var members = Model.Children<Person>();
 }
+
+<section id="About">
+	<div>
+		@info
+	</div>
+	<div>
+		@foreach(var person in members ?? new List<Person>())
+		{
+			string instruments = "";
+			foreach (var instrument in person.Instruments ?? new List<string>())
+			{
+				instruments += " " + instrument;
+			}
+			<div>
+				<img src="@person?.Portrait?.Url()" />
+				<span>@person?.PersonName</span>
+				<br/>
+				<span>@instruments</span>
+			</div>
+		}
+	</div>
+</section>

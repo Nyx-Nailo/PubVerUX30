@@ -3,4 +3,62 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "Master.cshtml";
+	var person = Model.AncestorOrSelf<Person>();
+	string age = "Ålder saknas";
+	var place = person?.Place ?? "Sverige";
+	string instruments = string.Empty;
+
+
+	if (person is not null)
+	{
+		age = ((int.Parse(DateTime.UtcNow.ToString("yyyyMMdd")) - int.Parse(person.DateOfBirth.ToString("yyyyMMdd"))) / 10000).ToString();
+		foreach(var instrument in person.Instruments ?? new List<string>())
+		{
+			instruments += " " + instrument;
+		}
+	}
 }
+<section id="person">
+	<div>
+		<div>
+			<img src="@person?.Portrait?.GetCropUrl()" />
+		</div>
+		<div>
+			<span>
+				Namn: @person?.PersonName
+			</span>
+			<br/>
+			<span>
+				Ålder: @age
+			</span>
+			<br />
+			<span>
+				Instrument: @instruments
+			</span>
+			<br />
+			<span>
+				Musikfavoriter: @person?.FavMusic
+			</span>
+			<br />
+			<span>
+				Bor: @place
+			</span>
+			<br />
+			<span>
+				Familj: @person?.Family
+			</span>
+			<br />
+			<span>
+				Favorit Mat: @person?.FavFood
+			</span>
+			<br />
+			<span>
+				Favorit Dryck: @person?.FavDrink
+			</span>
+			<br />
+			<span>
+				Intressen: @person?.Interests
+			</span>
+		</div>
+	</div>
+</section>
