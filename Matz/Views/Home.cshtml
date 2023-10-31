@@ -6,9 +6,25 @@
 }
 
 <div id="Main">
+    <div class="Gigs">
+@{
+	var gigsSelection = Umbraco.Content(Guid.Parse("1e74e3be-51d6-4f3d-a016-990eeb9dc2a6"))
+    .ChildrenOfType("gigInfo")
+    .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate)
+    .Take(1);
+}
+        <strong>Nästa spelning</strong>
+        <div class="newsItem">
+	    @foreach (var item in gigsSelection)
+    	{
+            <a href="@item.Url()">@item.Name()</a>
+	    }
+	    </div>
+    </div>
     <div class="News">
 @{
-	var selection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
+	var newsSelection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
     .ChildrenOfType("newsItem")
     .Where(x => x.IsVisible())
     .OrderByDescending(x => x.CreateDate)
@@ -16,7 +32,7 @@
 }
         <strong>Senaste nyheterna</strong>
         <div class="newsItem">
-	    @foreach (var item in selection)
+	    @foreach (var item in newsSelection)
 	    {
     		<a href="@item.Url()">@item.Name()</a>
 	        <span>@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</span>
