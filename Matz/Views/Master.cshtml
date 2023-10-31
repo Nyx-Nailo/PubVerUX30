@@ -2,28 +2,49 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = null;
-}
+	
+	var pageTitle = Model.Value("headerTitle", fallback: Fallback.ToAncestors);
+	if (Model.Name != "Home")
+	    pageTitle += " - " + Model.Name;
 
-@{
 	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
 	.Children()
 	.Where(x => x.IsVisible());
 	var homePage = Model.AncestorOrSelf<Home>();
 }
+<!DOCTYPE html>
+<html lang="en">
 
-<div>
-	<img src="@homePage.HeaderImage.Url()" />
-	<ul>
-	    <li><a href="/">Startsida</a></li>
-        @foreach (var item in selection)
-        {
-		    <li>
-			    <a href="@item.Url()">@item.Name()</a>
-		    </li>
-        }
-	</ul>
-</div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@pageTitle</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+</head>
 
-@RenderBody()
+<body>
+
+<nav>
+    <div id="Menu">
+      <div class="logo">
+        <img src="@homePage.HeaderImage.Url()" />
+      </div>
+      <div class="nav">
+	      <a href="/">Startsida</a>
+      @foreach (var item in selection)
+      {
+	      <a href="@item.Url()">@item.Name()</a>
+      }
+      </div>
+	</div>
+</nav>
+
+<main>
+    @RenderBody()
+</main>
 
 @await Html.PartialAsync("~/Views/Partials/footer.cshtml")
+
+</body>
+</html>

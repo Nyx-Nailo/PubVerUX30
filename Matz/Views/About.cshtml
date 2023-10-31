@@ -4,14 +4,10 @@
 @{
 	Layout = "Master.cshtml";
 	var aboutPage = Model.AncestorOrSelf<About>();
-	var info = aboutPage?.Description;
 	var members = Model.Children<Person>();
 }
 
-<section id="About">
-	<div>
-		@info
-	</div>
+<div id="AboutUs">
 	<div>
 		@foreach(var person in members ?? new List<Person>())
 		{
@@ -21,13 +17,11 @@
 				instruments += " " + instrument;
 			}
 			<div>
-				<a href="@person.Url()"><img src="@person?.Portrait?.Url()" /></a>
+				<span><a href="@person.Url()"><img src="@person?.Portrait?.Url()" /></a></span>
 				<span>@person?.PersonName</span>
-				<br/>
 				<span>@instruments</span>
-				<br/>
-				<a href="@person?.Url()">Läs mer..</a>
+				<a href="@person?.Url()" class="button">Läs mer..</a>
 			</div>
 		}
 	</div>
-</section>
+</div>
