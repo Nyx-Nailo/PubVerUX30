@@ -35,6 +35,7 @@ namespace Matz
                 .AddDeliveryApi()
                 .AddComposers()
                 .Build();
+                 
         }
 
         /// <summary>
@@ -47,6 +48,7 @@ namespace Matz
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                ApiKey.Key = _config["ApiKey"];
             }
 
             app.UseUmbraco()
