@@ -6,11 +6,13 @@
 
 @{
 	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-    .Children()
-    .Where(x => x.IsVisible());
+	.Children()
+	.Where(x => x.IsVisible());
+	var homePage = Model.AncestorOrSelf<Home>();
 }
 
 <div>
+	<img src="@homePage.HeaderImage.Url()" />
 	<ul>
 	    <li><a href="/">Startsida</a></li>
         @foreach (var item in selection)
