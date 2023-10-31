@@ -1,16 +1,11 @@
-@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "Master.cshtml";
 }
 
-<div>
-    Home
-</div>
-
-<div>
-    
+<div id="Main">
 @{
 	var selection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
     .ChildrenOfType("newsItem")
@@ -18,15 +13,14 @@
     .OrderByDescending(x => x.CreateDate)
     .Take(3);
 }
-<strong>Senaste nyheterna</strong>
-<ul>
+    <strong>Senaste nyheterna</strong>
+
+    <div class="newsItem">
 	@foreach (var item in selection)
 	{
-		<li>
-			<a href="@item.Url()">@item.Name()</a>
-			<p>@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</p>
-		</li>
+		<a href="@item.Url()">@item.Name()</a>
+	    <span>@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</span>
 	}
-</ul>
-
+    </div>
 </div>
+

@@ -2,57 +2,14 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactUs>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @using Umbraco.Forms.Web
-
+@Html.RenderUmbracoFormDependencies()
 @{
 	Layout = "Master.cshtml";
 }
-<head>
-    @Html.RenderUmbracoFormDependencies()
-    <style>
-        /* Anpassa stilar efter din design */
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        h2 {
-            font-size: 20px;
-            color: #555;
-        }
-
-        .contact-form {
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
-        }
-
-        .form-control {
-            margin-bottom: 10px;
-        }
-
-        .btn {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-        }
-
-            .btn:hover {
-                background-color: #0056b3;
-            }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>@Model.Title</h1>
-        <h2>@Model.SubTitle</h2>
-
-        <div class="contact-form">
-            @Html.Raw(Model.ContactForm) <!-- Använd Raw för att inte escapea HTML -->
-        </div>
+<div class="ContactUs">
+    <h1>@Model.Title</h1>
+    <h2>@Model.SubTitle</h2>
+    <div class="contact-form">
+        @Html.Raw(Model.ContactForm) <!-- Använd Raw för att inte escapea HTML -->
     </div>
-</body>
+</div>

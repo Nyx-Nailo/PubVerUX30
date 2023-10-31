@@ -11,33 +11,23 @@
 
 
 <footer>
-    
-    <hr />
-    <div id="Footer-Container">
-        <div id="Footer-Socials">
-            <ul>
+    <div id="Footer">
+        <div>
+            <div class="socials">
             @foreach(var social in socials)
             {
-                <li>
-                    <a href="@social.Url">@social.Network</a>
-                </li>
+                <a href="@social.Url">@social.Network</a>
             }
-            </ul>
+            </div>
+            <div class="contact">
+                <span>@companyName</span>
+                <span>@phoneNumber</span>
+                <span>@email</span>
+            </div>
         </div>
-        <div id="Footer-Contact">
-            <ul>
-                <li>
-                    @companyName
-                </li>
-                <li>
-                    @phoneNumber
-                </li>
-                <li>
-                    @email
-                </li>
-            </ul>
+        <div class="copyright">
+            &copy; @companyName @DateTime.Now.Year
         </div>
     </div>
-    <div id="Footer-Copyright">&copy; @companyName @DateTime.Now.Year</div>
 </footer>
 
