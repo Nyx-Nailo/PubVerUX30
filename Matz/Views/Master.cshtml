@@ -4,7 +4,7 @@
 	Layout = null;
 	
 	var pageTitle = Model.Value("headerTitle", fallback: Fallback.ToAncestors);
-	if (Model.Name != "Home")
+	if (Model.Name != "Startsida")
 	    pageTitle += " - " + Model.Name;
 
 	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
@@ -25,23 +25,23 @@
 
 <body>
 
-<nav>
-    <div id="Menu">
-      <div class="logo">
+<header>
+    <div class="logo">
         <img src="@homePage.HeaderImage.Url()" />
-      </div>
-      <div class="nav">
-	      <a href="/">Startsida</a>
-      @foreach (var item in selection)
-      {
-	      <a href="@item.Url()">@item.Name()</a>
-      }
-      </div>
-	</div>
-</nav>
+    </div>
+    <nav>
+        <div class="nav">
+            <a href="/">Startsida</a>
+        @foreach (var item in selection)
+        {
+            <a href="@item.Url()">@item.Name()</a>
+        }
+        </div>
+    </nav>
+</header>
 
 <main>
-    @RenderBody()
+@RenderBody()
 </main>
 
 @await Html.PartialAsync("~/Views/Partials/footer.cshtml")

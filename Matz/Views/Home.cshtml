@@ -6,6 +6,7 @@
 }
 
 <div id="Main">
+    <div class="News">
 @{
 	var selection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
     .ChildrenOfType("newsItem")
@@ -13,14 +14,14 @@
     .OrderByDescending(x => x.CreateDate)
     .Take(3);
 }
-    <strong>Senaste nyheterna</strong>
-
-    <div class="newsItem">
-	@foreach (var item in selection)
-	{
-		<a href="@item.Url()">@item.Name()</a>
-	    <span>@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</span>
-	}
+        <strong>Senaste nyheterna</strong>
+        <div class="newsItem">
+	    @foreach (var item in selection)
+	    {
+    		<a href="@item.Url()">@item.Name()</a>
+	        <span>@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</span>
+	    }
+        </div>
     </div>
 </div>
 
