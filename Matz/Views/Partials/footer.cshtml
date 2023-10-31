@@ -14,7 +14,7 @@
             <div class="socials">
             @foreach(var social in socials)
             {
-                <a style="width:5%" href="@social.Url">@Html.Raw(social.GetIconSvgString())</a>
+                    <div style="width:5%"><a href="@social.Url">@Html.Raw(social.GetIconSvgString())</a></div>
             }
             </div>
             <div class="contact">
