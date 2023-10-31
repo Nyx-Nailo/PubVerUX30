@@ -1,6 +1,5 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-
 @{
     var root = Model.AncestorOrSelf<Home>();
     var companyName = root?.CompanyName ?? "Company name is missing";
@@ -8,7 +7,6 @@
     var email = root?.EMail ?? "E-Mail is missing";
     var socials = root?.Socials ?? new List<SocialLink>();
 }
-
 
 <footer>
     <div id="Footer">
@@ -30,4 +28,3 @@
         </div>
     </div>
 </footer>
-
