@@ -39,7 +39,6 @@ header,
 main,
 nav,
 footer {
-  background-color: @contentBg;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -60,24 +59,8 @@ a:hover {
   text-decoration: underline;
 }
 
-header {
-  background-color: transparent;
-  img {
-    width: 0;
-  }
-  div {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
 nav {
   div#Nav {
-    img {
-      width: 25%;
-    }
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -87,9 +70,14 @@ nav {
     font-weight: 400;
     text-transform: uppercase;
     font-family: monospace;
+    justify-content: space-between;
 
     a {
       text-decoration: none;
+
+      img {
+        width: 25rem;
+      }
     }
 
     a:hover {
@@ -100,10 +88,18 @@ nav {
       color: @menuActive;
       font-weight: bold;
     }
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
   }
 }
 
 main {
+  background-color: @contentBg;
+
   div#Main {
     width: 100%;
     display: flex;
@@ -202,15 +198,25 @@ footer {
         justify-content: center;
         align-items: center;
         gap: 1rem;
+
         a {
-          svg {
-            width: 1.5rem;
-            fill: #fff;
+          div {
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 0.9rem 1rem 0.7rem 1rem;
+            svg {
+              width: 1.5rem;
+              height: 1.5rem;
+              fill: #000;
+              aspect-ratio: 4/3;
+            }
           }
         }
         a:hover {
-          svg {
-            fill: #dbdbdb;
+          div {
+            svg {
+              fill: #666;
+            }
           }
         }
       }

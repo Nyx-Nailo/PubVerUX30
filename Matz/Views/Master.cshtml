@@ -28,11 +28,14 @@
 
     <nav>
         <div id="Nav">
-            <img src="@homePage.HeaderImage.Url()" />
-            <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active" :
-                null)>
-                @Model.AncestorOrSelf(1).Name
+            <div>
+            <a href="@Model.AncestorOrSelf(1).Url()">
+                <img src="@homePage.HeaderImage.Url()" />
             </a>
+            </div>
+            <div>
+            <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active" :
+                null)>@Model.AncestorOrSelf(1).Name</a>
             @foreach (var item in selection)
             {
                 if (Model.IsDescendantOrSelf(item))
@@ -44,6 +47,7 @@
                     <a href="@item.Url()">@item.Name()</a>
                 }
             }
+            </div>
         </div>
     </nav>
 

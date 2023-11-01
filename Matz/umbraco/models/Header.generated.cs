@@ -22,12 +22,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 	/// <summary>Header</summary>
 	public partial interface IHeader : IPublishedElement
 	{
-		/// <summary>Header Image</summary>
+		/// <summary>Band Logga</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::Umbraco.Cms.Core.Models.MediaWithCrops HeaderImage { get; }
 
-		/// <summary>Header Title</summary>
+		/// <summary>Sidans Namn</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string HeaderTitle { get; }
@@ -65,27 +65,27 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Header Image
+		/// Band Logga
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("headerImage")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops HeaderImage => GetHeaderImage(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Header Image</summary>
+		/// <summary>Static getter for Band Logga</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetHeaderImage(IHeader that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "headerImage");
 
 		///<summary>
-		/// Header Title
+		/// Sidans Namn
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("headerTitle")]
 		public virtual string HeaderTitle => GetHeaderTitle(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Header Title</summary>
+		/// <summary>Static getter for Sidans Namn</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetHeaderTitle(IHeader that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "headerTitle");

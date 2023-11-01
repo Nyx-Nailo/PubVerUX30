@@ -50,7 +50,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Company Name
+		/// Företagets Namn
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -58,7 +58,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string CompanyName => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetCompanyName(this, _publishedValueFallback);
 
 		///<summary>
-		/// E-Mail
+		/// E-Post Adress
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -66,7 +66,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string EMail => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetEMail(this, _publishedValueFallback);
 
 		///<summary>
-		/// Phone Number
+		/// Tele. Nr.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -74,7 +74,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string PhoneNumber => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetPhoneNumber(this, _publishedValueFallback);
 
 		///<summary>
-		/// Socials
+		/// Social Länkar: Länkare till facebook sida och liknande.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -82,7 +82,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.SocialLink> Socials => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetSocials(this, _publishedValueFallback);
 
 		///<summary>
-		/// Header Image
+		/// Band Logga
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -90,7 +90,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops HeaderImage => global::Umbraco.Cms.Web.Common.PublishedModels.Header.GetHeaderImage(this, _publishedValueFallback);
 
 		///<summary>
-		/// Header Title
+		/// Sidans Namn
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]

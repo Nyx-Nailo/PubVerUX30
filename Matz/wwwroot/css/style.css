@@ -22,7 +22,6 @@ header,
 main,
 nav,
 footer {
-  background-color: rgba(52, 45, 84, 0.45);
   display: flex;
   justify-content: left;
   align-items: center;
@@ -39,18 +38,6 @@ a:hover {
   color: #b8b1b0;
   text-decoration: underline;
 }
-header {
-  background-color: transparent;
-}
-header img {
-  width: 0;
-}
-header div {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 nav div#Nav {
   width: 100%;
   display: flex;
@@ -61,12 +48,13 @@ nav div#Nav {
   font-weight: 400;
   text-transform: uppercase;
   font-family: monospace;
-}
-nav div#Nav img {
-  width: 25%;
+  justify-content: space-between;
 }
 nav div#Nav a {
   text-decoration: none;
+}
+nav div#Nav a img {
+  width: 25rem;
 }
 nav div#Nav a:hover {
   text-decoration: underline;
@@ -74,6 +62,14 @@ nav div#Nav a:hover {
 nav div#Nav a.active {
   color: #bea246;
   font-weight: bold;
+}
+nav div#Nav div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+main {
+  background-color: rgba(52, 45, 84, 0.45);
 }
 main div#Main {
   width: 100%;
@@ -158,12 +154,19 @@ footer div#Footer div.contacts div.socials {
   align-items: center;
   gap: 1rem;
 }
-footer div#Footer div.contacts div.socials a svg {
-  width: 1.5rem;
-  fill: #fff;
+footer div#Footer div.contacts div.socials a div {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 0.9rem 1rem 0.7rem 1rem;
 }
-footer div#Footer div.contacts div.socials a:hover svg {
-  fill: #dbdbdb;
+footer div#Footer div.contacts div.socials a div svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #000;
+  aspect-ratio: 4/3;
+}
+footer div#Footer div.contacts div.socials a:hover div svg {
+  fill: #666;
 }
 footer div#Footer div.contacts div.contact {
   justify-content: center;
