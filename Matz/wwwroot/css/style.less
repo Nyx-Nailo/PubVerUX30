@@ -108,21 +108,26 @@ main {
   div#Main {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     div.Gigs {
-      width: 50%;
+      width: 100%;
     }
 
     div.News {
-      width: 50%;
+      width: 100%;
+      margin-top: 2rem;
 
       strong {
         font-size: 2rem;
       }
 
       div.newsItems {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
 
         div.newsItem {
           span.topic {
