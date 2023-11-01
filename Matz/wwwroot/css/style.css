@@ -91,6 +91,9 @@ main div#Main div.News {
 main div#Main div.News strong {
   font-size: 2rem;
 }
+main div#Main div.News div.newsItems {
+  margin-top: 1rem;
+}
 main div#Main div.News div.newsItems div.newsItem span.topic {
   font-size: 1.5rem;
 }
@@ -103,7 +106,7 @@ main div#Main div.News div.newsItems div.newsItem button {
   margin: 0.5rem 0 1rem 0;
 }
 main div#Main div.News div.newsItems div.newsItem button:hover.button {
-  background-color: #3498dbdc;
+  background-color: #2c85c0dc;
   color: #fff1f8;
   padding: 0.75rem 1.75rem;
   border: none;
