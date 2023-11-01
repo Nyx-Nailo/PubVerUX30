@@ -10,17 +10,14 @@
 
 <footer>
     <div id="Footer">
-        <div>
+        <div class="contacts">
             <div class="socials">
-            @foreach(var social in socials)
-            {
-                    <div style="width:5%"><a href="@social.Url">@Html.Raw(social.GetIconSvgString())</a></div>
-            }
-            </div>
-            <div class="contact">
-                <span>@companyName</span>
-                <span>@phoneNumber</span>
-                <span>@email</span>
+                @foreach (var social in socials)
+                {
+                    <a href="@social.Url">
+                        <div>@Html.Raw(social.GetIconSvgString())</div>
+                    </a>
+                }
             </div>
         </div>
         <div class="copyright">

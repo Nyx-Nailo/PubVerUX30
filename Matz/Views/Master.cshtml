@@ -1,4 +1,4 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = null;
@@ -21,24 +21,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@pageTitle</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" media="all" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="@homePage.HeaderImage.Url()" />
-        </div>
-    </header>
-
     <nav>
         <div id="Nav">
-            <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active" :
-                null)>
-                @Model.AncestorOrSelf(1).Name
+            <div>
+            <a href="@Model.AncestorOrSelf(1).Url()">
+                <img src="@homePage.HeaderImage.Url()" />
             </a>
+            </div>
+            <div>
+            <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active" :
+                null)>@Model.AncestorOrSelf(1).Name</a>
             @foreach (var item in selection)
             {
                 if (Model.IsDescendantOrSelf(item))
@@ -50,6 +47,7 @@
                     <a href="@item.Url()">@item.Name()</a>
                 }
             }
+            </div>
         </div>
     </nav>
 
