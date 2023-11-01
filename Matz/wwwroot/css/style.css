@@ -1,22 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 body {
   margin-top: 2rem;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 16px;
   background-color: #000000;
-  background-image: linear-gradient(180deg, #00145a 0%, rgba(0, 0, 0, 0.75) 60%);
+  background-image: linear-gradient(180deg, #1c4e99 0%, rgba(0, 0, 0, 0.75) 80%);
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  color: #fff;
+  color: #fff1f8;
 }
 header,
 main,
 nav,
 footer {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(52, 45, 84, 0.45);
   display: flex;
   justify-content: left;
   align-items: center;
@@ -26,11 +33,11 @@ footer {
   padding: 1rem 2rem;
 }
 a {
-  color: #fff;
+  color: #fff1f8;
   text-decoration: none;
 }
 a:hover {
-  color: #333;
+  color: #b8b1b0;
   text-decoration: underline;
 }
 header {
@@ -44,13 +51,13 @@ nav div#Nav {
   gap: 2rem;
 }
 nav div#Nav a {
-  color: #fff;
   text-decoration: none;
 }
 nav div#Nav a:hover {
   text-decoration: underline;
 }
 nav div#Nav a.active {
+  color: #bea246;
   font-weight: bold;
 }
 main div#Main {
@@ -63,6 +70,60 @@ main div#Main div.Gigs {
 }
 main div#Main div.News {
   width: 50%;
+}
+main div#Main div.News strong {
+  font-size: 2rem;
+}
+main div#Main div.News div.newsItems div.newsItem span.topic {
+  font-size: 1.5rem;
+}
+main div#Main div.News div.newsItems div.newsItem button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 0.2rem;
+  margin: 0.5rem 0 1rem 0;
+}
+main div#Main div.News div.newsItems div.newsItem button:hover.button {
+  background-color: #3498dbdc;
+  color: #fff1f8;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 0.2rem;
+}
+main div#News div.topic {
+  font-size: 1.75rem;
+}
+main div#News div.newsList div.newsListings {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+}
+main div#News div.newsList div.newsListings div.newsItem div h3 {
+  font-size: 1.5rem;
+}
+main div#News div.newsList div.newsListings div.newsItem div span {
+  font-size: 0.75rem;
+  color: #ccc;
+}
+main div#News div.newsList div.newsListings div.newsItem div button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  margin-top: 0.5rem;
+  border-radius: 0.2rem;
+}
+main div#News div.newsList div.newsListings div.newsItem div button:hover {
+  background-color: #3498dbdc;
+  color: #fff1f8;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  cursor: pointer;
+}
+main div#NewsItem h1 {
+  font-size: 2rem;
 }
 footer div#Footer {
   width: 100%;

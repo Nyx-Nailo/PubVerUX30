@@ -5,8 +5,7 @@
 	Layout = "Master.cshtml";
 	
 	/*
-	 topic: style="padding: 1rem; background-color: #ccc"
-	 content:  style="padding: 1rem; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));"
+	 content:  style=""
 	 item:  style="display: flex; flex-direction: column;"
 	*/
 	
@@ -27,10 +26,18 @@
         @foreach (var item in selection)
 	    {
 		    <div class="newsItem">
-			    <h3>@item.Name()</h3>
-			    <span>@item.CreateDate</span>
-			    @Html.Truncate(item.Value("newsContent").ToString(), 220, true)
-			    <a href="@item.Url()">Fortsätt läsa...</a>
+		        <div>
+	    		    <h3>@item.Name()</h3>
+			    </div>
+			    <div>
+	    		    <span>@item.CreateDate</span>
+			    </div>
+			    <div>
+	    		    @Html.Truncate(item.Value("newsContent").ToString(), 220, true)
+			    </div>
+			    <div>
+	    		    <a href="@item.Url()"><button class="button">Fortsätt läsa...</button></a>
+			    </div>
 		    </div>
 	    }
         </div>

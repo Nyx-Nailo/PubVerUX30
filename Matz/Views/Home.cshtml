@@ -31,11 +31,14 @@
     .Take(3);
 }
         <strong>Senaste nyheterna</strong>
-        <div class="newsItem">
+        <div class="newsItems">
 	    @foreach (var item in newsSelection)
 	    {
-    		<a href="@item.Url()">@item.Name()</a>
-	        <span>@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</span>
+	        <div class="newsItem">
+    	    	<span class="topic">@item.Name()</span>
+	            <span class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</span>
+    	        <a href="@item.Url()"><button  class="button">Läs mera...</button></a>
+	        </div>
 	    }
         </div>
     </div>
