@@ -26,14 +26,9 @@
 
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="@homePage.HeaderImage.Url()" />
-        </div>
-    </header>
-
     <nav>
         <div id="Nav">
+            <img src="@homePage.HeaderImage.Url()" />
             <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active" :
                 null)>
                 @Model.AncestorOrSelf(1).Name

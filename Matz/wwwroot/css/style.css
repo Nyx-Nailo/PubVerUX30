@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 body {
-  margin-top: 2rem;
   font-family: "Roboto";
   font-size: 16px;
   background-color: #000000;
@@ -43,12 +42,28 @@ a:hover {
 header {
   background-color: transparent;
 }
+header img {
+  width: 0;
+}
+header div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 nav div#Nav {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+nav div#Nav img {
+  width: 25%;
 }
 nav div#Nav a {
   text-decoration: none;
@@ -148,7 +163,7 @@ footer div#Footer div.contacts div.socials a svg {
   fill: #fff;
 }
 footer div#Footer div.contacts div.socials a:hover svg {
-  fill: #333;
+  fill: #dbdbdb;
 }
 footer div#Footer div.contacts div.contact {
   justify-content: center;
