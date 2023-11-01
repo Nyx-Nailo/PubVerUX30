@@ -33,6 +33,9 @@ body {
   gap: 0.5rem;
 
   color: @textColor;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 header,
@@ -60,13 +63,15 @@ a:hover {
 }
 
 nav {
+  border-bottom: 2px solid #fff;
   div#Nav {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
     gap: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px #000;
     font-weight: 400;
     text-transform: uppercase;
     font-family: monospace;
