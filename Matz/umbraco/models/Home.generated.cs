@@ -82,6 +82,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.SocialLink> Socials => global::Umbraco.Cms.Web.Common.PublishedModels.Footer.GetSocials(this, _publishedValueFallback);
 
 		///<summary>
+		/// Alternativ Logga: Den här texten visas om loggan inte lyckas laddas in
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("altImage")]
+		public virtual string AltImage => global::Umbraco.Cms.Web.Common.PublishedModels.Header.GetAltImage(this, _publishedValueFallback);
+
+		///<summary>
 		/// Band Logga
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
