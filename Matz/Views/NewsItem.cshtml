@@ -7,16 +7,14 @@
 
 <section id="NewsItem">
     <div class="topic">
-        @Model.Value("newsTitle")
+        @Model.AncestorOrSelf(2).Name
     </div>
     <div class="item">
+        <div class="subtopic">@Model.Value("newsTitle")</div>
         <div class="date">date @Model.Value("createDate")</div>
         <div class="text">@Model.Value("newsContent")</div>
     </div>
-</section>
-
-<section id="back">
-    <div>
+    <div class="readmore">
         <button class="button" onclick="history.back()">&#8592; tillbaka</button>
     </div>
 </section>

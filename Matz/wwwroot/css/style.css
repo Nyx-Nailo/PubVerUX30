@@ -206,15 +206,12 @@ main section#NewsItem {
   flex-direction: column;
   gap: 0.4rem;
 }
-main section#NewsItem div.topic {
-  font-size: 1.4rem;
-}
 main section#NewsItem div.item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
 }
-main section#NewsItem div.item div.topic {
+main section#NewsItem div.item div.subtopic {
   font-size: 1.2rem;
 }
 main section#NewsItem div.item div.date {
@@ -223,12 +220,13 @@ main section#NewsItem div.item div.date {
 }
 main section#NewsItem div.item div.text {
   font-size: 1rem;
-  margin-bottom: 1rem;
 }
-main section#NewsItem div.item div.readmore {
-  text-align: right;
+main section#NewsItem div.readmore {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
 }
-main section#NewsItem div.item div.readmore button {
+main section#NewsItem div.readmore button {
   background-color: #3498db;
   color: #fff1f8;
   padding: 0.5rem 1.5rem;
@@ -236,26 +234,26 @@ main section#NewsItem div.item div.readmore button {
   border-radius: 0.3rem;
   cursor: pointer;
 }
-main section#NewsItem div.item div.readmore button:hover {
+main section#NewsItem div.readmore button:hover {
   background-color: #2a7cb3;
 }
 main section#AboutUs div.content {
+  background-color: rgba(28, 78, 153, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 main section#AboutUs div.members {
+  background-color: rgba(28, 78, 153, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
   display: grid;
   gap: 1rem;
   grid-auto-flow: dense;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
   grid-auto-rows: auto auto auto auto;
   container-type: inline-size;
-}
-main section#AboutUs div.members div.member:nth-child(odd) {
-  background-color: rgba(28, 78, 153, 0.75);
-}
-main section#AboutUs div.members div.member:nth-child(even) {
-  background-color: rgba(28, 78, 153, 0.5);
 }
 main section#AboutUs div.members div.member {
   display: grid;
@@ -264,6 +262,7 @@ main section#AboutUs div.members div.member {
   border-radius: 0.5rem;
   grid-row: span 4;
   grid-template-rows: subgrid;
+  background-color: rgba(28, 78, 153, 0.5);
 }
 main section#AboutUs div.members div.member div.topic {
   font-size: 1.2rem;
@@ -290,6 +289,45 @@ main section#AboutUs div.members div.member div.readmore button {
   cursor: pointer;
 }
 main section#AboutUs div.members div.member div.readmore button:hover {
+  background-color: #2a7cb3;
+}
+main section#AboutMe {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+main section#AboutMe div.content {
+  background-color: rgba(28, 78, 153, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+main section#AboutMe div.content div.center {
+  width: 50%;
+  display: flex;
+  gap: 1rem;
+}
+main section#AboutMe div.content div.center div {
+  flex: 50%;
+}
+main section#AboutMe div.content div.center div.image {
+  text-align: right;
+}
+main section#AboutMe div.readmore {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#AboutMe div.readmore button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#AboutMe div.readmore button:hover {
   background-color: #2a7cb3;
 }
 main section#ContactUs div.subTopic {
@@ -368,6 +406,75 @@ main section#ContactUs div.grid div.contact-agents div.subtitle small {
 main section#ContactUs div.grid div.contact-agents div.subgrid {
   display: grid;
   row-gap: 2rem;
+}
+main section#Gigs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+main section#Gigs div.Gigs {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#Gigs div.Gigs div.subtopic {
+  font-size: 1.2rem;
+}
+main section#Gigs div.Gigs div.date {
+  font-size: 0.75rem;
+  color: #ccc;
+}
+main section#Gigs div.Gigs div.text {
+  font-size: 1rem;
+}
+main section#Gig {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+main section#Gig div.gig {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+main section#Gig div.gig div.center {
+  width: 50%;
+  display: flex;
+  gap: 1rem;
+}
+main section#Gig div.gig div.center div {
+  flex: 50%;
+}
+main section#Gig div.gig div.center div.map {
+  text-align: right;
+}
+main section#Gig div.gig div.center div.information div.subtopic {
+  font-size: 1.2rem;
+}
+main section#Gig div.gig div.center div.information div.date {
+  font-size: 0.75rem;
+  color: #ccc;
+}
+main section#Gig div.gig div.center div.information div.text {
+  font-size: 1rem;
+}
+main section#Gig div.readmore {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#Gig div.readmore button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#Gig div.readmore button:hover {
+  background-color: #2a7cb3;
 }
 main section#back button {
   background-color: #3498db;

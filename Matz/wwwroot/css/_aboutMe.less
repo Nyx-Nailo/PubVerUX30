@@ -1,24 +1,29 @@
 @import "_vars";
 
-section#NewsItem {
+section#AboutMe {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 
-  div.item {
+  div.content {
     background-color: @backgroundColorEven;
-    padding: 0.75rem;
     border-radius: 0.5rem;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
 
-    div.subtopic {
-      font-size: 1.2rem;
-    }
-    div.date {
-      font-size: 0.75rem;
-      color: #ccc;
-    }
-    div.text {
-      font-size: 1rem;
+    div.center {
+      width: 50%;
+      display: flex;
+      gap: 1rem;
+
+      div {
+        flex: 50%;
+      }
+
+      div.image {
+        text-align: right;
+      }
     }
   }
 

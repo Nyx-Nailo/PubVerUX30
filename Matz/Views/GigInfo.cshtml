@@ -7,10 +7,20 @@
 }
 
 <section id="Gig">
-    <div>
-        <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=@ApiKey.Key&q=@address"></iframe>
+    <div class="topic">
+        @Model.AncestorOrSelf(2).Name
     </div>
-    <div class="description">
-        @Model.Description;
+    <div class="gig">
+        <div class="center">
+            <div class="map">
+                <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=@ApiKey.Key&q=@address"></iframe>
+            </div>
+            <div class="information">
+                @Model.Description
+            </div>
+        </div>
+    </div>
+    <div class="readmore">
+        <button class="button" onclick="history.back()">&#8592; tillbaka</button>
     </div>
 </section>
