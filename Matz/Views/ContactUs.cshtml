@@ -4,12 +4,34 @@
 @using Umbraco.Forms.Web
 @Html.RenderUmbracoFormDependencies()
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    var contactInformation = Model.Children<ContactInformation>();
 }
 <div class="ContactUs">
-    <h1>@Model.Title</h1>
-    <h2>@Model.SubTitle</h2>
+    <h2>@Model.Value("contactTitle")</h2>
     <div class="contact-form">
-        @Html.Raw(Model.ContactForm) <!-- Använd Raw för att inte escapea HTML -->
+        @Html.Raw(Model.ContactForm) 
     </div>
+</div>
+
+
+<div class="contact">
+
+    <div>
+    <h3>Vill du boka oss?</h3>
+    <h4>Kontaktuppgifter till våra agenturer</h4>
+    </div>
+
+	@foreach (var contact in contactInformation)
+	{
+        <div class="contact-item">
+
+	    <img src="@contact.ContactImage" alt="Kontakt bild"/>
+        <h3>@contact.ContactName</h3>
+        <p>@contact.ContactNumber</p>
+        <p>@contact.ContactEmail</p>   
+
+		</div>
+	}
+
 </div>
