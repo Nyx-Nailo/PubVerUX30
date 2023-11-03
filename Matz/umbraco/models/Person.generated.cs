@@ -50,14 +50,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Date of Birth
+		/// Födelsedag
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[ImplementPropertyType("dateOfBirth")]
 		public virtual global::System.DateTime DateOfBirth => this.Value<global::System.DateTime>(_publishedValueFallback, "dateOfBirth");
 
 		///<summary>
-		/// Family
+		/// Familj
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -65,7 +65,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Family => this.Value<string>(_publishedValueFallback, "family");
 
 		///<summary>
-		/// Fav Drink
+		/// Favorit Dryck
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -73,7 +73,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string FavDrink => this.Value<string>(_publishedValueFallback, "favDrink");
 
 		///<summary>
-		/// Fav Food
+		/// Favorit Mat
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -81,7 +81,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string FavFood => this.Value<string>(_publishedValueFallback, "favFood");
 
 		///<summary>
-		/// Fav Music
+		/// Favorit Musik
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -89,7 +89,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string FavMusic => this.Value<string>(_publishedValueFallback, "favMusic");
 
 		///<summary>
-		/// Instruments
+		/// Instrument
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -97,7 +97,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<string> Instruments => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "instruments");
 
 		///<summary>
-		/// Interests
+		/// Intressen
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -105,7 +105,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Interests => this.Value<string>(_publishedValueFallback, "interests");
 
 		///<summary>
-		/// Name
+		/// Namn
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -113,7 +113,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string PersonName => this.Value<string>(_publishedValueFallback, "personName");
 
 		///<summary>
-		/// Place: Where the person live
+		/// Ort
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -121,7 +121,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Place => this.Value<string>(_publishedValueFallback, "place");
 
 		///<summary>
-		/// Portrait
+		/// Profilbild
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]

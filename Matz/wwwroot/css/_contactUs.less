@@ -1,0 +1,40 @@
+@import "_vars";
+
+section#ContactUs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  div.subTopic {
+    font-size: 1.2rem;
+  }
+  div.form {
+    legend {
+      font-weight: 1rem;
+      font-weight: normal;
+    }
+
+    label {
+      font-weight: normal;
+      font-size: 0.9rem;
+    }
+
+    div.umbraco-forms-field-wrapper {
+      input {
+        margin: 0;
+        margin-bottom: 0;
+      }
+      input:last-of-type {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    input[type="submit"] {
+      .button-style();
+    }
+
+    p {
+      display: none;
+    }
+  }
+}

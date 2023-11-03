@@ -6,10 +6,15 @@
 @{
 	Layout = "Master.cshtml";
 }
-<div class="ContactUs">
-    <h1>@Model.Title</h1>
-    <h2>@Model.SubTitle</h2>
-    <div class="contact-form">
-        @Html.Raw(Model.ContactForm) <!-- Använd Raw för att inte escapea HTML -->
+
+<section id="ContactUs">
+    <div class="topic">
+        @Model.Name()
     </div>
-</div>
+    <div class="subTopic">
+        @Model.SubTitle
+    </div>
+    <div class="form">
+        @Html.Raw(Model.ContactForm)
+    </div>
+</section>

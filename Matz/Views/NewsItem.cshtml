@@ -5,7 +5,18 @@
 	Layout = "Master.cshtml";
 }
 
-<div id="NewsItem">
-    <h1>@Model.Value("newsTitle")</h1>
-    <p>@Model.Value("newsContent")</p>
-</div>
+<section id="NewsItem">
+    <div class="topic">
+        @Model.Value("newsTitle")
+    </div>
+    <div class="item">
+        <div class="date">date @Model.Value("createDate")</div>
+        <div class="text">@Model.Value("newsContent")</div>
+    </div>
+</section>
+
+<section id="back">
+    <div>
+        <button class="button" onclick="history.back()">&#8592; tillbaka</button>
+    </div>
+</section>

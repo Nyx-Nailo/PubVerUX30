@@ -22,22 +22,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 	/// <summary>Footer</summary>
 	public partial interface IFooter : IPublishedElement
 	{
-		/// <summary>Company Name</summary>
+		/// <summary>Företagets Namn</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string CompanyName { get; }
 
-		/// <summary>E-Mail</summary>
+		/// <summary>E-Post Adress</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string EMail { get; }
 
-		/// <summary>Phone Number</summary>
+		/// <summary>Tele. Nr.</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string PhoneNumber { get; }
 
-		/// <summary>Socials</summary>
+		/// <summary>Social Länkar</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.SocialLink> Socials { get; }
@@ -75,53 +75,53 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Company Name
+		/// Företagets Namn
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("companyName")]
 		public virtual string CompanyName => GetCompanyName(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Company Name</summary>
+		/// <summary>Static getter for Företagets Namn</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetCompanyName(IFooter that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "companyName");
 
 		///<summary>
-		/// E-Mail
+		/// E-Post Adress
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("eMail")]
 		public virtual string EMail => GetEMail(this, _publishedValueFallback);
 
-		/// <summary>Static getter for E-Mail</summary>
+		/// <summary>Static getter for E-Post Adress</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetEMail(IFooter that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "eMail");
 
 		///<summary>
-		/// Phone Number
+		/// Tele. Nr.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("phoneNumber")]
 		public virtual string PhoneNumber => GetPhoneNumber(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Phone Number</summary>
+		/// <summary>Static getter for Tele. Nr.</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetPhoneNumber(IFooter that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "phoneNumber");
 
 		///<summary>
-		/// Socials
+		/// Social Länkar: Länkare till facebook sida och liknande.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("socials")]
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.SocialLink> Socials => GetSocials(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Socials</summary>
+		/// <summary>Static getter for Social Länkar</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.SocialLink> GetSocials(IFooter that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.SocialLink>>(publishedValueFallback, "socials");

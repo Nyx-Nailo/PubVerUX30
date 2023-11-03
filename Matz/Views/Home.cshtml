@@ -5,42 +5,47 @@
 	Layout = "Master.cshtml";
 }
 
-<div id="Main">
-    <div class="Gigs">
-@{
-	var gigsSelection = Umbraco.Content(Guid.Parse("1e74e3be-51d6-4f3d-a016-990eeb9dc2a6"))
-    .ChildrenOfType("gigInfo")
-    .Where(x => x.IsVisible())
-    .OrderByDescending(x => x.CreateDate)
-    .Take(1);
-}
-        <strong>Nästa spelning</strong>
-        <div class="newsItem">
-	    @foreach (var item in gigsSelection)
-    	{
+<section id="StartpageGigs">
+    <div class="topic">
+        Nästa spelning
+    </div>
+    <div class="gig">
+    @{
+    var gigsSelection = Umbraco.Content(Guid.Parse("1e74e3be-51d6-4f3d-a016-990eeb9dc2a6"))
+        .ChildrenOfType("gigInfo")
+        .Where(x => x.IsVisible())
+        .OrderByDescending(x => x.CreateDate)
+        .Take(1);
+
+        foreach (var item in gigsSelection)
+        {
             <a href="@item.Url()">@item.Name()</a>
-	    }
-	    </div>
+        }
+    }
     </div>
-    <div class="News">
-@{
-	var newsSelection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
-    .ChildrenOfType("newsItem")
-    .Where(x => x.IsVisible())
-    .OrderByDescending(x => x.CreateDate)
-    .Take(3);
-}
-        <strong>Senaste nyheterna</strong>
-        <div class="newsItems">
-	    @foreach (var item in newsSelection)
-	    {
-	        <div class="newsItem">
-    	    	<span class="topic">@item.Name()</span>
-	            <span class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</span>
-    	        <a href="@item.Url()"><button  class="button">Läs mera...</button></a>
-	        </div>
-	    }
-        </div>
+</section>
+
+<section id="StartpageNews">
+    <div class="topic">
+        Senaste nyheterna
     </div>
-</div>
+    <div class="items">
+    @{
+    var newsSelection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
+        .ChildrenOfType("newsItem")
+        .Where(x => x.IsVisible())
+        .OrderByDescending(x => x.CreateDate)
+        .Take(3);
+
+        foreach (var item in newsSelection)
+        {
+            <div class="news">
+                <div class="topic">@item.Name()</div>
+                <div class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</div>
+                <div class="readmore"><a href="@item.Url()"><button  class="button">Läs mera...</button></a></div>
+            </div>
+        }
+    }
+    </div>
+</section>
 

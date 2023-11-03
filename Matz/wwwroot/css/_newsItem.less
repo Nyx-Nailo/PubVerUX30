@@ -1,0 +1,39 @@
+@import "_vars";
+
+section#NewsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  div.topic {
+    font-size: 1.4rem;
+  }
+
+  div.item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    div.topic {
+      font-size: 1.2rem;
+    }
+    div.date {
+      font-size: 0.75rem;
+      color: #ccc;
+    }
+    div.text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    div.readmore {
+      text-align: right;
+
+      button {
+        .button-style();
+      }
+      button:hover {
+        background-color: @buttonBgHover;
+      }
+    }
+  }
+}
