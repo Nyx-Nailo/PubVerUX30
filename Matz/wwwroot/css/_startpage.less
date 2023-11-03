@@ -1,9 +1,11 @@
 @import "_vars";
 
 section#StartpageGigs {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  div.gig {
+    background-color: @backgroundColorEven;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
 }
 
 section#StartpageNews {
@@ -15,14 +17,8 @@ section#StartpageNews {
     grid-auto-rows: auto auto auto;
     container-type: inline-size;
 
-    div.news:nth-child(odd) {
-      background-color: @backgroundColor;
-    }
-    div.news:nth-child(even) {
-      background-color: @backgroundColorEven;
-    }
-
     div.news {
+      background-color: @backgroundColorEven;
       display: grid;
       gap: 0.2rem;
       padding: 0.75rem;
@@ -30,7 +26,7 @@ section#StartpageNews {
       grid-row: span 3;
       grid-template-rows: subgrid;
 
-      div.topic {
+      div.subtopic {
         font-size: 1.2rem;
       }
       div.text {

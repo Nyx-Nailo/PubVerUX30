@@ -25,7 +25,7 @@
         foreach (var item in newsSelection)
         {
             <div class="news">
-                <div class="topic">@item.Name()</div>
+                <div class="subtopic">@item.Name()</div>
                 <div class="date">@item.CreateDate</div>
                 <div class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</div>
                 <div class="readmore"><a href="@item.Url()"><button  class="button">Läs mera...</button></a></div>

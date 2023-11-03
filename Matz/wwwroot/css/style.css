@@ -34,6 +34,7 @@ nav {
   font-weight: 400;
   font-size: 1.1rem;
   padding: 0;
+  margin-bottom: 0.5rem;
 }
 main {
   width: 100%;
@@ -47,8 +48,12 @@ main {
 main section {
   width: 100%;
   max-width: 80rem;
+  margin-bottom: 1.5rem;
 }
 main section div.topic {
+  background-color: rgba(28, 78, 153, 0.75);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
 }
@@ -106,10 +111,10 @@ nav div#Nav div.menu a:hover.active {
   color: #e0bf51;
   text-shadow: 0px 0px 10px #e0bf51;
 }
-main section#StartpageGigs {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+main section#StartpageGigs div.gig {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
 }
 main section#StartpageNews div.items {
   display: grid;
@@ -119,13 +124,8 @@ main section#StartpageNews div.items {
   grid-auto-rows: auto auto auto;
   container-type: inline-size;
 }
-main section#StartpageNews div.items div.news:nth-child(odd) {
-  background-color: rgba(28, 78, 153, 0.75);
-}
-main section#StartpageNews div.items div.news:nth-child(even) {
-  background-color: rgba(28, 78, 153, 0.5);
-}
 main section#StartpageNews div.items div.news {
+  background-color: rgba(28, 78, 153, 0.5);
   display: grid;
   gap: 0.2rem;
   padding: 0.75rem;
@@ -133,7 +133,7 @@ main section#StartpageNews div.items div.news {
   grid-row: span 3;
   grid-template-rows: subgrid;
 }
-main section#StartpageNews div.items div.news div.topic {
+main section#StartpageNews div.items div.news div.subtopic {
   font-size: 1.2rem;
 }
 main section#StartpageNews div.items div.news div.text {
@@ -153,9 +153,6 @@ main section#StartpageNews div.items div.news div.readmore button {
 }
 main section#StartpageNews div.items div.news div.readmore button:hover {
   background-color: #2a7cb3;
-}
-main section#News div.topic {
-  font-size: 1.4rem;
 }
 main section#News div.items {
   display: grid;
@@ -179,7 +176,7 @@ main section#News div.items div.news {
   grid-row: span 4;
   grid-template-rows: subgrid;
 }
-main section#News div.items div.news div.topic {
+main section#News div.items div.news div.subtopic {
   font-size: 1.2rem;
 }
 main section#News div.items div.news div.date {
@@ -295,30 +292,53 @@ main section#AboutUs div.members div.member div.readmore button {
 main section#AboutUs div.members div.member div.readmore button:hover {
   background-color: #2a7cb3;
 }
-main section#ContactUs {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
 main section#ContactUs div.subTopic {
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
-main section#ContactUs div.form legend {
-  font-weight: 1rem;
-  font-weight: normal;
+main section#ContactUs div.grid {
+  display: flex;
+  gap: 10%;
+  background-color: rgba(28, 78, 153, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
 }
-main section#ContactUs div.form label {
-  font-weight: normal;
+main section#ContactUs div.grid div.contact-form {
+  display: flex;
+  justify-content: right;
+  flex: 50%;
+}
+main section#ContactUs div.grid div.contact-form div.content-right {
   font-size: 0.9rem;
 }
-main section#ContactUs div.form div.umbraco-forms-field-wrapper input {
-  margin: 0;
-  margin-bottom: 0;
+main section#ContactUs div.grid div.contact-form div.content-right div.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
-main section#ContactUs div.form div.umbraco-forms-field-wrapper input:last-of-type {
-  margin-bottom: 1.2rem;
+main section#ContactUs div.grid div.contact-form div.content-right fieldset {
+  border: none;
 }
-main section#ContactUs div.form input[type="submit"] {
+main section#ContactUs div.grid div.contact-form div.content-right p {
+  display: none;
+}
+main section#ContactUs div.grid div.contact-form div.content-right input[type="text"],
+main section#ContactUs div.grid div.contact-form div.content-right input[type="tel"],
+main section#ContactUs div.grid div.contact-form div.content-right input[type="email"] {
+  width: 100%;
+  padding: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+main section#ContactUs div.grid div.contact-form div.content-right textarea {
+  width: 100%;
+  height: 7rem;
+  margin-bottom: 1rem;
+}
+main section#ContactUs div.grid div.contact-form div.content-right input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 2rem;
+}
+main section#ContactUs div.grid div.contact-form div.content-right input[type="submit"] {
   background-color: #3498db;
   color: #fff1f8;
   padding: 0.5rem 1.5rem;
@@ -326,8 +346,28 @@ main section#ContactUs div.form input[type="submit"] {
   border-radius: 0.3rem;
   cursor: pointer;
 }
-main section#ContactUs div.form p {
-  display: none;
+main section#ContactUs div.grid div.contact-form div.content-right input[type="submit"]:hover {
+  background-color: #2a7cb3;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#ContactUs div.grid div.contact-agents {
+  flex: 50%;
+}
+main section#ContactUs div.grid div.contact-agents div.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+main section#ContactUs div.grid div.contact-agents div.subtitle small {
+  padding: 0;
+  font-size: 0.9rem;
+}
+main section#ContactUs div.grid div.contact-agents div.subgrid {
+  display: grid;
+  row-gap: 2rem;
 }
 main section#back button {
   background-color: #3498db;
