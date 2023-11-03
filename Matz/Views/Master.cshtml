@@ -28,37 +28,39 @@
 
 <body>
 
-<nav>
-    <div id="Nav">
-        <div class="image">
-            <a href="@Model.AncestorOrSelf(1).Url()">
-                <img src="@homePage.HeaderImage.Url()" />
-            </a>
-        </div>
-        <div class="menu">
-            <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active" : null)>
-                @Model.AncestorOrSelf(1).Name
-            </a>
-            @foreach (var item in selection)
-            {
-                if (Model.IsDescendantOrSelf(item))
+    <nav>
+        <div id="Nav">
+            <div class="image">
+                <a href="@Model.AncestorOrSelf(1).Url()">
+                    <img src="@homePage.HeaderImage.Url()" />
+                </a>
+            </div>
+            <div class="menu">
+                <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active"
+                    : null)>
+                    @Model.AncestorOrSelf(1).Name
+                </a>
+                @foreach (var item in selection)
                 {
-                    <a href="@item.Url()" class="active">@item.Name()</a>
+                    if (Model.IsDescendantOrSelf(item))
+                    {
+                        <a href="@item.Url()" class="active">@item.Name()</a>
+                    }
+                    else
+                    {
+                        <a href="@item.Url()">@item.Name()</a>
+                    }
                 }
-                else
-                {
-                    <a href="@item.Url()">@item.Name()</a>
-                }
-            }
+            </div>
         </div>
-    </div>
-</nav>
+        </div>
+    </nav>
 
-<main>
-    @RenderBody()
-</main>
+    <main>
+        @RenderBody()
+    </main>
 
-@await Html.PartialAsync("~/Views/Partials/footer.cshtml")
+    @await Html.PartialAsync("~/Views/Partials/footer.cshtml")
 
 </body>
 

@@ -7,7 +7,6 @@
   transition: all 0.1s;
 }
 body {
-  margin-top: 2rem;
   font-family: "Roboto";
   background-color: rgba(233, 233, 233, 0.75);
   background-image: linear-gradient(180deg, #1c4e99 30%, rgba(233, 233, 233, 0.75) 90%);
@@ -21,6 +20,8 @@ body {
   align-items: center;
   gap: 0.5rem;
   color: #fff1f8;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 header,
 nav,
