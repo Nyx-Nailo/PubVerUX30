@@ -1,4 +1,4 @@
-@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = null;
@@ -30,7 +30,7 @@
         <div id="Nav">
             <div>
             <a href="@Model.AncestorOrSelf(1).Url()">
-                <img src="@homePage.HeaderImage.Url()" />
+                <img src="@homePage.HeaderImage.Url()" alt="@homePage.AltImage" />
             </a>
             </div>
             <div>
