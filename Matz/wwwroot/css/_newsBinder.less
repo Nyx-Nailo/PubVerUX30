@@ -1,0 +1,50 @@
+@import "_vars";
+
+section#News {
+  div.items {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    grid-auto-rows: auto auto auto auto;
+    container-type: inline-size;
+
+    div.news:nth-child(odd) {
+      background-color: @backgroundColor;
+    }
+    div.news:nth-child(even) {
+      background-color: @backgroundColorEven;
+    }
+
+    div.news {
+      display: grid;
+      gap: 0.2rem;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+
+      div.subtopic {
+        font-size: 1.2rem;
+      }
+      div.date {
+        font-size: 0.75rem;
+        color: #ccc;
+      }
+      div.text {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      div.readmore {
+        text-align: right;
+
+        button {
+          .button-style();
+        }
+        button:hover {
+          background-color: @buttonBgHover;
+        }
+      }
+    }
+  }
+}
