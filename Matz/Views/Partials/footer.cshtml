@@ -14,9 +14,9 @@
             <div class="socials">
                 @foreach (var social in socials)
                 {
-                    <div class="@social.Name">
-                        <a href="@social.Url">@Html.Raw(social.GetIconSvgString())</a>
-                    </div>
+                    <a href="@social.Url" aria-label="@social.Name">
+                        <div>@Html.Raw(social.GetIconSvgString())</div>
+                    </a>
                 }
             </div>
         </div>
