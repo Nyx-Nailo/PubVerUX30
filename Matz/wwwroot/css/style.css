@@ -504,7 +504,7 @@ footer div#Footer div.contacts div.socials {
   align-items: center;
   gap: 1rem;
 }
-footer div#Footer div.contacts div.socials div {
+footer div#Footer div.contacts div.socials a div {
   background-color: #fff;
   padding-top: 0.75rem;
   padding-bottom: 0.5rem;
@@ -512,7 +512,7 @@ footer div#Footer div.contacts div.socials div {
   padding-left: 0.75rem;
   border-radius: 50%;
 }
-footer div#Footer div.contacts div.socials div a svg {
+footer div#Footer div.contacts div.socials a div svg {
   width: 24px;
   height: 24px;
   fill: #131313;
@@ -520,13 +520,13 @@ footer div#Footer div.contacts div.socials div a svg {
 footer div#Footer div.contacts div.socials div:hover {
   cursor: pointer;
 }
-footer div#Footer div.contacts div.socials div.Facebook:hover a svg {
+footer div#Footer div.contacts div.socials a div.Facebook:hover svg {
   fill: #0165e1;
 }
-footer div#Footer div.contacts div.socials div.Instagram:hover a svg {
+footer div#Footer div.contacts div.socials a div.Instagram:hover svg {
   fill: #fd5949;
 }
-footer div#Footer div.contacts div.socials div.X:hover a svg {
+footer div#Footer div.contacts div.socials a div.X:hover svg {
   fill: #808080;
 }
 footer div#Footer div.copyright {
