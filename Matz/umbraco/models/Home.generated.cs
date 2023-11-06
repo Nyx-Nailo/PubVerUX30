@@ -106,7 +106,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string HeaderTitle => global::Umbraco.Cms.Web.Common.PublishedModels.Header.GetHeaderTitle(this, _publishedValueFallback);
 
 		///<summary>
-		/// Beskrivning: En beskrivning över websidans syfte och/eller innehåll
+		/// Beskrivning: En beskrivning om websidans syfte och/eller innehåll
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]

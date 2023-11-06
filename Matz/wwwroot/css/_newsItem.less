@@ -1,0 +1,37 @@
+@import "_vars";
+
+section#NewsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  div.item {
+    background-color: @backgroundColorEven;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+
+    div.subtopic {
+      font-size: 1.2rem;
+    }
+    div.date {
+      font-size: 0.75rem;
+      color: #ccc;
+    }
+    div.text {
+      font-size: 1rem;
+    }
+  }
+
+  div.readmore {
+    background-color: @backgroundColorEven;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+
+    button {
+      .button-style();
+    }
+    button:hover {
+      background-color: @buttonBgHover;
+    }
+  }
+}
