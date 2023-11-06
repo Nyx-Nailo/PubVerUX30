@@ -1,0 +1,85 @@
+@import "_vars";
+
+section#ContactUs {
+  div.subTopic {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  div.grid {
+    display: flex;
+    gap: 10%;
+
+    background-color: @backgroundColorEven;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+
+    div.contact-form {
+      display: flex;
+      justify-content: right;
+      flex: 50%;
+
+      div.content-right {
+        div.subtitle {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        font-size: 0.9rem;
+
+        fieldset {
+          border: none;
+        }
+
+        p {
+          display: none;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"] {
+          width: 100%;
+          padding: 0.4rem;
+          margin-bottom: 0.5rem;
+        }
+
+        textarea {
+          width: 100%;
+          height: 7rem;
+          margin-bottom: 1rem;
+        }
+
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+          margin-bottom: 2rem;
+        }
+
+        input[type="submit"] {
+          .button-style();
+        }
+        input[type="submit"]:hover {
+          .button-style(@buttonBgHover);
+        }
+      }
+    }
+    div.contact-agents {
+      flex: 50%;
+
+      div.subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+
+        small {
+          padding: 0;
+          font-size: 0.9rem;
+        }
+      }
+
+      div.subgrid {
+        display: grid;
+        row-gap: 2rem;
+      }
+    }
+  }
+}

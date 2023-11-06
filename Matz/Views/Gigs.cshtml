@@ -9,14 +9,14 @@
     .Where(x => x.IsVisible());
 }
 
-<div id="Gig">
+<section id="Gigs">
     <div class="topic">
         <h1>@Model.Name</h1>
     </div>
     <div class="Gigs">
     @foreach (var item in selection)
     {
-        <a href="@item.Url()">@item.Name()</a>
+        <div><a href="@item.Url()">@item.Name()</a></div>
     }
     </div>
-</div>
+</section>
