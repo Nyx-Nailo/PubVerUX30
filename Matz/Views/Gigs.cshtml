@@ -2,9 +2,9 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Gigs>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 
-	var selection = Umbraco.Content(Guid.Parse("1e74e3be-51d6-4f3d-a016-990eeb9dc2a6"))
+    var selection = Umbraco.Content(Guid.Parse("1e74e3be-51d6-4f3d-a016-990eeb9dc2a6"))
     .ChildrenOfType("gigInfo")
     .Where(x => x.IsVisible());
 }
@@ -13,10 +13,5 @@
     <div class="topic">
         <h1>@Model.Name</h1>
     </div>
-    <div class="Gigs">
-    @foreach (var item in selection)
-    {
-        <a href="@item.Url()">@item.Name()</a>
-    }
-    </div>
+    @Html.Partial("CalenderPartial")
 </div>

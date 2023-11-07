@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    DateTime Now = DateTime.Now;
+    DateTime StartOfTheMonth = new DateTime(Now.Year, Now.Month, 1);
+    int DaysInMonth = DateTime.DaysInMonth(Now.Year, Now.Month);
+    int firstDayOfTheMonthDayOfTheWeek = Convert.ToInt32(StartOfTheMonth.DayOfWeek.ToString("d"));
+
+    var Gigs = Model.Children.ToList();
+
+    var calenderBoxCount = 42;
+    var counting = 0;
+}
+<div id="CalenderDayName">
+    <div>Måndag</div>
+    <div>Tisdag</div>
+    <div>Onsdag</div>
+    <div>Torsdag</div>
+    <div>Fredag</div>
+    <div>Lördag</div>
+    <div>Söndag</div>
+</div>
+<div id="Calender">
+    @for(int daysBefore = 0; daysBefore < firstDayOfTheMonthDayOfTheWeek - 1; daysBefore++)
+    {
+        <div id="CalenderDayItemLowOpacity"></div>
+        counting++;
+    }
+
+    @for(int calenderDay = 1; calenderDay < DaysInMonth + 1; calenderDay++)
+    {
+        <div id="CalenderDayItem">
+            @calenderDay
+            @foreach(var gig in Gigs)
+            {
+                var gigDateString = gig.Value("datum").ToString().Substring(0, 10).Replace(" ", "");
+                var currentDateString = Now.Month.ToString() + "/" + calenderDay + "/" + Now.Year.ToString();
+
+                if (gigDateString == currentDateString)
+                {
+                    <a id="gig" href="@gig.Url()">@gig.Name()</a>
+                }
+                
+            }
+        </div>
+        counting++;
+    }
+    @{
+        if (counting < calenderBoxCount)
+        {
+            while (counting < calenderBoxCount)
+            {
+                <div id="CalenderDayItemLowOpacity"></div>
+                counting++;
+            }
+            counting = 0;
+        }
+    }
+</div>
