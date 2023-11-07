@@ -1,0 +1,41 @@
+﻿#Calender {
+    width: 1000px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: repeat(6, 15%);
+    grid-template-columns: repeat(7, 17.2%);
+}
+
+#CalenderDayItem {
+    border-style: solid;
+    border-radius: 3px;
+    border-color: white;
+}
+
+#CalenderDayItemLowOpacity {
+    border-style: solid;
+    border-radius: 3px;
+    border-color: white;
+    opacity: 0.5;
+}
+
+#CalenderDayName {
+    display: grid;
+    grid-template-columns: repeat(7, 17.2%);
+    grid-template-rows: repeat(1, 15%);
+}
+
+#gig {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#nextButton {
+    align-items: end;
+    margin-left: 1100px;
+    margin-bottom: 30px;
+    background-color: rgba(52, 45, 84, 0.45);
+    color: white;
+    border-radius: 3px;
+    font-size: 20px;
+}
