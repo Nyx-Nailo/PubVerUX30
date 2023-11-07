@@ -11,54 +11,63 @@
 
 	if (person is not null)
 	{
-		age = ((int.Parse(DateTime.UtcNow.ToString("yyyyMMdd")) - int.Parse(person.DateOfBirth.ToString("yyyyMMdd"))) / 10000).ToString();
-		foreach(var instrument in person.Instruments ?? new List<string>())
+		age = ((int.Parse(DateTime.UtcNow.ToString("yyyyMMdd")) - int.Parse(person.DateOfBirth.ToString("yyyyMMdd"))) /
+		10000).ToString();
+		foreach (var instrument in person.Instruments ?? new List<string>())
 		{
 			instruments += " " + instrument;
 		}
 	}
 }
-<div id="About">
-	<div>
-		<div>
-			<img src="@person?.Portrait?.GetCropUrl()" />
-		</div>
-		<div>
-			<span>
-				Namn: @person?.PersonName
-			</span>
-			<br/>
-			<span>
-				Ålder: @age
-			</span>
-			<br />
-			<span>
-				Instrument: @instruments
-			</span>
-			<br />
-			<span>
-				Musikfavoriter: @person?.FavMusic
-			</span>
-			<br />
-			<span>
-				Bor: @place
-			</span>
-			<br />
-			<span>
-				Familj: @person?.Family
-			</span>
-			<br />
-			<span>
-				Favorit Mat: @person?.FavFood
-			</span>
-			<br />
-			<span>
-				Favorit Dryck: @person?.FavDrink
-			</span>
-			<br />
-			<span>
-				Intressen: @person?.Interests
-			</span>
+<section id="AboutMe">
+	<div class="topic">
+		@Model.Name
+	</div>
+	<div class="content">
+		<div class="center">
+			<div class="image">
+				<img src="@person?.Portrait?.GetCropUrl()" alt="@person?.AltPortrait" />
+			</div>
+			<div class="information">
+				<span>
+					Namn: @person?.PersonName
+				</span>
+				<br />
+				<span>
+					Ålder: @age
+				</span>
+				<br />
+				<span>
+					Instrument: @instruments
+				</span>
+				<br />
+				<span>
+					Musikfavoriter: @person?.FavMusic
+				</span>
+				<br />
+				<span>
+					Bor: @place
+				</span>
+				<br />
+				<span>
+					Familj: @person?.Family
+				</span>
+				<br />
+				<span>
+					Favorit Mat: @person?.FavFood
+				</span>
+				<br />
+				<span>
+					Favorit Dryck: @person?.FavDrink
+				</span>
+				<br />
+				<span>
+					Intressen: @person?.Interests
+				</span>
+			</div>
 		</div>
 	</div>
-</div>
+	<div class="readmore">
+		<button class="button" onclick="history.back()">&#8592; tillbaka</button>
+	</div>
+</section>

@@ -1,0 +1,53 @@
+@import "_vars";
+
+div#Nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  font-weight: 300;
+
+  div.image {
+    background-color: @backgroundColor;
+    padding: 1rem 3rem;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+
+    img {
+      width: 250px;
+      filter: drop-shadow(0 0 5px #000);
+    }
+  }
+  div.menu {
+    background-color: @backgroundColorEven;
+    text-align: right;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: right;
+    padding: 1rem 2rem;
+    padding-right: 4rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    text-shadow: 1px 1px #000;
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+      text-shadow: 0px 0px 10px #fff;
+    }
+
+    a.active {
+      color: @menuActive;
+      font-weight: bold;
+    }
+    a:hover.active {
+      color: @menuActive;
+      text-shadow: 0px 0px 10px @menuActive;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Gigs>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
@@ -9,9 +9,17 @@
     .Where(x => x.IsVisible());
 }
 
-<div id="Gig">
+<section id="Gigs">
     <div class="topic">
         <h1>@Model.Name</h1>
     </div>
+
     @Html.Partial("CalenderPartial")
-</div>
+                              
+    <div class="Gigs">
+    @foreach (var item in selection)
+    {
+        <div><a href="@item.Url()">@item.Name()</a></div>
+    }
+    </div>
+</section>

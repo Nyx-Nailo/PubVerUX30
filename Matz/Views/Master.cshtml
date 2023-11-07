@@ -19,36 +19,44 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="@homePage?.MetaDescription"/>
     <title>@pageTitle</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
     <link rel="stylesheet" type="text/css" href="/css/Calender.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono" rel="stylesheet">
+
 </head>
 
 <body>
 
     <nav>
         <div id="Nav">
-            <div>
-            <a href="@Model.AncestorOrSelf(1).Url()">
-                <img src="@homePage.HeaderImage.Url()" />
-            </a>
+            <div class="image">
+                <a href="@Model.AncestorOrSelf(1).Url()">
+                    <img src="@homePage.HeaderImage.Url()" alt="@homePage.AltImage" />
+                </a>
             </div>
-            <div>
-            <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active" :
-                null)>@Model.AncestorOrSelf(1).Name</a>
-            @foreach (var item in selection)
-            {
-                if (Model.IsDescendantOrSelf(item))
+            <div class="menu">
+                <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active"
+                    : null)>
+                    @Model.AncestorOrSelf(1).Name
+                </a>
+                @foreach (var item in selection)
                 {
-                    <a href="@item.Url()" class="active">@item.Name()</a>
+                    if (Model.IsDescendantOrSelf(item))
+                    {
+                                <a href="@item.Url()" class="active">@item.Name()</a>
+                    }
+                    else
+                    {
+                                <a href="@item.Url()">@item.Name()</a>
+                    }
                 }
-                else
-                {
-                    <a href="@item.Url()">@item.Name()</a>
-                }
-            }
             </div>
+        </div>
         </div>
     </nav>
 

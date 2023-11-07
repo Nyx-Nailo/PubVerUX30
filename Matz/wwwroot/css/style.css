@@ -4,13 +4,16 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  transition: all 0.1s;
 }
 body {
   font-family: "Roboto";
-  font-size: 16px;
-  background-color: #000000;
-  background-image: linear-gradient(180deg, #1c4e99 0%, rgba(0, 0, 0, 0.75) 80%);
+  background-color: rgba(233, 233, 233, 0.75);
+  background-image: linear-gradient(180deg, #1c4e99 30%, rgba(233, 233, 233, 0.75) 90%);
+  background: url("/media/5760850-3425893654.jpg");
   background-repeat: no-repeat;
+  background-position: 50% 60%;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,16 +24,38 @@ body {
   padding-bottom: 2rem;
 }
 header,
-main,
 nav,
 footer {
-  display: flex;
-  justify-content: left;
-  align-items: center;
   width: 100%;
   max-width: 80rem;
-  border-radius: 0.2rem;
-  padding: 1rem 2rem;
+}
+nav {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.1rem;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+main {
+  width: 100%;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+main section {
+  width: 100%;
+  max-width: 80rem;
+  margin-bottom: 1.5rem;
+}
+main section div.topic {
+  background-color: rgba(28, 78, 153, 0.75);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 a {
   color: #fff1f8;
@@ -40,118 +65,429 @@ a:hover {
   color: #b8b1b0;
   text-decoration: underline;
 }
-nav {
-  border-bottom: 2px solid #fff;
-}
 nav div#Nav {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: baseline;
-  gap: 2rem;
-  font-size: 1.3rem;
+  font-weight: 300;
+}
+nav div#Nav div.image {
+  background-color: rgba(28, 78, 153, 0.75);
+  padding: 1rem 3rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+nav div#Nav div.image img {
+  width: 250px;
+  filter: drop-shadow(0 0 5px #000);
+}
+nav div#Nav div.menu {
+  background-color: rgba(28, 78, 153, 0.5);
+  text-align: right;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: right;
+  padding: 1rem 2rem;
+  padding-right: 4rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
   text-shadow: 1px 1px #000;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-family: monospace;
-  justify-content: space-between;
 }
-nav div#Nav a {
+nav div#Nav div.menu a {
   text-decoration: none;
+  text-transform: uppercase;
 }
-nav div#Nav a img {
-  width: 25rem;
-}
-nav div#Nav a:hover {
+nav div#Nav div.menu a:hover {
+  color: #fff;
   text-decoration: underline;
+  text-shadow: 0px 0px 10px #fff;
 }
-nav div#Nav a.active {
-  color: #bea246;
+nav div#Nav div.menu a.active {
+  color: #e0bf51;
   font-weight: bold;
 }
-nav div#Nav div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+nav div#Nav div.menu a:hover.active {
+  color: #e0bf51;
+  text-shadow: 0px 0px 10px #e0bf51;
 }
-main {
-  background-color: rgba(52, 45, 84, 0.45);
+main section#StartpageGigs div.gig {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
 }
-main div#Main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-main div#Main div.Gigs {
-  width: 100%;
-}
-main div#Main div.News {
-  width: 100%;
-  margin-top: 2rem;
-}
-main div#Main div.News strong {
-  font-size: 2rem;
-}
-main div#Main div.News div.newsItems {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-main div#Main div.News div.newsItems div.newsItem span.topic {
-  font-size: 1.5rem;
-}
-main div#Main div.News div.newsItems div.newsItem button {
-  background-color: #3498db;
-  color: #fff1f8;
-  padding: 0.75rem 1.75rem;
-  border: none;
-  border-radius: 0.2rem;
-  margin: 0.5rem 0 1rem 0;
-}
-main div#Main div.News div.newsItems div.newsItem button:hover.button {
-  background-color: #2c85c0dc;
-  color: #fff1f8;
-  padding: 0.75rem 1.75rem;
-  border: none;
-  border-radius: 0.2rem;
-}
-main div#News div.topic {
-  font-size: 1.75rem;
-}
-main div#News div.newsList div.newsListings {
+main section#StartpageNews div.items {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-auto-rows: auto auto auto;
+  container-type: inline-size;
 }
-main div#News div.newsList div.newsListings div.newsItem div h3 {
-  font-size: 1.5rem;
+main section#StartpageNews div.items div.news {
+  background-color: rgba(28, 78, 153, 0.5);
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
 }
-main div#News div.newsList div.newsListings div.newsItem div span {
+main section#StartpageNews div.items div.news div.subtopic {
+  font-size: 1.2rem;
+}
+main section#StartpageNews div.items div.news div.text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+main section#StartpageNews div.items div.news div.readmore {
+  text-align: right;
+}
+main section#StartpageNews div.items div.news div.readmore button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#StartpageNews div.items div.news div.readmore button:hover {
+  background-color: #2a7cb3;
+}
+main section#News div.items {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-auto-rows: auto auto auto auto;
+  container-type: inline-size;
+}
+main section#News div.items div.news:nth-child(odd) {
+  background-color: rgba(28, 78, 153, 0.75);
+}
+main section#News div.items div.news:nth-child(even) {
+  background-color: rgba(28, 78, 153, 0.5);
+}
+main section#News div.items div.news {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+}
+main section#News div.items div.news div.subtopic {
+  font-size: 1.2rem;
+}
+main section#News div.items div.news div.date {
   font-size: 0.75rem;
   color: #ccc;
 }
-main div#News div.newsList div.newsListings div.newsItem div button {
+main section#News div.items div.news div.text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+main section#News div.items div.news div.readmore {
+  text-align: right;
+}
+main section#News div.items div.news div.readmore button {
   background-color: #3498db;
   color: #fff1f8;
-  padding: 0.75rem 1.75rem;
+  padding: 0.5rem 1.5rem;
   border: none;
-  margin-top: 0.5rem;
-  border-radius: 0.2rem;
-}
-main div#News div.newsList div.newsListings div.newsItem div button:hover {
-  background-color: #3498dbdc;
-  color: #fff1f8;
-  padding: 0.75rem 1.75rem;
-  border: none;
+  border-radius: 0.3rem;
   cursor: pointer;
 }
-main div#NewsItem h1 {
-  font-size: 2rem;
+main section#News div.items div.news div.readmore button:hover {
+  background-color: #2a7cb3;
+}
+main section#NewsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+main section#NewsItem div.item {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#NewsItem div.item div.subtopic {
+  font-size: 1.2rem;
+}
+main section#NewsItem div.item div.date {
+  font-size: 0.75rem;
+  color: #ccc;
+}
+main section#NewsItem div.item div.text {
+  font-size: 1rem;
+}
+main section#NewsItem div.readmore {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#NewsItem div.readmore button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#NewsItem div.readmore button:hover {
+  background-color: #2a7cb3;
+}
+main section#AboutUs div.content {
+  background-color: rgba(28, 78, 153, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+main section#AboutUs div.members {
+  background-color: rgba(28, 78, 153, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  grid-auto-rows: auto auto auto auto;
+  container-type: inline-size;
+}
+main section#AboutUs div.members div.member {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  background-color: rgba(28, 78, 153, 0.5);
+}
+main section#AboutUs div.members div.member div.topic {
+  font-size: 1.2rem;
+}
+main section#AboutUs div.members div.member div.col {
+  display: flex;
+  flex-direction: column;
+}
+main section#AboutUs div.members div.member div.col span.topic {
+  font-size: 1rem;
+}
+main section#AboutUs div.members div.member div.col span.text {
+  font-size: 0.9rem;
+}
+main section#AboutUs div.members div.member div.readmore {
+  text-align: right;
+}
+main section#AboutUs div.members div.member div.readmore button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#AboutUs div.members div.member div.readmore button:hover {
+  background-color: #2a7cb3;
+}
+main section#AboutMe {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+main section#AboutMe div.content {
+  background-color: rgba(28, 78, 153, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+main section#AboutMe div.content div.center {
+  width: 50%;
+  display: flex;
+  gap: 1rem;
+}
+main section#AboutMe div.content div.center div {
+  flex: 50%;
+}
+main section#AboutMe div.content div.center div.image {
+  text-align: right;
+}
+main section#AboutMe div.readmore {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#AboutMe div.readmore button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#AboutMe div.readmore button:hover {
+  background-color: #2a7cb3;
+}
+main section#ContactUs div.subTopic {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+main section#ContactUs div.grid {
+  display: flex;
+  gap: 10%;
+  background-color: rgba(28, 78, 153, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+main section#ContactUs div.grid div.contact-form {
+  display: flex;
+  justify-content: right;
+  flex: 50%;
+}
+main section#ContactUs div.grid div.contact-form div.content-right {
+  font-size: 0.9rem;
+}
+main section#ContactUs div.grid div.contact-form div.content-right div.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+main section#ContactUs div.grid div.contact-form div.content-right fieldset {
+  border: none;
+}
+main section#ContactUs div.grid div.contact-form div.content-right p {
+  display: none;
+}
+main section#ContactUs div.grid div.contact-form div.content-right input[type="text"],
+main section#ContactUs div.grid div.contact-form div.content-right input[type="tel"],
+main section#ContactUs div.grid div.contact-form div.content-right input[type="email"] {
+  width: 100%;
+  padding: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+main section#ContactUs div.grid div.contact-form div.content-right textarea {
+  width: 100%;
+  height: 7rem;
+  margin-bottom: 1rem;
+}
+main section#ContactUs div.grid div.contact-form div.content-right input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 2rem;
+}
+main section#ContactUs div.grid div.contact-form div.content-right input[type="submit"] {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#ContactUs div.grid div.contact-form div.content-right input[type="submit"]:hover {
+  background-color: #2a7cb3;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#ContactUs div.grid div.contact-agents {
+  flex: 50%;
+}
+main section#ContactUs div.grid div.contact-agents div.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+main section#ContactUs div.grid div.contact-agents div.subtitle small {
+  padding: 0;
+  font-size: 0.9rem;
+}
+main section#ContactUs div.grid div.contact-agents div.subgrid {
+  display: grid;
+  row-gap: 2rem;
+}
+main section#Gigs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+main section#Gigs div.Gigs {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#Gigs div.Gigs div.subtopic {
+  font-size: 1.2rem;
+}
+main section#Gigs div.Gigs div.date {
+  font-size: 0.75rem;
+  color: #ccc;
+}
+main section#Gigs div.Gigs div.text {
+  font-size: 1rem;
+}
+main section#Gig {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+main section#Gig div.gig {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+main section#Gig div.gig div.center {
+  width: 50%;
+  display: flex;
+  gap: 1rem;
+}
+main section#Gig div.gig div.center div {
+  flex: 50%;
+}
+main section#Gig div.gig div.center div.map {
+  text-align: right;
+}
+main section#Gig div.gig div.center div.information div.subtopic {
+  font-size: 1.2rem;
+}
+main section#Gig div.gig div.center div.information div.date {
+  font-size: 0.75rem;
+  color: #ccc;
+}
+main section#Gig div.gig div.center div.information div.text {
+  font-size: 1rem;
+}
+main section#Gig div.readmore {
+  background-color: rgba(28, 78, 153, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#Gig div.readmore button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#Gig div.readmore button:hover {
+  background-color: #2a7cb3;
+}
+main section#back button {
+  background-color: #3498db;
+  color: #fff1f8;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+main section#back button:hover {
+  background-color: #2a7cb3;
 }
 footer div#Footer {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -170,21 +506,28 @@ footer div#Footer div.contacts div.socials {
 }
 footer div#Footer div.contacts div.socials a div {
   background-color: #fff;
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
   border-radius: 50%;
-  padding: 0.9rem 1rem 0.7rem 1rem;
 }
 footer div#Footer div.contacts div.socials a div svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: #000;
-  aspect-ratio: 4/3;
+  width: 24px;
+  height: 24px;
+  fill: #131313;
 }
-footer div#Footer div.contacts div.socials a:hover div svg {
-  fill: #666;
+footer div#Footer div.contacts div.socials div:hover {
+  cursor: pointer;
 }
-footer div#Footer div.contacts div.contact {
-  justify-content: center;
-  align-items: center;
+footer div#Footer div.contacts div.socials a div.Facebook:hover svg {
+  fill: #0165e1;
+}
+footer div#Footer div.contacts div.socials a div.Instagram:hover svg {
+  fill: #fd5949;
+}
+footer div#Footer div.contacts div.socials a div.X:hover svg {
+  fill: #808080;
 }
 footer div#Footer div.copyright {
   text-align: center;

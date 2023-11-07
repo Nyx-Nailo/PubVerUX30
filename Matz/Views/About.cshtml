@@ -7,21 +7,36 @@
 	var members = Model.Children<Person>();
 }
 
-<div id="AboutUs">
-	<div>
-		@foreach(var person in members ?? new List<Person>())
+<section id="AboutUs">
+	<div class="topic">
+		@Model.Name
+	</div>
+	<div class="content">
+		@Model.Value("description")
+	</div>
+	<div class="topic">
+		Medlemmar
+	</div>
+	<div class="members">
+		@foreach (var person in members ?? new List<Person>())
 		{
 			string instruments = "";
 			foreach (var instrument in person.Instruments ?? new List<string>())
 			{
-				instruments += " " + instrument;
+				instruments += instrument + ", ";
 			}
-			<div>
-				<span><a href="@person.Url()"><img src="@person?.Portrait?.Url()" /></a></span>
-				<span>@person?.PersonName</span>
-				<span>@instruments</span>
-				<a href="@person?.Url()" class="button">Läs mer..</a>
-			</div>
+
+			if (instruments.Length > 2)
+			{
+				instruments = instruments.Substring(0, instruments.Length - 2);
+			}
+
+				<div class="member">
+					<div class="image"><a href="@person.Url()"><img src="@person?.Portrait?.Url()" alt="@person?.AltPortrait" /></a></div>
+					<div class="subtopic">@person?.PersonName</div>
+					<div class="col"><span class="topic">Instrument:</span> <span class="text">@instruments</span></div>
+					<div class="readmore"><a href="@person?.Url()"><button class="button">Läs mer..</button></a></div>
+				</div>
 		}
 	</div>
-</div>
+</section>

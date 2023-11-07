@@ -1,15 +1,4 @@
-@backgroundColor: rgba(28, 78, 153, 1);
-@textColor: #fff1f8;
-@linkHover: #b8b1b0;
-@contentBg: rgba(52, 45, 84, 0.45);
-@menuActive: #bea246;
-
-.button-style(@bgcolor: #3498db) {
-  background-color: @bgcolor;
-  color: @textColor;
-  padding: 0.75rem 1.75rem;
-  border: none;
-}
+@import "_vars";
 
 * {
   padding: 0;
@@ -17,15 +6,17 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  transition: all 0.1s;
 }
 
 body {
   font-family: "Roboto";
-  font-size: 16px;
-  background-color: rgba(0, 0, 0, 1);
-  background-image: linear-gradient(180deg, rgba(28, 78, 153, 1) 0%, rgba(0, 0, 0, 0.75) 80%);
+  background-color: rgba(233, 233, 233, 0.75);
+  background-image: linear-gradient(180deg, rgba(28, 78, 153, 1) 30%, rgba(233, 233, 233, 0.75) 90%);
+  background: url("/media/5760850-3425893654.jpg");
   background-repeat: no-repeat;
-
+  background-position: 50% 60%;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,18 +30,42 @@ body {
 }
 
 header,
-main,
 nav,
 footer {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-
   width: 100%;
   max-width: 80rem;
-  border-radius: 0.2rem;
+}
 
-  padding: 1rem 2rem;
+nav {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.1rem;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+main {
+  width: 100%;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  section {
+    width: 100%;
+    max-width: 80rem;
+    margin-bottom: 1.5rem;
+
+    div.topic {
+      background-color: @backgroundColor;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+  }
 }
 
 a {
@@ -63,183 +78,29 @@ a:hover {
 }
 
 nav {
-  border-bottom: 2px solid #fff;
-  div#Nav {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 2rem;
-    font-size: 1.3rem;
-    text-shadow: 1px 1px #000;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-family: monospace;
-    justify-content: space-between;
-
-    a {
-      text-decoration: none;
-
-      img {
-        width: 25rem;
-      }
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    a.active {
-      color: @menuActive;
-      font-weight: bold;
-    }
-
-    div {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-  }
+  @import "_nav";
 }
 
 main {
-  background-color: @contentBg;
+  @import "_startpage";
 
-  div#Main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  @import "_newsBinder";
 
-    div.Gigs {
-      width: 100%;
-    }
+  @import "_newsItem";
 
-    div.News {
-      width: 100%;
-      margin-top: 2rem;
+  @import "_aboutUs";
 
-      strong {
-        font-size: 2rem;
-      }
+  @import "_aboutMe";
 
-      div.newsItems {
-        margin-top: 0.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
+  @import "_contactUs";
 
-        div.newsItem {
-          span.topic {
-            font-size: 1.5rem;
-          }
+  @import "_gigs";
 
-          button {
-            .button-style();
-            border-radius: 0.2rem;
-            margin: 0.5rem 0 1rem 0;
-          }
+  @import "_gig";
 
-          button:hover.button {
-            .button-style(#2c85c0dc);
-            border-radius: 0.2rem;
-          }
-        }
-      }
-    }
-  }
-
-  div#News {
-    div.topic {
-      font-size: 1.75rem;
-    }
-    div.newsList {
-      div.newsListings {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
-
-        div.newsItem {
-          div {
-            h3 {
-              font-size: 1.5rem;
-            }
-            span {
-              font-size: 0.75rem;
-              color: #ccc;
-            }
-            p {
-            }
-            button {
-              .button-style();
-              margin-top: 0.5rem;
-              border-radius: 0.2rem;
-            }
-            button:hover {
-              .button-style(#3498dbdc);
-              cursor: pointer;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  div#NewsItem {
-    h1 {
-      font-size: 2rem;
-    }
-  }
+  @import "_back";
 }
 
 footer {
-  div#Footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    div.contacts {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-
-      div.socials {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-
-        a {
-          div {
-            background-color: #fff;
-            border-radius: 50%;
-            padding: 0.9rem 1rem 0.7rem 1rem;
-            svg {
-              width: 1.5rem;
-              height: 1.5rem;
-              fill: #000;
-              aspect-ratio: 4/3;
-            }
-          }
-        }
-        a:hover {
-          div {
-            svg {
-              fill: #666;
-            }
-          }
-        }
-      }
-      div.contact {
-        justify-content: center;
-        align-items: center;
-      }
-    }
-    div.copyright {
-      text-align: center;
-      font-size: 0.7rem;
-    }
-  }
+  @import "_footer";
 }
