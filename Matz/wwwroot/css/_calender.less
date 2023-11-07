@@ -1,0 +1,40 @@
+@import "_vars";
+
+section#Gigs {
+  div.content {
+    background-color: @backgroundColorEven;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+
+    div.calendar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 1rem;
+
+      div.wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.25rem;
+
+        div.day {
+          background-color: #00000042;
+          padding: 0.5rem;
+          display: grid;
+          font-size: 2rem;
+          text-align: center;
+          border-radius: 0.25rem;
+        }
+
+        div.gigs {
+          padding: 0.5rem;
+          background-color: @backgroundColorEven;
+          border-radius: 0.25rem;
+
+          li {
+            margin-left: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

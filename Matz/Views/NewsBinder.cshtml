@@ -2,13 +2,13 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsBinder>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "Master.cshtml";
-	
-	/*
-	 content:  style=""
-	 item:  style="display: flex; flex-direction: column;"
-	*/
-	
+    Layout = "Master.cshtml";
+
+    /*
+    content: style=""
+    item: style="display: flex; flex-direction: column;"
+    */
+
 }
 
 <section id="News">
@@ -16,21 +16,21 @@
         @Model.Name
     </div>
     <div class="items">
-    @{
-    var newsSelection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
-        .ChildrenOfType("newsItem")
-        .Where(x => x.IsVisible())
-        .OrderByDescending(x => x.CreateDate);
+        @{
+            var newsSelection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
+            .ChildrenOfType("newsItem")
+            .Where(x => x.IsVisible())
+            .OrderByDescending(x => x.CreateDate);
 
-        foreach (var item in newsSelection)
-        {
-            <div class="news">
-                <div class="subtopic">@item.Name()</div>
-                <div class="date">@item.CreateDate</div>
-                <div class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</div>
-                <div class="readmore"><a href="@item.Url()"><button  class="button">Läs mera...</button></a></div>
-            </div>
+            foreach (var item in newsSelection)
+            {
+                <div class="news">
+                    <div class="subtopic">@item.Name()</div>
+                    <div class="date">@item.CreateDate.ToString("yyyy-MM-dd HH:mm")</div>
+                    <div class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</div>
+                    <div class="readmore"><a href="@item.Url()"><button class="button">Läs mera...</button></a></div>
+                </div>
+            }
         }
-    }
     </div>
 </section>

@@ -2,7 +2,7 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsItem>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
 
 <section id="NewsItem">
@@ -11,7 +11,7 @@
     </div>
     <div class="item">
         <div class="subtopic">@Model.Value("newsTitle")</div>
-        <div class="date">date @Model.Value("createDate")</div>
+        <div class="date">@Model.CreateDate.ToString("yyyy-MM-dd HH:mm")</div>
         <div class="text">@Model.Value("newsContent")</div>
     </div>
     <div class="readmore">
