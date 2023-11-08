@@ -489,15 +489,10 @@ main section#back button:hover {
 }
 main .error-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  top: 30%;
+  padding: 5px;
   text-align: center;
+  background-color: #fff;
 }
 main .error-title {
   font-size: 50px;
@@ -525,6 +520,20 @@ main .error-link:hover {
   color: #fff;
   text-decoration: underline;
   text-shadow: 0px 0px 10px #fff;
+}
+@media screen and (min-width: 1023px) {
+  main .error-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 95%;
+  }
 }
 footer div#Footer {
   display: flex;
