@@ -11,6 +11,7 @@
     <PackageReference Include="Umbraco.Forms" Version="12.1.1" />
     <PackageReference Include="uSync" Version="12.2.0" />
     <PackageReference Include="uSync.Forms" Version="12.0.0" />
+    <PackageReference Include="uSync.PeopleEdition" Version="12.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,6 +5,39 @@ section#StartpageGigs {
     background-color: @backgroundColorEven;
     padding: 0.75rem;
     border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    span.day {
+      background-color: #00000018;
+
+      padding: 0.4rem 1rem;
+      border-radius: 0.4rem;
+      margin-right: 1rem;
+      text-align: center;
+      text-transform: capitalize;
+    }
+    div.info {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      span.link {
+        font-size: 2rem;
+        text-transform: capitalize;
+      }
+      span.city {
+        font-size: 0.9rem;
+        text-transform: capitalize;
+      }
+    }
+  }
+  div.gig:hover {
+    span.day {
+      background-color: #ffffff3a;
+    }
   }
 }
 
@@ -23,11 +56,16 @@ section#StartpageNews {
       gap: 0.2rem;
       padding: 0.75rem;
       border-radius: 0.5rem;
-      grid-row: span 3;
+      grid-row: span 4;
       grid-template-rows: subgrid;
 
       div.subtopic {
         font-size: 1.2rem;
+      }
+      div.date {
+        font-size: 0.8rem;
+        padding: 0.3rem 0;
+        color: #ccc;
       }
       div.text {
         font-size: 1rem;
@@ -40,7 +78,7 @@ section#StartpageNews {
           .button-style();
         }
         button:hover {
-          background-color: #2a7cb3;
+          background-color: @buttonBgHover;
         }
       }
     }

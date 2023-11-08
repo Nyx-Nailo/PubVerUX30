@@ -2,7 +2,7 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
 
 <section id="StartpageGigs">
@@ -10,18 +10,25 @@
         Nästa spelning
     </div>
     <div class="gig">
-    @{
-    var gigsSelection = Umbraco.Content(Guid.Parse("1e74e3be-51d6-4f3d-a016-990eeb9dc2a6"))
-        .ChildrenOfType("gigInfo")
-        .Where(x => x.IsVisible())
-        .OrderByDescending(x => x.CreateDate)
-        .Take(1);
+        @{
+            DateTime dateToday = DateTime.Now;
 
-        foreach (var item in gigsSelection)
-        {
-            <a href="@item.Url()">@item.Name()</a>
+            var gigsSelection = Umbraco.Content(Guid.Parse("1e74e3be-51d6-4f3d-a016-990eeb9dc2a6"))
+            .ChildrenOfType("gigInfo")
+            .Where(x => x.Value<DateTime>("datum") >= dateToday)
+            .OrderBy(x => x.Value("datum"))
+            .Take(1);
+
+            foreach (var item in gigsSelection)
+            {
+                DateTime date = item.Value<DateTime>("datum");
+                <span class="day">@date.Day<br />@date.ToString("MMM")</span>
+                <div class="info">
+                    <span class="link"><a href="@item.Url()">@item.Name()</a></span>
+                    <span class="city">Ort: @item.Value("gigCity")</span>
+                </div>
+            }
         }
-    }
     </div>
 </section>
 
@@ -30,22 +37,22 @@
         Senaste nyheterna
     </div>
     <div class="items">
-    @{
-    var newsSelection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
-        .ChildrenOfType("newsItem")
-        .Where(x => x.IsVisible())
-        .OrderByDescending(x => x.CreateDate)
-        .Take(3);
+        @{
+            var newsSelection = Umbraco.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))
+            .ChildrenOfType("newsItem")
+            .Where(x => x.IsVisible())
+            .OrderByDescending(x => x.CreateDate)
+            .Take(3);
 
-        foreach (var item in newsSelection)
-        {
-            <div class="news">
-                <div class="subtopic">@item.Name()</div>
-                <div class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</div>
-                <div class="readmore"><a href="@item.Url()"><button  class="button">Läs mera...</button></a></div>
-            </div>
+            foreach (var item in newsSelection)
+            {
+                <div class="news">
+                    <div class="subtopic">@item.Name()</div>
+                    <div class="date">@item.CreateDate.ToString("yyyy-MM-dd HH:mm")</div>
+                    <div class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</div>
+                    <div class="readmore"><a href="@item.Url()"><button class="button">Läs mera...</button></a></div>
+                </div>
+            }
         }
-    }
     </div>
 </section>
-

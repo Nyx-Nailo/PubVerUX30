@@ -7,37 +7,30 @@
     Layout = "Master.cshtml";
     var contactInformation = Model.Children<ContactInformation>();
 }
-<section id="ContactUs">
-    <div class="topic">
-        @Model.Name
-    </div>
-    <div class="grid">
-        <div class="contact-form">
-            <div class="content-right">
-                <div class="subtitle">
-                    @Model.Value("contactTitle")
-                </div>
-                <div class="form">
-                    @Html.Raw(Model.ContactForm) 
-                </div>
-            </div>
+<section id="Contact">
+    <article id="ContactUs">
+        <div class="topic">
+            @Model.Value("contactTitle")
         </div>
-        <div class="contact-agents">
-            <div class="subtitle">
-                Vill du boka oss?<br />
-                <small>Kontaktuppgifter till våra agenturer</small>
-            </div>
-            <div class="subgrid">
-        	    @foreach (var contact in contactInformation)
-        	    {
+        <div class="content">
+            @Html.Raw(Model.ContactForm)
+        </div>
+    </article>
+
+    <article id="ContactAgent">
+        <div class="topic">
+            Vill du boka oss?<br />
+        </div>
+        <div class="content">
+            @foreach (var contact in contactInformation)
+            {
                 <div class="agent">
-        	        <img src="@contact.ContactImage" alt="Kontakt bild"/>
+                    <img src="@contact.ContactImage" alt="Kontakt bild" />
                     <h3>@contact.ContactName</h3>
                     <a href="tel:@contact.ContactNumber">@contact.ContactNumber</a><br />
                     <a href="mail:@contact.ContactEmail">@contact.ContactEmail</a>
-    		    </div>
-	            }
-	        </div>
+                </div>
+            }
         </div>
-    </div>
+    </article>
 </section>
