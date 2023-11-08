@@ -16,28 +16,43 @@ section#Gigs {
         grid-template-columns: auto 1fr;
         gap: 0.25rem;
 
-        div.day {
+        div.date {
           background-color: #00000042;
           padding: 0.5rem;
           display: grid;
           font-size: 2rem;
           text-align: center;
           border-radius: 0.25rem;
+          align-items: end;
+        }
+        div.month {
+          align-items: start;
         }
 
-        div.gigs {
+        div.gig {
           padding: 0.5rem;
           background-color: @backgroundColorEven;
           border-radius: 0.25rem;
 
           li {
-            margin-left: 1.2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+
+            span.link {
+              font-size: 1.2rem;
+              text-transform: capitalize;
+            }
+            span.city {
+              color: #ccc;
+              margin-bottom: 0.5rem;
+              text-transform: capitalize;
+            }
           }
         }
       }
 
       div.wrapper:hover {
-        div.day {
+        div.date {
           background-color: #ffffff69;
         }
       }

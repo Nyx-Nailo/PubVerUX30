@@ -166,12 +166,31 @@ main section#StartpageGigs div.gig {
   display: flex;
   align-items: center;
   font-size: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 main section#StartpageGigs div.gig span.day {
   background-color: #00000018;
   padding: 0.4rem 1rem;
   border-radius: 0.4rem;
   margin-right: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+main section#StartpageGigs div.gig div.info {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+main section#StartpageGigs div.gig div.info span.link {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+main section#StartpageGigs div.gig div.info span.city {
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+main section#StartpageGigs div.gig:hover span.day {
+  background-color: #ffffff3a;
 }
 main section#StartpageNews div.items {
   display: grid;
@@ -544,23 +563,37 @@ main section#Gigs div.content div.calendar div.wrapper {
   grid-template-columns: auto 1fr;
   gap: 0.25rem;
 }
-main section#Gigs div.content div.calendar div.wrapper div.day {
+main section#Gigs div.content div.calendar div.wrapper div.date {
   background-color: #00000042;
   padding: 0.5rem;
   display: grid;
   font-size: 2rem;
   text-align: center;
   border-radius: 0.25rem;
+  align-items: end;
 }
-main section#Gigs div.content div.calendar div.wrapper div.gigs {
+main section#Gigs div.content div.calendar div.wrapper div.month {
+  align-items: start;
+}
+main section#Gigs div.content div.calendar div.wrapper div.gig {
   padding: 0.5rem;
   background-color: rgba(28, 78, 153, 0.5);
   border-radius: 0.25rem;
 }
-main section#Gigs div.content div.calendar div.wrapper div.gigs li {
-  margin-left: 1.2rem;
+main section#Gigs div.content div.calendar div.wrapper div.gig li {
+  display: grid;
+  grid-template-columns: 1fr;
 }
-main section#Gigs div.content div.calendar div.wrapper:hover div.day {
+main section#Gigs div.content div.calendar div.wrapper div.gig li span.link {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+main section#Gigs div.content div.calendar div.wrapper div.gig li span.city {
+  color: #ccc;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+main section#Gigs div.content div.calendar div.wrapper:hover div.date {
   background-color: #ffffff69;
 }
 footer div#Footer {

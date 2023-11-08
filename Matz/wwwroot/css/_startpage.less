@@ -8,6 +8,8 @@ section#StartpageGigs {
     display: flex;
     align-items: center;
     font-size: 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
 
     span.day {
       background-color: #00000018;
@@ -15,6 +17,26 @@ section#StartpageGigs {
       padding: 0.4rem 1rem;
       border-radius: 0.4rem;
       margin-right: 1rem;
+      text-align: center;
+      text-transform: capitalize;
+    }
+    div.info {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      span.link {
+        font-size: 2rem;
+        text-transform: capitalize;
+      }
+      span.city {
+        font-size: 0.9rem;
+        text-transform: capitalize;
+      }
+    }
+  }
+  div.gig:hover {
+    span.day {
+      background-color: #ffffff3a;
     }
   }
 }

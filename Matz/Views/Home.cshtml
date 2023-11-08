@@ -22,8 +22,11 @@
             foreach (var item in gigsSelection)
             {
                 DateTime date = item.Value<DateTime>("datum");
-                <span class="day">@date.Day @date.ToString("MMM")</span>
-                <a href="@item.Url()">@item.Name()</a>
+                <span class="day">@date.Day<br />@date.ToString("MMM")</span>
+                <div class="info">
+                    <span class="link"><a href="@item.Url()">@item.Name()</a></span>
+                    <span class="city">Ort: @item.Value("gigCity")</span>
+                </div>
             }
         }
     </div>

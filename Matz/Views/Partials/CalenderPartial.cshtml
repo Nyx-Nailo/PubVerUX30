@@ -13,17 +13,23 @@
 
         <div class="wrapper">
             <div class="day">
-                <span class="day">@date.Day</span>
-                <span class="month">@date.ToString("MMM")</span>
+                <div class="date">
+                    <span class="day">@date.Day</span>
+                    <span class="month">@date.ToString("MMM")</span>
+                </div>
             </div>
-
             <div class="gigs">
-                <ol>
-                    @foreach (var gig in gigDate)
-                    {
-                        <li><a href="@gig.Url()">@gig.Name</a></li>
-                    }
-                </ol>
+                <div class="gig">
+                    <ol>
+                        @foreach (var gig in gigDate)
+                        {
+                            <li>
+                                <span class="link"><a href="@gig.Url()">@gig.Name</a></span>
+                                <span class="city">Ort: @gig.Value("gigCity")</span>
+                            </li>
+                        }
+                    </ol>
+                </div>
             </div>
         </div>
     }
