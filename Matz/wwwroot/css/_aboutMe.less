@@ -3,12 +3,12 @@
 section#AboutMe {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
 
   div.content {
-    background-color: @backgroundColorEven;
-    border-radius: 0.5rem;
-    padding: 0.75rem;
+    .content-style();
+
+    margin-bottom: 0.25rem;
+
     display: flex;
     justify-content: center;
 
@@ -28,15 +28,13 @@ section#AboutMe {
   }
 
   div.readmore {
-    background-color: @backgroundColorEven;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
+    .content-style();
 
     button {
       .button-style();
     }
     button:hover {
-      background-color: @buttonBgHover;
+      background-color: @backgroundButtonHover;
     }
   }
 }

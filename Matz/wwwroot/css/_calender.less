@@ -2,14 +2,12 @@
 
 section#Gigs {
   div.content {
-    background-color: @backgroundColorEven;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+    .content-style();
 
     div.calendar {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-      gap: 1rem;
+      gap: 0.5rem;
 
       div.wrapper {
         display: grid;
@@ -17,22 +15,19 @@ section#Gigs {
         gap: 0.25rem;
 
         div.date {
-          background-color: #00000042;
-          padding: 0.5rem;
+          .content-style(@backgroundDate);
+
           display: grid;
           font-size: 2rem;
           text-align: center;
-          border-radius: 0.25rem;
           align-items: end;
         }
-        div.month {
-          align-items: start;
+        span.month {
+          font-size: 1rem;
         }
 
         div.gig {
-          padding: 0.5rem;
-          background-color: @backgroundColorEven;
-          border-radius: 0.25rem;
+          .content-style(@backgroundContent);
 
           li {
             display: grid;
@@ -43,7 +38,7 @@ section#Gigs {
               text-transform: capitalize;
             }
             span.city {
-              color: #ccc;
+              color: @contentDateText;
               margin-bottom: 0.5rem;
               text-transform: capitalize;
             }
@@ -53,7 +48,7 @@ section#Gigs {
 
       div.wrapper:hover {
         div.date {
-          background-color: #ffffff69;
+          background-color: @backgroundDateHover;
         }
       }
     }

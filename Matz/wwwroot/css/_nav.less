@@ -12,7 +12,7 @@ div#Nav {
   }
 
   div.image {
-    background-color: @backgroundColor;
+    background-color: @backgroundTopic;
     padding: 1rem 2rem;
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
@@ -30,7 +30,7 @@ div#Nav {
 
     img {
       width: 250px;
-      filter: drop-shadow(0 0 5px #000);
+      filter: drop-shadow(0 0 5px @imageLogoShadow);
 
       @media (max-width: 991px) {
         width: 350px;
@@ -43,35 +43,34 @@ div#Nav {
   }
 
   div.menu {
-    background-color: @backgroundColorEven;
+    background-color: @backgroundContent;
     text-align: right;
     display: flex;
     gap: 1rem;
     justify-content: right;
     padding: 1rem 1.5rem;
-    padding-right: 2rem;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
-    text-shadow: 1px 1px #000;
+    text-shadow: 1px 1px @menuLinkTextShadow;
 
     a {
+      color: @menuLinkColor;
       text-decoration: none;
       text-transform: uppercase;
+      text-shadow: 1px 1px @menuLinkTextShadow;
     }
 
     a:hover {
-      color: #fff;
       text-decoration: underline;
-      text-shadow: 0px 0px 10px #fff;
+      text-shadow: 1px 1px @menuLinkTextShadow, 0px 0px 10px @menuLinkColor;
     }
 
     a.active {
-      color: @menuActive;
+      color: @menuLinkColorActive;
       font-weight: bold;
     }
     a:hover.active {
-      color: @menuActive;
-      text-shadow: 0px 0px 10px @menuActive;
+      text-shadow: 1px 1px @menuLinkTextShadow, 0px 0px 10px @menuLinkColorActive;
     }
 
     @media (max-width: 991px) {

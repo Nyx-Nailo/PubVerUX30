@@ -1,18 +1,46 @@
-@backgroundColor: rgba(28, 78, 153, 0.75);
-@backgroundColorEven: rgba(28, 78, 153, 0.5);
-@textColor: #fff1f8;
-@linkColor: #f1e9e9;
-@linkHover: #b4b0b0;
-@contentBg: rgba(49, 49, 49, 0.75);
-@menuActive: rgba(247, 180, 56, 0.945);
-@buttonBg: #3194d6;
-@buttonBgHover: #266fa0;
+@backgroundBase: rgba(233, 233, 233, 0.75);
+@backgroundGradientOne: rgba(28, 78, 153, 1);
+@backgroundGradientTwo: rgba(233, 233, 233, 0.75);
 
-.button-style(@bgcolor: @buttonBg) {
-  background-color: @bgcolor;
+@backgroundTopic: rgba(28, 78, 153, 0.75);
+@backgroundContent: rgba(28, 78, 153, 0.5);
+@backgroundDate: rgba(0, 0, 0, 0.1);
+@backgroundDateHover: rgba(255, 255, 255, 0.2);
+
+@backgroundButton: rgba(51, 149, 215, 1);
+@backgroundButtonHover: rgba(38, 112, 161, 1);
+
+@backgroundSocial: #ffffffda;
+
+@textColor: #fff1f8;
+
+@linkColor: rgba(242, 232, 232, 1);
+@linkColorHover: rgba(181, 176, 176, 1);
+
+@contentDateText: rgba(204, 204, 204, 0.877);
+
+@menuLinkColor: rgba(255, 255, 255, 1);
+@menuLinkColorActive: rgba(247, 180, 56, 0.9);
+@menuLinkTextShadow: rgba(0, 0, 0, 1);
+
+@imageLogoShadow: rgba(0, 0, 0, 0.75);
+
+@socialFill: rgba(19, 19, 19, 1);
+@socialFacebook: rgba(0, 101, 224, 0.6);
+@socialInstagram: rgba(252, 89, 74, 0.6);
+@socialX: rgba(128, 128, 128, 0.6);
+
+.button-style(@bgcolor: @backgroundButton) {
+  background-color: @backgroundButton;
   color: @textColor;
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
+}
+
+.content-style(@bgcolor: @backgroundContent) {
+  background-color: @bgcolor;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
 }

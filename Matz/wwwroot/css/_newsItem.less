@@ -3,12 +3,10 @@
 section#NewsItem {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
 
   div.item {
-    background-color: @backgroundColorEven;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
+    .content-style();
+    margin-bottom: 0.25rem;
 
     div.subtopic {
       font-size: 1.2rem;
@@ -16,7 +14,7 @@ section#NewsItem {
     div.date {
       font-size: 0.75rem;
       color: #ccc;
-      padding: 0.4rem 0;
+      padding: 0.5rem 0;
     }
     div.text {
       font-size: 1rem;
@@ -24,15 +22,13 @@ section#NewsItem {
   }
 
   div.readmore {
-    background-color: @backgroundColorEven;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
+    .content-style();
 
     button {
       .button-style();
     }
     button:hover {
-      background-color: @buttonBgHover;
+      background-color: @backgroundButtonHover;
     }
   }
 }

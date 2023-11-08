@@ -2,23 +2,35 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ErrorPage404>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = null;
+    Layout = null;
+
+    var homePage = Model.AncestorOrSelf<ErrorPage404>();
 }
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <title>Fel - Sidan är inte tillgänglig</title>
+    <link rel="stylesheet" type="text/css" href="/css/404.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <title>Fel - Ett fel har inträffat</title>
 </head>
-<body>
+
+<body style="background-image: url(@homePage?.HeaderBackground?.Url())">
     <main>
-        <div class="error-container">
-            <h1 class="error-title">Oops! 🤬</h1>
-            <p class="error-message">Fel uppstod. Vi beklagar för besväret. Vänligen försök igen senare.</p>
-            <a href="/" class="error-link">Gå till startsidan</a>
+        <div class="container">
+            <img src="@homePage?.HeaderImage?.Url()" title="Logga" width="350px" height="auto" />
+            <div class="error-container">
+                <h1>Oops! 🤬</h1>
+                <p>
+                    Ett fel har inträffat.<br />
+                    Vi beklagar för besväret. Vänligen försök igen.
+                </p>
+                <a href="/"><span class="error-link">Gå till startsidan</span></a>
+            </div>
         </div>
     </main>
 </body>
+
 </html>

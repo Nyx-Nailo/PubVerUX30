@@ -3,7 +3,7 @@
 section#Contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
+  column-gap: 0.25rem;
 
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
@@ -13,13 +13,11 @@ section#Contact {
   article#ContactUs {
     div.topic {
       font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     div.content {
-      background-color: @backgroundColorEven;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
+      .content-style();
 
       fieldset {
         border: none;
@@ -53,7 +51,7 @@ section#Contact {
         .button-style();
       }
       input[type="submit"]:hover {
-        .button-style(@buttonBgHover);
+        .button-style(@backgroundButtonHover);
       }
 
       span.field-validation-error {
@@ -66,13 +64,11 @@ section#Contact {
   article#ContactAgent {
     div.topic {
       font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     div.content {
-      background-color: @backgroundColorEven;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
+      .content-style();
 
       display: grid;
       grid-template-columns: 1fr;

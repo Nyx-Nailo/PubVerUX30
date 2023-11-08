@@ -10,8 +10,8 @@
 
 body {
   font-family: "Roboto";
-  background-color: rgba(233, 233, 233, 0.75);
-  background-image: linear-gradient(180deg, rgba(28, 78, 153, 1) 30%, rgba(233, 233, 233, 0.75) 90%);
+  background-color: @backgroundBase;
+  background-image: linear-gradient(180deg, @backgroundGradientOne 30%, @backgroundGradientTwo 90%);
   background-repeat: no-repeat;
   background-position: 50% 60%;
   background-attachment: fixed;
@@ -19,18 +19,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   color: @textColor;
   padding: 2rem;
 
   @media (max-width: 991px) {
     padding: 0.2rem;
-  }
-
-  @media (min-width: 577px) and (max-width: 768px) {
-  }
-
-  @media (max-width: 576px) {
   }
 }
 
@@ -46,7 +40,7 @@ nav {
   font-weight: 400;
   font-size: 1.1rem;
   padding: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 main {
@@ -56,19 +50,19 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 
   section {
     width: 100%;
     max-width: 80rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 
     div.topic {
-      background-color: @backgroundColor;
+      background-color: @backgroundTopic;
       padding: 0.75rem;
       border-radius: 0.5rem;
       font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
   }
 }
@@ -78,7 +72,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: @linkHover;
+  color: @linkColorHover;
   text-decoration: underline;
 }
 
@@ -104,9 +98,6 @@ main {
   @import "_back";
 
   @import "_calender";
-
-  @import "_404Error";
-
 }
 
 footer {

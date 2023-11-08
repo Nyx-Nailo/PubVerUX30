@@ -1,3 +1,5 @@
+@import "_vars";
+
 div#Footer {
   display: flex;
   flex-direction: column;
@@ -17,7 +19,7 @@ div#Footer {
 
       a {
         div {
-          background-color: #ffffffda;
+          background-color: @backgroundSocial;
           padding-top: 0.75rem;
           padding-bottom: 0.5rem;
           padding-right: 0.75rem;
@@ -28,7 +30,7 @@ div#Footer {
             width: 24px;
             height: 24px;
 
-            fill: rgb(19, 19, 19);
+            fill: @socialFill;
           }
         }
       }
@@ -39,7 +41,7 @@ div#Footer {
       a {
         div.Facebook:hover {
           svg {
-            fill: #0165e1;
+            fill: @socialFacebook;
           }
         }
       }
@@ -47,7 +49,7 @@ div#Footer {
       a {
         div.Instagram:hover {
           svg {
-            fill: #fd5949;
+            fill: @socialInstagram;
           }
         }
       }
@@ -55,7 +57,7 @@ div#Footer {
       a {
         div.X:hover {
           svg {
-            fill: rgb(128, 128, 128);
+            fill: @socialX;
           }
         }
       }
