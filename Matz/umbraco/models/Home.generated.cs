@@ -90,6 +90,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string AltImage => global::Umbraco.Cms.Web.Common.PublishedModels.Header.GetAltImage(this, _publishedValueFallback);
 
 		///<summary>
+		/// Bakgrunds bild
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("headerBackground")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops HeaderBackground => global::Umbraco.Cms.Web.Common.PublishedModels.Header.GetHeaderBackground(this, _publishedValueFallback);
+
+		///<summary>
 		/// Band Logga
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.2.0+173d8dc")]

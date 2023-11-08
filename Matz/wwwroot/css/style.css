@@ -9,7 +9,6 @@ body {
   font-family: "Roboto";
   background-color: rgba(233, 233, 233, 0.75);
   background-image: linear-gradient(180deg, #1c4e99 30%, rgba(233, 233, 233, 0.75) 90%);
-  background: url("/media/5760850-3425893654.jpg");
   background-repeat: no-repeat;
   background-position: 50% 60%;
   background-attachment: fixed;
@@ -561,6 +560,9 @@ main section#Gigs div.content div.calendar div.wrapper div.gigs {
 main section#Gigs div.content div.calendar div.wrapper div.gigs li {
   margin-left: 1.2rem;
 }
+main section#Gigs div.content div.calendar div.wrapper:hover div.day {
+  background-color: #ffffff69;
+}
 footer div#Footer {
   display: flex;
   flex-direction: column;
@@ -579,7 +581,7 @@ footer div#Footer div.contacts div.socials {
   gap: 1rem;
 }
 footer div#Footer div.contacts div.socials a div {
-  background-color: #fff;
+  background-color: #ffffffda;
   padding-top: 0.75rem;
   padding-bottom: 0.5rem;
   padding-right: 0.75rem;
