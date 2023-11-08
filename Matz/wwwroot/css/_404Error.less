@@ -2,10 +2,15 @@
 
 .error-container {
     position: absolute;
-    top: 30%;
-    padding: 5px;
-    text-align:center;
-    background-color:#fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
 }
 
 
@@ -41,17 +46,8 @@
     text-shadow: 0px 0px 10px #fff;
 }
 
-@media screen and (min-width: 1023px){
+@media screen and (max-width: 1023px){
     .error-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        width:95%;
+        width: 95%;
     }
 }
