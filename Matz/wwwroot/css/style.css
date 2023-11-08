@@ -487,6 +487,33 @@ main section#back button {
 main section#back button:hover {
   background-color: #2a7cb3;
 }
+main .error-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+main .error-title {
+  font-size: 50px;
+  color: #000;
+  margin: 0;
+}
+main .error-message {
+  font-size: 24px;
+  margin: 20px 0;
+  color: #000;
+}
+main .error-link {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
 footer div#Footer {
   display: flex;
   flex-direction: column;
