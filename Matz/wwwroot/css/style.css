@@ -53,7 +53,7 @@ main section {
   margin-bottom: 1rem;
 }
 main section div.topic {
-  background-color: rgba(28, 78, 153, 0.75);
+  background-color: rgba(0, 31, 63, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   font-size: 1.4rem;
@@ -61,11 +61,11 @@ main section div.topic {
   text-shadow: 1px 1px #000;
 }
 a {
-  color: #f2e8e8;
+  color: #e7dfd2;
   text-decoration: none;
 }
 a:hover {
-  color: #b5b0b0;
+  color: #bbb4aa;
   text-decoration: underline;
 }
 nav div#Nav {
@@ -81,7 +81,7 @@ nav div#Nav {
   }
 }
 nav div#Nav div.image {
-  background-color: rgba(28, 78, 153, 0.75);
+  background-color: rgba(0, 31, 63, 0.95);
   padding: 1rem 2rem;
   border-top-right-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
@@ -114,7 +114,7 @@ nav div#Nav div.image img {
   }
 }
 nav div#Nav div.menu {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(0, 31, 63, 0.95);
   text-align: right;
   display: flex;
   gap: 1rem;
@@ -135,11 +135,11 @@ nav div#Nav div.menu a:hover {
   text-shadow: 1px 1px #000000, 0px 0px 10px #ffffff;
 }
 nav div#Nav div.menu a.active {
-  color: rgba(247, 180, 56, 0.9);
+  color: #eec2a5;
   font-weight: bold;
 }
 nav div#Nav div.menu a:hover.active {
-  text-shadow: 1px 1px #000000, 0px 0px 10px rgba(247, 180, 56, 0.9);
+  text-shadow: 1px 1px #000000, 0px 0px 10px #eec2a5;
 }
 @media (max-width: 991px) {
   nav div#Nav div.menu {
@@ -160,7 +160,7 @@ nav div#Nav div.menu a:hover.active {
   }
 }
 main section#StartpageGigs div.gig {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   font-size: 2rem;
@@ -168,7 +168,7 @@ main section#StartpageGigs div.gig {
   grid-template-columns: auto 1fr;
 }
 main section#StartpageGigs div.gig span.day {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(33, 71, 109, 0.95);
   padding: 0.4rem 1rem;
   border-radius: 0.4rem;
   margin-right: 1rem;
@@ -188,21 +188,21 @@ main section#StartpageGigs div.gig div.info span.city {
   text-transform: capitalize;
 }
 main section#StartpageGigs div.gig:hover span.day {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 74, 148, 0.95);
 }
 main section#StartpageNews div.items {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   display: grid;
-  gap: 0.25rem;
+  gap: 0.8rem;
   grid-auto-flow: dense;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   grid-auto-rows: auto auto auto;
   container-type: inline-size;
 }
 main section#StartpageNews div.items div.news {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(33, 71, 109, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   display: grid;
@@ -226,38 +226,50 @@ main section#StartpageNews div.items div.news div.readmore {
   text-align: right;
 }
 main section#StartpageNews div.items div.news div.readmore button {
-  background-color: #3395d7;
-  color: #fff1f8;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 main section#StartpageNews div.items div.news div.readmore button:hover {
   background-color: #2670a1;
 }
 main section#StartpageNews div.items div.news:nth-child(even) {
-  background-color: rgba(28, 78, 153, 0.75);
+  background-color: rgba(31, 59, 87, 0.95);
 }
 main section#News div.items {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   display: grid;
-  gap: 0.25rem;
+  gap: 0.8rem;
   grid-auto-flow: dense;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   grid-auto-rows: auto auto auto auto;
   container-type: inline-size;
 }
 main section#News div.items div.news:nth-child(odd) {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(33, 71, 109, 0.95);
 }
 main section#News div.items div.news:nth-child(even) {
-  background-color: rgba(28, 78, 153, 0.75);
+  background-color: rgba(31, 59, 87, 0.95);
 }
 main section#News div.items div.news {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   display: grid;
@@ -281,12 +293,24 @@ main section#News div.items div.news div.readmore {
   text-align: right;
 }
 main section#News div.items div.news div.readmore button {
-  background-color: #3395d7;
-  color: #fff1f8;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 main section#News div.items div.news div.readmore button:hover {
   background-color: #2670a1;
@@ -296,7 +320,7 @@ main section#NewsItem {
   flex-direction: column;
 }
 main section#NewsItem div.item {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   margin-bottom: 0.25rem;
@@ -313,30 +337,42 @@ main section#NewsItem div.item div.text {
   font-size: 1rem;
 }
 main section#NewsItem div.readmore {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
 }
 main section#NewsItem div.readmore button {
-  background-color: #3395d7;
-  color: #fff1f8;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 main section#NewsItem div.readmore button:hover {
   background-color: #2670a1;
 }
 main section#AboutUs div.content {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
 }
 main section#AboutUs div.members {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   display: grid;
@@ -347,7 +383,7 @@ main section#AboutUs div.members {
   container-type: inline-size;
 }
 main section#AboutUs div.members div.member {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   display: grid;
@@ -372,25 +408,40 @@ main section#AboutUs div.members div.member div.readmore {
   text-align: right;
 }
 main section#AboutUs div.members div.member div.readmore button {
-  background-color: #3395d7;
-  color: #fff1f8;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 main section#AboutUs div.members div.member div.readmore button:hover {
   background-color: #2670a1;
 }
 main section#AboutUs div.members div.member:nth-child(even) {
-  background-color: rgba(28, 78, 153, 0.75);
+  background-color: rgba(31, 59, 87, 0.95);
+}
+main section#AboutUs div.members div.member:nth-child(odd) {
+  background-color: rgba(33, 71, 109, 0.95);
 }
 main section#AboutMe {
   display: flex;
   flex-direction: column;
 }
 main section#AboutMe div.content {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   margin-bottom: 0.25rem;
@@ -409,17 +460,29 @@ main section#AboutMe div.content div.center div.image {
   text-align: right;
 }
 main section#AboutMe div.readmore {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
 }
 main section#AboutMe div.readmore button {
-  background-color: #3395d7;
-  color: #fff1f8;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 main section#AboutMe div.readmore button:hover {
   background-color: #2670a1;
@@ -439,7 +502,7 @@ main section#Contact article#ContactUs div.topic {
   margin-bottom: 0.25rem;
 }
 main section#Contact article#ContactUs div.content {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
 }
@@ -467,20 +530,44 @@ main section#Contact article#ContactUs div.content input[type="checkbox"] {
   margin-bottom: 2rem;
 }
 main section#Contact article#ContactUs div.content input[type="submit"] {
-  background-color: #3395d7;
-  color: #fff1f8;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 main section#Contact article#ContactUs div.content input[type="submit"]:hover {
-  background-color: #3395d7;
-  color: #fff1f8;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 main section#Contact article#ContactUs div.content span.field-validation-error {
   color: red;
@@ -490,7 +577,7 @@ main section#Contact article#ContactAgent div.topic {
   margin-bottom: 0.25rem;
 }
 main section#Contact article#ContactAgent div.content {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   display: grid;
@@ -502,7 +589,7 @@ main section#Gig {
   flex-direction: column;
 }
 main section#Gig div.gig {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   margin-bottom: 0.25rem;
@@ -531,34 +618,58 @@ main section#Gig div.gig div.center div.information div.text {
   font-size: 1rem;
 }
 main section#Gig div.readmore {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
 }
 main section#Gig div.readmore button {
-  background-color: #3395d7;
-  color: #fff1f8;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 main section#Gig div.readmore button:hover {
   background-color: #2670a1;
 }
 main section#back button {
-  background-color: #3395d7;
-  color: #fff1f8;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 main section#back button:hover {
   background-color: #2670a1;
 }
 main section#Gigs div.content {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
 }
@@ -592,8 +703,8 @@ main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
   grid-template-columns: auto 1fr;
   column-gap: 0.25rem;
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.date {
-  background-color: rgba(0, 0, 0, 0.1);
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.eventday {
+  background-color: rgba(31, 59, 87, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   width: 60px;
@@ -607,7 +718,7 @@ main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days di
   gap: 0.4rem;
 }
 main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap {
-  background-color: rgba(28, 78, 153, 0.5);
+  background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
   display: grid;
@@ -620,11 +731,17 @@ main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days di
   font-size: 0.8rem;
   color: #ccc;
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:hover {
-  background-color: rgba(28, 78, 153, 0.75);
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:nth-child(even) {
+  background-color: rgba(31, 59, 87, 0.95);
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days:hover div.date {
-  background-color: rgba(255, 255, 255, 0.2);
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:nth-child(odd) {
+  background-color: rgba(33, 71, 109, 0.95);
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:hover {
+  background-color: rgba(0, 74, 148, 0.95);
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days:hover div.day div.eventday {
+  background-color: rgba(0, 74, 148, 0.95);
 }
 footer div#Footer {
   display: flex;

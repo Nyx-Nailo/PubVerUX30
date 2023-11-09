@@ -36,14 +36,16 @@ section#Gigs {
             grid-template-columns: auto 1fr;
             column-gap: 0.25rem;
 
-            div.date {
-              .content-style(@backgroundDate);
+            div.day {
+              div.eventday {
+                .content-style(@backgroundGridOne);
 
-              width: 60px;
-              text-align: center;
+                width: 60px;
+                text-align: center;
 
-              font-size: 2rem;
-              text-shadow: 1px 1px #000;
+                font-size: 2rem;
+                text-shadow: 1px 1px #000;
+              }
             }
 
             div.eventsWrap {
@@ -52,7 +54,7 @@ section#Gigs {
               gap: 0.4rem;
 
               div.infoWrap {
-                .content-style(@backgroundContent);
+                .content-style();
                 display: grid;
                 grid-template-columns: 1fr;
 
@@ -64,14 +66,23 @@ section#Gigs {
                   color: #ccc;
                 }
               }
+              div.infoWrap:nth-child(even) {
+                background-color: @backgroundGridOne;
+              }
+              div.infoWrap:nth-child(odd) {
+                background-color: @backgroundGridTwo;
+              }
+
               div.infoWrap:hover {
-                background-color: @backgroundTopic;
+                background-color: @backgroundHighlightHover;
               }
             }
           }
           div.days:hover {
-            div.date {
-              background-color: @backgroundDateHover;
+            div.day {
+              div.eventday {
+                background-color: @backgroundHighlightHover;
+              }
             }
           }
         }

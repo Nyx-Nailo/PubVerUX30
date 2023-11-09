@@ -29,8 +29,10 @@
                .Distinct())
                 {
                     <div class="days">
-                        <div class="date">
-                            @eventDays.Day
+                        <div class="day">
+                            <div class="eventday">
+                                @eventDays.Day
+                            </div>
                         </div>
                         <div class="eventsWrap">
                             @foreach (var eventTime in Model.Children
