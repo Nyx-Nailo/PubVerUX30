@@ -58,6 +58,7 @@ main section div.topic {
   border-radius: 0.5rem;
   font-size: 1.4rem;
   margin-bottom: 0.25rem;
+  text-shadow: 1px 1px #000;
 }
 a {
   color: #f2e8e8;
@@ -435,7 +436,6 @@ main section#Contact {
   }
 }
 main section#Contact article#ContactUs div.topic {
-  font-size: 1.2rem;
   margin-bottom: 0.25rem;
 }
 main section#Contact article#ContactUs div.content {
@@ -487,7 +487,6 @@ main section#Contact article#ContactUs div.content span.field-validation-error {
   font-weight: bold;
 }
 main section#Contact article#ContactAgent div.topic {
-  font-size: 1.2rem;
   margin-bottom: 0.25rem;
 }
 main section#Contact article#ContactAgent div.content {
@@ -565,45 +564,66 @@ main section#Gigs div.content {
 }
 main section#Gigs div.content div.calendar {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-rows: 1fr;
   gap: 0.5rem;
 }
-main section#Gigs div.content div.calendar div.wrapper {
+main section#Gigs div.content div.calendar div.monthWrap {
+  text-transform: capitalize;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.topic {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.topic span.month {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #000;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.topic span.year {
+  text-align: right;
+  text-shadow: 1px 1px #000;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 0.25rem;
 }
-main section#Gigs div.content div.calendar div.wrapper div.date {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.25rem;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.date {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 0.75rem;
   border-radius: 0.5rem;
-  display: grid;
-  font-size: 2rem;
+  width: 60px;
   text-align: center;
-  align-items: end;
+  font-size: 2rem;
+  text-shadow: 1px 1px #000;
 }
-main section#Gigs div.content div.calendar div.wrapper span.month {
-  font-size: 1rem;
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
-main section#Gigs div.content div.calendar div.wrapper div.gig {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap {
   background-color: rgba(28, 78, 153, 0.5);
   padding: 0.75rem;
   border-radius: 0.5rem;
-}
-main section#Gigs div.content div.calendar div.wrapper div.gig li {
   display: grid;
   grid-template-columns: 1fr;
 }
-main section#Gigs div.content div.calendar div.wrapper div.gig li span.link {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap span.title {
   font-size: 1.2rem;
-  text-transform: capitalize;
 }
-main section#Gigs div.content div.calendar div.wrapper div.gig li span.city {
-  color: rgba(204, 204, 204, 0.877);
-  margin-bottom: 0.5rem;
-  text-transform: capitalize;
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap span.city {
+  font-size: 0.8rem;
+  color: #ccc;
 }
-main section#Gigs div.content div.calendar div.wrapper:hover div.date {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:hover {
+  background-color: rgba(28, 78, 153, 0.75);
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days:hover div.date {
   background-color: rgba(255, 255, 255, 0.2);
 }
 footer div#Footer {

@@ -6,49 +6,74 @@ section#Gigs {
 
     div.calendar {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      grid-template-rows: 1fr;
       gap: 0.5rem;
 
-      div.wrapper {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0.25rem;
+      div.monthWrap {
+        text-transform: capitalize;
 
-        div.date {
-          .content-style(@backgroundDate);
-
+        div.topic {
           display: grid;
-          font-size: 2rem;
-          text-align: center;
-          align-items: end;
-        }
-        span.month {
-          font-size: 1rem;
-        }
+          grid-template-columns: 1fr 1fr;
 
-        div.gig {
-          .content-style(@backgroundContent);
-
-          li {
-            display: grid;
-            grid-template-columns: 1fr;
-
-            span.link {
-              font-size: 1.2rem;
-              text-transform: capitalize;
-            }
-            span.city {
-              color: @contentDateText;
-              margin-bottom: 0.5rem;
-              text-transform: capitalize;
-            }
+          span.month {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px #000;
+          }
+          span.year {
+            text-align: right;
+            text-shadow: 1px 1px #000;
           }
         }
-      }
 
-      div.wrapper:hover {
-        div.date {
-          background-color: @backgroundDateHover;
+        div.dayWrap {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+          gap: 0.25rem;
+
+          div.days {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 0.25rem;
+
+            div.date {
+              .content-style(@backgroundDate);
+
+              width: 60px;
+              text-align: center;
+
+              font-size: 2rem;
+              text-shadow: 1px 1px #000;
+            }
+
+            div.eventsWrap {
+              display: flex;
+              flex-direction: column;
+              gap: 0.4rem;
+
+              div.infoWrap {
+                .content-style(@backgroundContent);
+                display: grid;
+                grid-template-columns: 1fr;
+
+                span.title {
+                  font-size: 1.2rem;
+                }
+                span.city {
+                  font-size: 0.8rem;
+                  color: #ccc;
+                }
+              }
+              div.infoWrap:hover {
+                background-color: @backgroundTopic;
+              }
+            }
+          }
+          div.days:hover {
+            div.date {
+              background-color: @backgroundDateHover;
+            }
+          }
         }
       }
     }

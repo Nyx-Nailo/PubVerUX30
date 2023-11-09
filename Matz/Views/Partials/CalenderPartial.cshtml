@@ -3,33 +3,54 @@
 <div class="calendar">
     @{
         DateTime dateToday = DateTime.Now;
+        var year = 0;
     }
+
     @foreach (var gigDate in Model.Children
     .Where(x => x.Value<DateTime>("datum") >= dateToday)
-    .GroupBy(x => x.Value<DateTime>("datum"))
-    .OrderBy(group => group.Key).ToList())
+    .OrderBy(x => x.Value("datum"))
+    .Select(x => new { Year = x.Value<DateTime>("datum").Year, Month = x.Value<DateTime>("datum").Month })
+    .Distinct())
     {
-        DateTime date = gigDate.Key;
+        var swedishCulture = new System.Globalization.CultureInfo("sv-SE");
+        var monthName = new DateTime(gigDate.Year, gigDate.Month, 1).ToString("MMMM", swedishCulture);
 
-        <div class="wrapper">
-            <div class="day">
-                <div class="date">
-                    <span class="day">@date.Day</span>
-                    <span class="month">@date.ToString("MMM")</span>
-                </div>
+        <div class="monthWrap">
+            <div class="topic">
+                <span class="month">@monthName</span>
+                <span class="year">@gigDate.Year</span>
             </div>
-            <div class="gigs">
-                <div class="gig">
-                    <ol>
-                        @foreach (var gig in gigDate)
-                        {
-                            <li>
-                                <span class="link"><a href="@gig.Url()">@gig.Name</a></span>
-                                <span class="city">Ort: @gig.Value("gigCity")</span>
-                            </li>
-                        }
-                    </ol>
-                </div>
+            <div class="dayWrap">
+                @foreach (var eventDays in Model.Children
+               .Where(x => x.Value<DateTime>("datum") >= dateToday &&
+               x.Value<DateTime>("datum").Month == gigDate.Month &&
+               x.Value<DateTime>("datum").Year == gigDate.Year)
+               .OrderBy(x => x.Value("datum"))
+               .Select(x => new { Day = x.Value<DateTime>("datum").Day })
+               .Distinct())
+                {
+                    <div class="days">
+                        <div class="date">
+                            @eventDays.Day
+                        </div>
+                        <div class="eventsWrap">
+                            @foreach (var eventTime in Model.Children
+                           .Where(x => x.Value<DateTime>("datum") >= dateToday &&
+                           x.Value<DateTime>("datum").Month == gigDate.Month &&
+                           x.Value<DateTime>("datum").Year == gigDate.Year &&
+                           x.Value<DateTime>("datum").Day == eventDays.Day)
+                           .OrderBy(x => x.Value("datum")))
+                            {
+                                <div class="infoWrap">
+                                    <a href="@eventTime.Url()" alt="Länk till spelning i @eventTime.Value("gigCity")">
+                                        <span class="title">@eventTime.Value("title")</span>
+                                    </a>
+                                    <span class="city">Ort: @eventTime.Value("gigCity")</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     }
