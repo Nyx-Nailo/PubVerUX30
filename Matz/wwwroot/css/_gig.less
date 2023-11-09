@@ -3,12 +3,12 @@
 section#Gig {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
 
   div.gig {
-    background-color: @backgroundColorEven;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
+    .content-style();
+
+    margin-bottom: 0.25rem;
+
     display: flex;
     justify-content: center;
 
@@ -40,15 +40,13 @@ section#Gig {
   }
 
   div.readmore {
-    background-color: @backgroundColorEven;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
+    .content-style();
 
     button {
       .button-style();
     }
     button:hover {
-      background-color: @buttonBgHover;
+      background-color: @backgroundButtonHover;
     }
   }
 }

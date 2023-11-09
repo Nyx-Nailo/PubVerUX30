@@ -2,17 +2,13 @@
 
 section#StartpageGigs {
   div.gig {
-    background-color: @backgroundColorEven;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
+    .content-style();
     font-size: 2rem;
     display: grid;
     grid-template-columns: auto 1fr;
 
     span.day {
-      background-color: #00000018;
+      background-color: @backgroundHighlight;
 
       padding: 0.4rem 1rem;
       border-radius: 0.4rem;
@@ -36,26 +32,26 @@ section#StartpageGigs {
   }
   div.gig:hover {
     span.day {
-      background-color: #ffffff3a;
+      background-color: @backgroundHighlightHover;
     }
   }
 }
 
 section#StartpageNews {
   div.items {
+    .content-style();
     display: grid;
-    gap: 1rem;
+    gap: 0.8rem;
     grid-auto-flow: dense;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     grid-auto-rows: auto auto auto;
     container-type: inline-size;
 
     div.news {
-      background-color: @backgroundColorEven;
+      .content-style(@backgroundGridTwo);
+
       display: grid;
       gap: 0.2rem;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
       grid-row: span 4;
       grid-template-rows: subgrid;
 
@@ -65,7 +61,7 @@ section#StartpageNews {
       div.date {
         font-size: 0.8rem;
         padding: 0.3rem 0;
-        color: #ccc;
+        color: @contentDateText;
       }
       div.text {
         font-size: 1rem;
@@ -78,9 +74,13 @@ section#StartpageNews {
           .button-style();
         }
         button:hover {
-          background-color: @buttonBgHover;
+          background-color: @backgroundButtonHover;
         }
       }
+    }
+
+    div.news:nth-child(even) {
+      background-color: @backgroundGridOne;
     }
   }
 }

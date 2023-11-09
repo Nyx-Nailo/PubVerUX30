@@ -480,4 +480,5 @@ appsettings-schema.*.json
 
 /wwwroot/css/*
 !/wwwroot/css/style.css
+!/wwwroot/css/404.css
 !/wwwroot/css/*.less

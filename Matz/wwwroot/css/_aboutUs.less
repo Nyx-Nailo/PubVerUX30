@@ -2,17 +2,13 @@
 
 section#AboutUs {
   div.content {
-    background-color: @backgroundColorEven;
-    border-radius: 0.5rem;
-    padding: 0.75rem;
+    .content-style();
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
   }
 
   div.members {
-    background-color: @backgroundColorEven;
-    border-radius: 0.5rem;
-    padding: 0.75rem;
+    .content-style();
     display: grid;
     gap: 1rem;
     grid-auto-flow: dense;
@@ -21,13 +17,12 @@ section#AboutUs {
     container-type: inline-size;
 
     div.member {
+      .content-style();
+
       display: grid;
       gap: 0.2rem;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
       grid-row: span 4;
       grid-template-rows: subgrid;
-      background-color: @backgroundColorEven;
 
       div.topic {
         font-size: 1.2rem;
@@ -50,9 +45,16 @@ section#AboutUs {
           .button-style();
         }
         button:hover {
-          background-color: @buttonBgHover;
+          background-color: @backgroundButtonHover;
         }
       }
+    }
+
+    div.member:nth-child(even) {
+      background-color: @backgroundGridOne;
+    }
+    div.member:nth-child(odd) {
+      background-color: @backgroundGridTwo;
     }
   }
 }

@@ -50,7 +50,7 @@
                     <div class="subtopic">@item.Name()</div>
                     <div class="date">@item.CreateDate.ToString("yyyy-MM-dd HH:mm")</div>
                     <div class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</div>
-                    <div class="readmore"><a href="@item.Url()"><button class="button">Läs mera...</button></a></div>
+                    <div class="readmore"><a href="@item.Url()"><button class="button">Läs mer...</button></a></div>
                 </div>
             }
         }

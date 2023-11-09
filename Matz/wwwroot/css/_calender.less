@@ -2,58 +2,89 @@
 
 section#Gigs {
   div.content {
-    background-color: @backgroundColorEven;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+    .content-style();
 
     div.calendar {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-      gap: 1rem;
+      grid-template-rows: 1fr;
+      gap: 0.5rem;
 
-      div.wrapper {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0.25rem;
+      div.monthWrap {
+        text-transform: capitalize;
 
-        div.date {
-          background-color: #00000042;
-          padding: 0.5rem;
+        div.topic {
           display: grid;
-          font-size: 2rem;
-          text-align: center;
-          border-radius: 0.25rem;
-          align-items: end;
-        }
-        div.month {
-          align-items: start;
-        }
+          grid-template-columns: 1fr 1fr;
 
-        div.gig {
-          padding: 0.5rem;
-          background-color: @backgroundColorEven;
-          border-radius: 0.25rem;
-
-          li {
-            display: grid;
-            grid-template-columns: 1fr;
-
-            span.link {
-              font-size: 1.2rem;
-              text-transform: capitalize;
-            }
-            span.city {
-              color: #ccc;
-              margin-bottom: 0.5rem;
-              text-transform: capitalize;
-            }
+          span.month {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px #000;
+          }
+          span.year {
+            text-align: right;
+            text-shadow: 1px 1px #000;
           }
         }
-      }
 
-      div.wrapper:hover {
-        div.date {
-          background-color: #ffffff69;
+        div.dayWrap {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+          gap: 0.25rem;
+
+          div.days {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 0.25rem;
+
+            div.day {
+              div.eventday {
+                .content-style(@backgroundGridOne);
+
+                width: 60px;
+                text-align: center;
+
+                font-size: 2rem;
+                text-shadow: 1px 1px #000;
+              }
+            }
+
+            div.eventsWrap {
+              display: flex;
+              flex-direction: column;
+              gap: 0.4rem;
+
+              div.infoWrap {
+                .content-style();
+                display: grid;
+                grid-template-columns: 1fr;
+
+                span.title {
+                  font-size: 1.2rem;
+                }
+                span.city {
+                  font-size: 0.8rem;
+                  color: #ccc;
+                }
+              }
+              div.infoWrap:nth-child(even) {
+                background-color: @backgroundGridOne;
+              }
+              div.infoWrap:nth-child(odd) {
+                background-color: @backgroundGridTwo;
+              }
+
+              div.infoWrap:hover {
+                background-color: @backgroundHighlightHover;
+              }
+            }
+          }
+          div.days:hover {
+            div.day {
+              div.eventday {
+                background-color: @backgroundHighlightHover;
+              }
+            }
+          }
         }
       }
     }
