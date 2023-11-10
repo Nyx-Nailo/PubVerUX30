@@ -25,10 +25,10 @@
             @foreach (var contact in contactInformation)
             {
                 <div class="agent">
-                    <img src="@contact.ContactImage" alt="Kontakt bild" />
                     <h3>@contact.ContactName</h3>
                     <a href="tel:@contact.ContactNumber">@contact.ContactNumber</a><br />
-                    <a href="mail:@contact.ContactEmail">@contact.ContactEmail</a>
+                    <a href="mail:@contact.ContactEmail">@contact.ContactEmail</a><br />
+                    <img src="@contact.ContactImage.Url()" alt="@contact.ContactName bild" />
                 </div>
             }
         </div>

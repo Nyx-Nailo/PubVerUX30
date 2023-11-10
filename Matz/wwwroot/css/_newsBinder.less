@@ -17,6 +17,11 @@ section#News {
       background-color: @backgroundGridOne;
     }
 
+    div.noNews {
+      font-size: 1rem;
+      font-style: italic;
+    }
+
     div.news {
       .content-style();
 
@@ -36,6 +41,12 @@ section#News {
       div.text {
         font-size: 1rem;
         margin-bottom: 1rem;
+
+        p {
+          img {
+            display: none;
+          }
+        }
       }
       div.readmore {
         text-align: right;

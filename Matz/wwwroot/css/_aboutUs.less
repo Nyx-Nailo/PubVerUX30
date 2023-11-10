@@ -16,16 +16,50 @@ section#AboutUs {
     grid-auto-rows: auto auto auto auto;
     container-type: inline-size;
 
+    div.member:hover {
+      div.image {
+        div.img {
+          img {
+            transform: scale(1.05);
+            filter: saturate(1);
+          }
+        }
+      }
+    }
+
     div.member {
       .content-style();
 
       display: grid;
       gap: 0.2rem;
-      grid-row: span 4;
-      grid-template-rows: subgrid;
+      grid-row: span 3;
 
-      div.topic {
-        font-size: 1.2rem;
+      div.image {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0.5rem;
+
+        div.img {
+          width: 150px;
+          border-radius: 0.4rem;
+          overflow: hidden;
+          border: 1px solid #fff;
+          box-shadow: 0 5px 10px #00000050;
+          margin: 0;
+
+          img {
+            display: block;
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            transition: 0.3s;
+            filter: saturate(0.75);
+          }
+        }
+      }
+      div.subtopic {
+        text-align: center;
+        font-size: 1.4rem;
       }
       div.col {
         display: flex;
@@ -39,7 +73,8 @@ section#AboutUs {
         }
       }
       div.readmore {
-        text-align: right;
+        padding-top: 1rem;
+        text-align: center;
 
         button {
           .button-style();
