@@ -25,47 +25,66 @@
 	</div>
 	<div class="content">
 		<div class="center">
+			<div></div>
 			<div class="image">
 				<img src="@person?.Portrait?.GetCropUrl()" alt="@person?.AltPortrait" />
 			</div>
 			<div class="information">
-				<span>
-					Namn: @person?.PersonName
-				</span>
-				<br />
-				<span>
-					Ålder: @age
-				</span>
-				<br />
-				<span>
-					Instrument: @instruments
-				</span>
-				<br />
-				<span>
-					Musikfavoriter: @person?.FavMusic
-				</span>
-				<br />
-				<span>
-					Bor: @place
-				</span>
-				<br />
-				<span>
-					Familj: @person?.Family
-				</span>
-				<br />
-				<span>
-					Favorit Mat: @person?.FavFood
-				</span>
-				<br />
-				<span>
-					Favorit Dryck: @person?.FavDrink
-				</span>
-				<br />
-				<span>
-					Intressen: @person?.Interests
-				</span>
+				<div class="temp">
+					<span class="name">
+						@person?.PersonName
+					</span>
+					<span>
+						Ålder:</span>
+					<span>
+						@age
+					</span>
+					<span>
+						Instrument:
+					</span>
+					<span>
+						@instruments
+					</span>
+					<span>
+						Musikfavoriter:
+					</span>
+					<span>
+						@person?.FavMusic
+					</span>
+					<span>
+						Bor:
+					</span>
+					<span>
+						@place
+					</span>
+					<span>
+						Familj:
+					</span>
+					<span>
+						@person?.Family
+					</span>
+					<span>
+						Favorit Mat:
+					</span>
+					<span>
+						@person?.FavFood
+					</span>
+					<span>
+						Favorit Dryck:
+					</span>
+					<span>
+						@person?.FavDrink
+					</span>
+					<span>
+						Intressen:
+					</span>
+					<span>
+						@person?.Interests
+					</span>
+				</div>
 			</div>
 		</div>
+		<div></div>
 	</div>
 	<div class="readmore">
 		<button class="button" onclick="history.back()">&#8592; tillbaka</button>
