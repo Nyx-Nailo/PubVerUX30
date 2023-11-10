@@ -403,14 +403,10 @@ main section#AboutUs div.members div.member {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
-  display: grid;
-  gap: 0.2rem;
-  grid-row: span 3;
 }
 main section#AboutUs div.members div.member div.image {
-  display: flex;
+  display: grid;
   justify-content: center;
-  padding-bottom: 0.5rem;
 }
 main section#AboutUs div.members div.member div.image div.img {
   width: 150px;
@@ -429,6 +425,7 @@ main section#AboutUs div.members div.member div.image div.img img {
   filter: saturate(0.75);
 }
 main section#AboutUs div.members div.member div.subtopic {
+  margin-top: 1rem;
   text-align: center;
   font-size: 1.4rem;
 }
