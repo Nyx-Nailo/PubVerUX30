@@ -3,8 +3,20 @@
 section#AboutUs {
   div.content {
     .content-style();
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    padding-left: 10%;
+    padding-right: 10%;
+
     margin-bottom: 1.5rem;
+
+    p:not(:last-child) {
+      padding-bottom: 1rem;
+    }
+
+    @media (max-width: 991px) {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
   }
 
   div.members {

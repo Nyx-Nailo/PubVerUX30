@@ -7,6 +7,10 @@ section#StartpageGigs {
     display: grid;
     grid-template-columns: auto 1fr;
 
+    @media (max-width: 280px) {
+      grid-template-columns: 1fr;
+    }
+
     span.day {
       background-color: @backgroundHighlight;
 
@@ -15,6 +19,11 @@ section#StartpageGigs {
       margin-right: 1rem;
       text-align: center;
       text-transform: capitalize;
+
+      @media (max-width: 280px) {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
     }
     div.info {
       display: grid;

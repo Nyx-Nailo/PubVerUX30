@@ -28,6 +28,10 @@ div#Nav {
       padding: 1rem;
     }
 
+    @media (max-width: 240px) {
+      display: none;
+    }
+
     img {
       width: 250px;
       filter: drop-shadow(0 0 5px @imageLogoShadow);
@@ -39,6 +43,10 @@ div#Nav {
       @media (max-width: 576px) {
         width: 300px;
       }
+
+      @media (max-width: 340px) {
+        width: 220px;
+      }
     }
   }
 
@@ -46,6 +54,7 @@ div#Nav {
     background-color: @backgroundTopic;
     text-align: right;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     justify-content: right;
     padding: 1rem 1.5rem;
