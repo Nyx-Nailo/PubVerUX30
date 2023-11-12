@@ -42,10 +42,10 @@ section#Gigs {
             column-gap: 0.25rem;
 
             div.day {
-              div.eventday {
-                .content-style(@backgroundGridOne);
+              .content-style(@backgroundGridOne);
 
-                width: 60px;
+              div.eventday {
+                width: 35px;
                 text-align: center;
 
                 font-size: 2rem;
@@ -71,23 +71,17 @@ section#Gigs {
                   color: #ccc;
                 }
               }
-              div.infoWrap:nth-child(even) {
-                background-color: @backgroundGridOne;
-              }
-              div.infoWrap:nth-child(odd) {
+              div.infoWrap {
                 background-color: @backgroundGridTwo;
               }
-
               div.infoWrap:hover {
-                background-color: @backgroundHighlightHover;
+                background-color: @backgroundGridOne;
               }
             }
           }
           div.days:hover {
             div.day {
-              div.eventday {
-                background-color: @backgroundHighlightHover;
-              }
+              background-color: @backgroundHighlightHover;
             }
           }
         }
