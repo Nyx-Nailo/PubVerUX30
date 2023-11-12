@@ -3,7 +3,7 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     Layout = "Master.cshtml";
-    var address = Uri.EscapeDataString(Model.Address);
+    var address = Uri.EscapeDataString(Model.Name + " " + Model.Address + " " + Model.GigCity);
 }
 
 <section id="Gig">
@@ -19,7 +19,39 @@
                     src="https://www.google.com/maps/embed/v1/place?key=@ApiKey.Key&q=@address"></iframe>
             </div>
             <div class="information">
-                @Model.Name
+                <span>
+                    Börjar:
+                </span>
+                <span>
+                    @Model.Datum.ToString("dd/MM/yyyy HH:mm")
+                </span>
+                <span>
+                    Pris:
+                </span>
+                <span>
+                    @Model.GigPrice
+                </span>
+                <span>
+                    Plats:
+                </span>
+                <span>
+                    @Model.Name
+                </span>
+                <span>
+                    Address:
+                </span>
+                <span>
+                    @Model.Address, @Model.GigCity
+                </span>
+                @if (String.IsNullOrEmpty(Model.Description?.ToString()) == false)
+                {
+                    <span>
+                        Om Spelning:
+                    </span>
+                    <span>
+                        @Model.Description
+                    </span>
+                }
             </div>
             <div></div>
         </div>
