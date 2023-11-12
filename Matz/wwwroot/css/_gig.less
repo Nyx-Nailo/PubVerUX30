@@ -20,23 +20,40 @@ section#Gig {
       }
 
       div.map {
-        text-align: center;
+        display: grid;
+        grid-template: auto;
+        gap: 0.4rem;
+        justify-content: center;
 
-        iframe {
+        div.cont {
           width: 330px;
-          background-color: #ffffff50;
+          text-align: center;
           border-radius: 0.5rem;
           border: 1px solid #000;
           box-shadow: 0 5px 10px #00000050;
 
+          @media (max-width: 360px) {
+            width: 200px;
+          }
+
           @media (max-width: 280px) {
-            width: 240px;
-            height: 240px;
+            display: none;
+          }
+
+          iframe {
+            width: 330px;
+            border-radius: 0.5rem;
+
+            @media (max-width: 360px) {
+              width: 200px;
+            }
+          }
+
+          @media (max-width: 991px) {
+            margin-top: 1rem;
           }
         }
-
         @media (max-width: 991px) {
-          margin-top: 1rem;
           order: 1;
         }
       }

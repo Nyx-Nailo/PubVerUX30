@@ -15,9 +15,11 @@
         <div class="center">
             <div></div>
             <div class="map">
+                <div class="cont" style="background-image: url('/media/empty-map.png')">
                 <iframe title="Google maps over location @Model.Address" width="330" height="330" style="border:0"
                     loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
                     src="https://www.google.com/maps/embed/v1/place?key=@ApiKey.Key&q=@address"></iframe>
+                </div>
             </div>
             <div class="information">
                 <div class="grid">
