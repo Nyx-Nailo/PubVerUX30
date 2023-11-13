@@ -715,6 +715,7 @@ main section#Contact article#ContactAgent div.content {
 }
 main section#Contact article#ContactAgent div.content div.agent img {
   width: 350px;
+  margin-top: 0.5rem;
 }
 @media (max-width: 350px) {
   main section#Contact article#ContactAgent div.content div.agent img {
