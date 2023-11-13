@@ -889,13 +889,12 @@ main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
   grid-template-columns: auto 1fr;
   column-gap: 0.25rem;
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day {
 @media (max-width: 280px) {
   main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
     grid-template-columns: 1fr;
   }
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.eventday {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day {
   background-color: rgba(31, 59, 87, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;

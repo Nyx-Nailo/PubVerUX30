@@ -2,6 +2,6 @@
 {
     public static class ApiKey
     {
-        public static string Key { get; set; }
+        public static string? Key { get; set; }
     }
 }
