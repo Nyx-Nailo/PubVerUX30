@@ -3,7 +3,8 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     Layout = "Master.cshtml";
-    var address = Uri.EscapeDataString(Model.Address);
+    var swedishCulture = new System.Globalization.CultureInfo("sv-SE");
+    var address = Uri.EscapeDataString(Model.Name + " " + Model.Address + " " + Model.GigCity);
 }
 
 <section id="Gig">
@@ -14,12 +15,48 @@
         <div class="center">
             <div></div>
             <div class="map">
-                <iframe title="Google maps over location @Model.Address" width="350" height="350" style="border:0"
+                <div class="cont" style="background-image: url('/media/empty-map.png')">
+                <iframe title="Google maps over location @Model.Address" width="330" height="330" style="border:0"
                     loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
                     src="https://www.google.com/maps/embed/v1/place?key=@ApiKey.Key&q=@address"></iframe>
+                </div>
             </div>
             <div class="information">
-                @Model.Name
+                <div class="grid">
+                    <span class="subtopic">
+                        @Model.Name
+                    </span>
+                    <span>
+                        Börjar:
+                    </span>
+                    <span>
+                        @Model.Datum.ToString("d MMMM yyyy kl: HH:mm", swedishCulture)
+                    </span>
+                    @if (Model.GigPrice > 0)
+                    {
+                        <span>
+                            Pris:
+                        </span>
+                        <span>
+                            @Model.GigPrice kr
+                        </span>
+                    }
+                    <span>
+                        Address:
+                    </span>
+                    <span>
+                        @Model.Address, @Model.GigCity
+                    </span>
+                    @if (String.IsNullOrEmpty(Model.Description?.ToString()) == false)
+                    {
+                        <span>
+                            Om Spelning:
+                        </span>
+                        <span>
+                            @Model.Description
+                        </span>
+                    }
+                </div>
             </div>
             <div></div>
         </div>
