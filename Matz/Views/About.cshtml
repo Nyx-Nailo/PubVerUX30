@@ -20,20 +20,10 @@
 	<div class="members">
 		@foreach (var person in members ?? new List<Person>())
 		{
-			string instruments = "";
-			foreach (var instrument in person.Instruments ?? new List<string>())
-			{
-				instruments += instrument + ", ";
-			}
-
-			if (instruments.Length > 2)
-			{
-				instruments = instruments.Substring(0, instruments.Length - 2);
-			}
-
 			<div class="member">
 				<div class="image">
-					<div class="img">
+					<div class="img"
+						style="background-image: url('/media/empty-profile.png');background-position: center;">
 						<a href="@person.Url()" alt="@person.Name">
 							<img src="@person?.Portrait?.Url()" alt="@person?.AltPortrait" />
 						</a>

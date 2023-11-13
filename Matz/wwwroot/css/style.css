@@ -558,12 +558,19 @@ main section#AboutMe div.content div.center {
 main section#AboutMe div.content div.center div.image {
   text-align: center;
 }
-main section#AboutMe div.content div.center div.image img {
-  width: 200px;
-  height: auto;
-  border-radius: 0.5rem;
+main section#AboutMe div.content div.center div.image div.img {
+  width: 150px;
+  border-radius: 0.4rem;
+  overflow: hidden;
   border: 1px solid #fff;
-  box-shadow: 0px 5xp 10px #00000050;
+  box-shadow: 0 5px 10px #00000050;
+  margin: 0;
+}
+main section#AboutMe div.content div.center div.image div.img img {
+  display: block;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
 }
 main section#AboutMe div.content div.center div.information div.temp {
   display: grid;
@@ -882,6 +889,7 @@ main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
   grid-template-columns: auto 1fr;
   column-gap: 0.25rem;
 }
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day {
 @media (max-width: 280px) {
   main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
     grid-template-columns: 1fr;
@@ -891,7 +899,9 @@ main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days di
   background-color: rgba(31, 59, 87, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
-  width: 60px;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.eventday {
+  width: 35px;
   text-align: center;
   font-size: 2rem;
   text-shadow: 1px 1px #000;
@@ -921,16 +931,13 @@ main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days di
   font-size: 0.8rem;
   color: #ccc;
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:nth-child(even) {
-  background-color: rgba(31, 59, 87, 0.95);
-}
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:nth-child(odd) {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap {
   background-color: rgba(33, 71, 109, 0.95);
 }
 main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:hover {
-  background-color: rgba(0, 74, 148, 0.95);
+  background-color: rgba(31, 59, 87, 0.95);
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days:hover div.day div.eventday {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days:hover div.day {
   background-color: rgba(0, 74, 148, 0.95);
 }
 footer div#Footer {
