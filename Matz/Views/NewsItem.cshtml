@@ -1,0 +1,20 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+}
+
+<section id="NewsItem">
+    <div class="topic">
+        @Model.AncestorOrSelf(2).Name
+    </div>
+    <div class="item">
+        <div class="subtopic">@Model.Value("newsTitle")</div>
+        <div class="date">@Model.CreateDate.ToString("yyyy-MM-dd HH:mm")</div>
+        <div class="text">@Model.Value("newsContent")</div>
+    </div>
+    <div class="readmore">
+        <button class="button" onclick="history.back()">&#8592; tillbaka</button>
+    </div>
+</section>

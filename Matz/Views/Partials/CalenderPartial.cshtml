@@ -1,0 +1,74 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    DateTime dateToday = DateTime.Now;
+
+    var gigs = Model.Children
+    .Where(x => x.Value<DateTime>("datum") >= dateToday)
+    .OrderBy(x => x.Value("datum"))
+    .Select(x => new { Year = x.Value<DateTime>("datum").Year, Month = x.Value<DateTime>("datum").Month })
+    .Distinct();
+}
+
+<div class="calendar">
+    @if (gigs.Count() > 0)
+    {
+        var lastYear = 0;
+
+        @foreach (var gigDate in gigs)
+        {
+            var swedishCulture = new System.Globalization.CultureInfo("sv-SE");
+            var monthName = new DateTime(gigDate.Year, gigDate.Month, 1).ToString("MMMM", swedishCulture);
+
+            <div class="monthWrap">
+                <div class="topic">
+                    <span class="month">@monthName</span>
+                    @if (gigDate.Year != lastYear)
+                    {
+                        lastYear = gigDate.Year;
+                        <span class="year">@gigDate.Year</span>
+                    }
+                </div>
+                <div class="dayWrap">
+                    @foreach (var eventDays in Model.Children
+                   .Where(x => x.Value<DateTime>("datum") >= dateToday &&
+                   x.Value<DateTime>("datum").Month == gigDate.Month &&
+                   x.Value<DateTime>("datum").Year == gigDate.Year)
+                   .OrderBy(x => x.Value("datum"))
+                   .Select(x => new { Day = x.Value<DateTime>("datum").Day })
+                   .Distinct())
+                    {
+                        <div class="days">
+                            <div class="day">
+                                <div class="eventday">
+                                    @eventDays.Day
+                                </div>
+                            </div>
+                            <div class="eventsWrap">
+                                @foreach (var eventTime in Model.Children
+                               .Where(x => x.Value<DateTime>("datum") >= dateToday &&
+                               x.Value<DateTime>("datum").Month == gigDate.Month &&
+                               x.Value<DateTime>("datum").Year == gigDate.Year &&
+                               x.Value<DateTime>("datum").Day == eventDays.Day)
+                               .OrderBy(x => x.Value("datum")))
+                                {
+                                    <div class="infoWrap">
+                                        <a href="@eventTime.Url()" alt="Länk till spelning i @eventTime.Value("gigCity")">
+                                            <span class="title">@eventTime.Name</span>
+                                        </a>
+                                        <span class="city">Ort: @eventTime.Value("gigCity"), @eventTime.Value("address")</span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="noGigs">
+            inga planerade spelnignar just nu...
+        </div>
+    }
+</div>

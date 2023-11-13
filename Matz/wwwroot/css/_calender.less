@@ -1,0 +1,100 @@
+@import "_vars";
+
+section#Gigs {
+  div.noGigs {
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  div.content {
+    .content-style();
+
+    div.calendar {
+      display: grid;
+      grid-template-rows: 1fr;
+      gap: 0.5rem;
+
+      div.monthWrap {
+        text-transform: capitalize;
+
+        div.topic {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+
+          span.month {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px #000;
+          }
+          span.year {
+            text-align: right;
+            text-shadow: 1px 1px #000;
+          }
+        }
+
+        div.dayWrap {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+          gap: 0.25rem;
+
+          div.days {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 0.25rem;
+
+            @media (max-width: 280px) {
+              grid-template-columns: 1fr;
+            }
+
+            div.day {
+              .content-style(@backgroundGridOne);
+
+              div.eventday {
+                width: 35px;
+                text-align: center;
+
+                font-size: 2rem;
+                text-shadow: 1px 1px #000;
+
+                @media (max-width: 280px) {
+                  font-size: 1rem;
+                  width: 100%;
+                }
+              }
+            }
+
+            div.eventsWrap {
+              display: flex;
+              flex-direction: column;
+              gap: 0.4rem;
+
+              div.infoWrap {
+                .content-style();
+                display: grid;
+                grid-template-columns: 1fr;
+
+                span.title {
+                  font-size: 1.2rem;
+                }
+                span.city {
+                  font-size: 0.8rem;
+                  color: #ccc;
+                }
+              }
+              div.infoWrap {
+                background-color: @backgroundGridTwo;
+              }
+              div.infoWrap:hover {
+                background-color: @backgroundGridOne;
+              }
+            }
+          }
+          div.days:hover {
+            div.day {
+              background-color: @backgroundHighlightHover;
+            }
+          }
+        }
+      }
+    }
+  }
+}

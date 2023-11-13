@@ -1,0 +1,991 @@
+* {
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-shadow: 0px 1px #000;
+}
+body {
+  font-family: "Roboto";
+  background-color: rgba(233, 233, 233, 0.75);
+  background-image: linear-gradient(180deg, #1c4e99 30%, rgba(233, 233, 233, 0.75) 90%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  color: #fff1f8;
+  padding: 2rem;
+}
+@media (max-width: 991px) {
+  body {
+    padding: 0.2rem;
+  }
+}
+header,
+nav,
+footer {
+  width: 100%;
+  max-width: 80rem;
+}
+nav {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.1rem;
+  padding: 0;
+  margin-bottom: 0.25rem;
+}
+main {
+  width: 100%;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+main section {
+  width: 100%;
+  max-width: 80rem;
+  margin-bottom: 1rem;
+}
+main section div.topic {
+  background-color: rgba(0, 31, 63, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 1px 1px #000;
+}
+a {
+  color: #e7dfd2;
+  text-decoration: none;
+}
+a:hover {
+  color: #bbb4aa;
+  text-decoration: underline;
+}
+nav div#Nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  font-weight: 300;
+}
+@media (max-width: 991px) {
+  nav div#Nav {
+    grid-template-columns: 1fr;
+    row-gap: 0.2rem;
+  }
+}
+nav div#Nav div.image {
+  background-color: rgba(0, 31, 63, 0.95);
+  padding: 1rem 2rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+@media (max-width: 991px) {
+  nav div#Nav div.image {
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  nav div#Nav div.image {
+    justify-content: center;
+    padding: 1rem;
+  }
+}
+@media (max-width: 240px) {
+  nav div#Nav div.image {
+    display: none;
+  }
+}
+nav div#Nav div.image img {
+  width: 250px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.75));
+}
+@media (max-width: 991px) {
+  nav div#Nav div.image img {
+    width: 350px;
+  }
+}
+@media (max-width: 576px) {
+  nav div#Nav div.image img {
+    width: 300px;
+  }
+}
+@media (max-width: 340px) {
+  nav div#Nav div.image img {
+    width: 220px;
+  }
+}
+nav div#Nav div.menu {
+  background-color: rgba(0, 31, 63, 0.95);
+  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: right;
+  padding: 1rem 1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  text-shadow: 1px 1px #000000;
+}
+nav div#Nav div.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 1px 1px #000000;
+}
+nav div#Nav div.menu a:hover {
+  text-decoration: underline;
+  text-shadow: 1px 1px #000000, 0px 0px 10px #ffffff;
+}
+nav div#Nav div.menu a.active {
+  color: #eec2a5;
+  font-weight: bold;
+}
+nav div#Nav div.menu a:hover.active {
+  text-shadow: 1px 1px #000000, 0px 0px 10px #eec2a5;
+}
+@media (max-width: 991px) {
+  nav div#Nav div.menu {
+    justify-content: center;
+    border-radius: 0.5rem;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  nav div#Nav div.menu {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  nav div#Nav div.menu {
+    font-size: 0.7rem;
+    gap: 0.6rem;
+    padding: 1rem 0.5rem;
+  }
+}
+main section#StartpageGigs div.gig {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+@media (max-width: 280px) {
+  main section#StartpageGigs div.gig {
+    grid-template-columns: 1fr;
+  }
+}
+main section#StartpageGigs div.gig span.day {
+  background-color: rgba(33, 71, 109, 0.95);
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+  margin-right: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+@media (max-width: 280px) {
+  main section#StartpageGigs div.gig span.day {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+main section#StartpageGigs div.gig div.info {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+main section#StartpageGigs div.gig div.info span.link {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+main section#StartpageGigs div.gig div.info span.city {
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+main section#StartpageGigs div.gig:hover span.day {
+  background-color: rgba(0, 74, 148, 0.95);
+}
+main section#StartpageNews div.items {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-auto-rows: auto auto auto;
+  container-type: inline-size;
+}
+main section#StartpageNews div.items div.news {
+  background-color: rgba(33, 71, 109, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 0.2rem;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+}
+main section#StartpageNews div.items div.news div.subtopic {
+  font-size: 1.2rem;
+}
+main section#StartpageNews div.items div.news div.date {
+  font-size: 0.8rem;
+  padding: 0.3rem 0;
+  color: rgba(204, 204, 204, 0.877);
+}
+main section#StartpageNews div.items div.news div.text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+main section#StartpageNews div.items div.news div.text p img {
+  display: none;
+}
+main section#StartpageNews div.items div.news div.readmore {
+  text-align: right;
+}
+main section#StartpageNews div.items div.news div.readmore button {
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+main section#StartpageNews div.items div.news div.readmore button:hover {
+  background-color: #2670a1;
+}
+main section#StartpageNews div.items div.news:nth-child(even) {
+  background-color: rgba(31, 59, 87, 0.95);
+}
+main section#News div.items {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  grid-auto-rows: auto auto auto auto;
+  container-type: inline-size;
+}
+main section#News div.items div.news:nth-child(odd) {
+  background-color: rgba(33, 71, 109, 0.95);
+}
+main section#News div.items div.news:nth-child(even) {
+  background-color: rgba(31, 59, 87, 0.95);
+}
+main section#News div.items div.noNews {
+  font-size: 1rem;
+  font-style: italic;
+}
+main section#News div.items div.news {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 0.2rem;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+}
+main section#News div.items div.news div.subtopic {
+  font-size: 1.2rem;
+}
+main section#News div.items div.news div.date {
+  font-size: 0.75rem;
+  color: rgba(204, 204, 204, 0.877);
+  padding: 0.2rem 0;
+}
+main section#News div.items div.news div.text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+main section#News div.items div.news div.text p img {
+  display: none;
+}
+main section#News div.items div.news div.readmore {
+  text-align: right;
+}
+main section#News div.items div.news div.readmore button {
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+main section#News div.items div.news div.readmore button:hover {
+  background-color: #2670a1;
+}
+main section#NewsItem {
+  display: flex;
+  flex-direction: column;
+}
+main section#NewsItem div.item {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+main section#NewsItem div.item div.subtopic {
+  font-size: 2rem;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+main section#NewsItem div.item div.subtopic p:not(:last-child) {
+  padding-bottom: 1rem;
+}
+@media (max-width: 991px) {
+  main section#NewsItem div.item div.subtopic {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+main section#NewsItem div.item div.date {
+  font-size: 0.75rem;
+  color: #ccc;
+  padding: 0.5rem 0;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+main section#NewsItem div.item div.date p:not(:last-child) {
+  padding-bottom: 1rem;
+}
+@media (max-width: 991px) {
+  main section#NewsItem div.item div.date {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+main section#NewsItem div.item div.text {
+  font-size: 1.2rem;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+main section#NewsItem div.item div.text p:not(:last-child) {
+  padding-bottom: 1rem;
+}
+@media (max-width: 991px) {
+  main section#NewsItem div.item div.text {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+main section#NewsItem div.readmore {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#NewsItem div.readmore button {
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+main section#NewsItem div.readmore button:hover {
+  background-color: #2670a1;
+}
+main section#AboutUs div.content {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 1.5rem;
+}
+main section#AboutUs div.content p:not(:last-child) {
+  padding-bottom: 1rem;
+}
+@media (max-width: 991px) {
+  main section#AboutUs div.content {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+main section#AboutUs div.members {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  grid-auto-rows: auto auto auto auto;
+  container-type: inline-size;
+}
+main section#AboutUs div.members div.member:hover div.image div.img img {
+  transform: scale(1.05);
+  filter: saturate(1);
+}
+main section#AboutUs div.members div.member {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#AboutUs div.members div.member div.image {
+  display: grid;
+  justify-content: center;
+}
+main section#AboutUs div.members div.member div.image div.img {
+  width: 150px;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  border: 1px solid #fff;
+  box-shadow: 0 5px 10px #00000050;
+  margin: 0;
+}
+main section#AboutUs div.members div.member div.image div.img img {
+  display: block;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.3s;
+  filter: saturate(0.75);
+}
+main section#AboutUs div.members div.member div.subtopic {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+main section#AboutUs div.members div.member div.col {
+  display: flex;
+  flex-direction: column;
+}
+main section#AboutUs div.members div.member div.col span.topic {
+  font-size: 1rem;
+}
+main section#AboutUs div.members div.member div.col span.text {
+  font-size: 0.9rem;
+}
+main section#AboutUs div.members div.member div.readmore {
+  padding-top: 1rem;
+  text-align: center;
+}
+main section#AboutUs div.members div.member div.readmore button {
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+main section#AboutUs div.members div.member div.readmore button:hover {
+  background-color: #2670a1;
+}
+main section#AboutUs div.members div.member:nth-child(even) {
+  background-color: rgba(31, 59, 87, 0.95);
+}
+main section#AboutUs div.members div.member:nth-child(odd) {
+  background-color: rgba(33, 71, 109, 0.95);
+}
+main section#AboutMe {
+  display: flex;
+  flex-direction: column;
+}
+main section#AboutMe div.content {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+main section#AboutMe div.content div.center {
+  display: grid;
+  grid-template-columns: 1fr auto auto 1fr;
+  column-gap: 1rem;
+}
+@media (max-width: 991px) {
+  main section#AboutMe div.content div.center {
+    grid-template-columns: auto;
+  }
+}
+main section#AboutMe div.content div.center div.image {
+  text-align: center;
+}
+main section#AboutMe div.content div.center div.image div.img {
+  width: 150px;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  border: 1px solid #fff;
+  box-shadow: 0 5px 10px #00000050;
+  margin: 0;
+}
+main section#AboutMe div.content div.center div.image div.img img {
+  display: block;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
+main section#AboutMe div.content div.center div.information div.temp {
+  display: grid;
+  grid-template: auto;
+  column-gap: 0.5rem;
+  justify-content: center;
+}
+main section#AboutMe div.content div.center div.information div.temp span.name {
+  font-size: 2rem;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+@media (max-width: 991px) {
+  main section#AboutMe div.content div.center div.information div.temp span.name {
+    text-align: center;
+  }
+}
+main section#AboutMe div.content div.center div.information div.temp span:nth-child(n + 2):nth-child(even) {
+  color: #e7dfd2;
+}
+main section#AboutMe div.readmore {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#AboutMe div.readmore button {
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+main section#AboutMe div.readmore button:hover {
+  background-color: #2670a1;
+}
+main section#Contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.25rem;
+}
+@media (max-width: 790px) {
+  main section#Contact {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
+main section#Contact article#ContactUs div.topic {
+  margin-bottom: 0.25rem;
+}
+main section#Contact article#ContactUs div.content {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#Contact article#ContactUs div.content fieldset {
+  border: none;
+}
+main section#Contact article#ContactUs div.content p {
+  display: none;
+}
+main section#Contact article#ContactUs div.content input[type="text"],
+main section#Contact article#ContactUs div.content input[type="tel"],
+main section#Contact article#ContactUs div.content input[type="email"] {
+  width: 100%;
+  padding: 0.4rem;
+  margin-bottom: 0.5rem;
+  text-shadow: none;
+}
+@media (max-width: 280px) {
+  main section#Contact article#ContactUs div.content input[type="text"],
+  main section#Contact article#ContactUs div.content input[type="tel"],
+  main section#Contact article#ContactUs div.content input[type="email"] {
+    width: 240px;
+  }
+}
+main section#Contact article#ContactUs div.content textarea {
+  width: 100%;
+  height: 7rem;
+  margin-bottom: 1rem;
+  text-shadow: none;
+  resize: none;
+}
+@media (max-width: 280px) {
+  main section#Contact article#ContactUs div.content textarea {
+    width: 240px;
+  }
+}
+main section#Contact article#ContactUs div.content input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 2rem;
+}
+main section#Contact article#ContactUs div.content input[type="submit"] {
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+main section#Contact article#ContactUs div.content input[type="submit"]:hover {
+  background-color: #2670a1;
+}
+main section#Contact article#ContactUs div.content span.field-validation-error {
+  color: red;
+  font-weight: bold;
+}
+main section#Contact article#ContactAgent div.topic {
+  margin-bottom: 0.25rem;
+}
+main section#Contact article#ContactAgent div.content {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+}
+main section#Contact article#ContactAgent div.content div.agent img {
+  width: 350px;
+  margin-top: 0.5rem;
+}
+@media (max-width: 350px) {
+  main section#Contact article#ContactAgent div.content div.agent img {
+    display: none;
+  }
+}
+main section#Gig {
+  display: flex;
+  flex-direction: column;
+}
+main section#Gig div.gig {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+main section#Gig div.gig div.center {
+  display: grid;
+  grid-template-columns: 1fr auto auto 1fr;
+  column-gap: 1rem;
+}
+@media (max-width: 991px) {
+  main section#Gig div.gig div.center {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+}
+main section#Gig div.gig div.center div.map {
+  display: grid;
+  grid-template: auto;
+  gap: 0.4rem;
+  justify-content: center;
+}
+main section#Gig div.gig div.center div.map div.cont {
+  width: 330px;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+  box-shadow: 0 5px 10px #00000050;
+}
+@media (max-width: 360px) {
+  main section#Gig div.gig div.center div.map div.cont {
+    width: 200px;
+  }
+}
+@media (max-width: 280px) {
+  main section#Gig div.gig div.center div.map div.cont {
+    display: none;
+  }
+}
+main section#Gig div.gig div.center div.map div.cont iframe {
+  width: 330px;
+  border-radius: 0.5rem;
+}
+@media (max-width: 360px) {
+  main section#Gig div.gig div.center div.map div.cont iframe {
+    width: 200px;
+  }
+}
+@media (max-width: 991px) {
+  main section#Gig div.gig div.center div.map div.cont {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 991px) {
+  main section#Gig div.gig div.center div.map {
+    order: 1;
+  }
+}
+main section#Gig div.gig div.center div.information div.grid {
+  display: grid;
+  grid-template: auto;
+  gap: 0.4rem;
+  justify-content: center;
+}
+main section#Gig div.gig div.center div.information div.grid span {
+  text-transform: capitalize;
+}
+main section#Gig div.gig div.center div.information div.grid span.subtopic {
+  font-size: 2rem;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+main section#Gig div.gig div.center div.information div.grid span:nth-child(n + 2):nth-child(even) {
+  color: #e7dfd2;
+}
+main section#Gig div.readmore {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#Gig div.readmore button {
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+main section#Gig div.readmore button:hover {
+  background-color: #2670a1;
+}
+main section#back button {
+  background-color: rgba(0, 31, 63, 0.95);
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+main section#back button:hover {
+  background-color: #2670a1;
+}
+main section#Gigs div.noGigs {
+  font-size: 1rem;
+  font-style: italic;
+}
+main section#Gigs div.content {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#Gigs div.content div.calendar {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 0.5rem;
+}
+main section#Gigs div.content div.calendar div.monthWrap {
+  text-transform: capitalize;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.topic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.topic span.month {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #000;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.topic span.year {
+  text-align: right;
+  text-shadow: 1px 1px #000;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 0.25rem;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.25rem;
+}
+@media (max-width: 280px) {
+  main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
+    grid-template-columns: 1fr;
+  }
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day {
+  background-color: rgba(31, 59, 87, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.eventday {
+  width: 35px;
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 1px 1px #000;
+}
+@media (max-width: 280px) {
+  main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.eventday {
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap {
+  background-color: rgba(50, 94, 129, 0.95);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap span.title {
+  font-size: 1.2rem;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap span.city {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap {
+  background-color: rgba(33, 71, 109, 0.95);
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:hover {
+  background-color: rgba(31, 59, 87, 0.95);
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days:hover div.day {
+  background-color: rgba(0, 74, 148, 0.95);
+}
+footer div#Footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer div#Footer div.contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+footer div#Footer div.contacts div.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer div#Footer div.contacts div.socials a div {
+  background-color: #ffffffda;
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  border-radius: 50%;
+}
+footer div#Footer div.contacts div.socials a div svg {
+  width: 24px;
+  height: 24px;
+  fill: #131313;
+}
+footer div#Footer div.contacts div.socials div:hover {
+  cursor: pointer;
+}
+footer div#Footer div.contacts div.socials a div.Facebook:hover svg {
+  fill: rgba(0, 101, 224, 0.6);
+}
+footer div#Footer div.contacts div.socials a div.Instagram:hover svg {
+  fill: rgba(252, 89, 74, 0.6);
+}
+footer div#Footer div.contacts div.socials a div.X:hover svg {
+  fill: rgba(128, 128, 128, 0.6);
+}
+footer div#Footer div.copyright {
+  text-align: center;
+  font-size: 0.7rem;
+}

@@ -1,0 +1,70 @@
+@import "_vars";
+
+div#Footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  div.contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    div.socials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        div {
+          background-color: @backgroundSocial;
+          padding-top: 0.75rem;
+          padding-bottom: 0.5rem;
+          padding-right: 0.75rem;
+          padding-left: 0.75rem;
+          border-radius: 50%;
+
+          svg {
+            width: 24px;
+            height: 24px;
+
+            fill: @socialFill;
+          }
+        }
+      }
+      div:hover {
+        cursor: pointer;
+      }
+
+      a {
+        div.Facebook:hover {
+          svg {
+            fill: @socialFacebook;
+          }
+        }
+      }
+
+      a {
+        div.Instagram:hover {
+          svg {
+            fill: @socialInstagram;
+          }
+        }
+      }
+
+      a {
+        div.X:hover {
+          svg {
+            fill: @socialX;
+          }
+        }
+      }
+    }
+  }
+  div.copyright {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+}

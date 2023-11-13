@@ -1,0 +1,62 @@
+@backgroundBase: rgba(233, 233, 233, 0.75);
+@backgroundGradientOne: rgba(28, 78, 153, 1);
+@backgroundGradientTwo: rgba(233, 233, 233, 0.75);
+
+@backgroundTopic: rgba(0, 31, 63, 0.95);
+@backgroundContent: rgba(50, 94, 129, 0.95);
+@backgroundHighlight: rgba(33, 71, 109, 0.95);
+@backgroundHighlightHover: rgba(0, 74, 148, 0.95);
+@backgroundGridOne: rgba(31, 59, 87, 0.95);
+@backgroundGridTwo: rgba(33, 71, 109, 0.95);
+
+@backgroundButton: @backgroundTopic;
+@backgroundButtonHover: rgba(38, 112, 161, 1);
+
+@backgroundSocial: #ffffffda;
+
+@textColor: #fff1f8;
+
+@linkColor: rgba(242, 232, 232, 1);
+@linkColor: #e7dfd2;
+@linkColorHover: rgba(181, 176, 176, 1);
+@linkColorHover: #bbb4aa;
+
+@contentDateText: rgba(204, 204, 204, 0.877);
+
+@menuLinkColor: rgba(255, 255, 255, 1);
+@menuLinkColorActive: rgba(238, 194, 165, 1);
+@menuLinkTextShadow: rgba(0, 0, 0, 1);
+
+@imageLogoShadow: rgba(0, 0, 0, 0.75);
+
+@socialFill: rgba(19, 19, 19, 1);
+@socialFacebook: rgba(0, 101, 224, 0.6);
+@socialInstagram: rgba(252, 89, 74, 0.6);
+@socialX: rgba(128, 128, 128, 0.6);
+
+.button-style() {
+  background-color: @backgroundButton;
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.content-style(@bgcolor: @backgroundContent) {
+  background-color: @bgcolor;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}

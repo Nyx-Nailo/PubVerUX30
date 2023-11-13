@@ -1,0 +1,36 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactUs>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Forms.Web
+@Html.RenderUmbracoFormDependencies()
+@{
+    Layout = "Master.cshtml";
+    var contactInformation = Model.Children<ContactInformation>();
+}
+<section id="Contact">
+    <article id="ContactUs">
+        <div class="topic">
+            @Model.Value("contactTitle")
+        </div>
+        <div class="content">
+            @Html.Raw(Model.ContactForm)
+        </div>
+    </article>
+
+    <article id="ContactAgent">
+        <div class="topic">
+            Vill du boka oss?<br />
+        </div>
+        <div class="content">
+            @foreach (var contact in contactInformation)
+            {
+                <div class="agent">
+                    <h3>@contact.ContactName</h3>
+                    <a href="tel:@contact.ContactNumber">@contact.ContactNumber</a><br />
+                    <a href="mail:@contact.ContactEmail">@contact.ContactEmail</a><br />
+                    <a href="@contact.ContactHomepage" target="_blank"><img src="@contact.ContactImage.Url()" alt="@contact.ContactName bild" /></a>
+                </div>
+            }
+        </div>
+    </article>
+</section>

@@ -1,0 +1,95 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Person>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+	var person = Model.AncestorOrSelf<Person>();
+	string age = "Ålder saknas";
+	var place = person?.Place ?? "Sverige";
+	string instruments = string.Empty;
+
+
+	if (person is not null)
+	{
+		age = ((int.Parse(DateTime.UtcNow.ToString("yyyyMMdd")) - int.Parse(person.DateOfBirth.ToString("yyyyMMdd"))) /
+		10000).ToString();
+		foreach (var instrument in person.Instruments ?? new List<string>())
+		{
+			instruments += " " + instrument;
+		}
+	}
+}
+<section id="AboutMe">
+	<div class="topic">
+		@Model.Name
+	</div>
+	<div class="content">
+		<div class="center">
+			<div></div>
+			<div class="image">
+				<div class="img"
+					style="background-image: url('/media/empty-profile.png');background-position: center;">
+					<img src="@person?.Portrait?.GetCropUrl()" alt="@person?.AltPortrait" />
+				</div>
+			</div>
+			<div class="information">
+				<div class="temp">
+					<span class="name">
+						@person?.PersonName
+					</span>
+					<span>
+						Ålder:</span>
+					<span>
+						@age
+					</span>
+					<span>
+						Instrument:
+					</span>
+					<span>
+						@instruments
+					</span>
+					<span>
+						Musikfavoriter:
+					</span>
+					<span>
+						@person?.FavMusic
+					</span>
+					<span>
+						Bor:
+					</span>
+					<span>
+						@place
+					</span>
+					<span>
+						Familj:
+					</span>
+					<span>
+						@person?.Family
+					</span>
+					<span>
+						Favorit Mat:
+					</span>
+					<span>
+						@person?.FavFood
+					</span>
+					<span>
+						Favorit Dryck:
+					</span>
+					<span>
+						@person?.FavDrink
+					</span>
+					<span>
+						Intressen:
+					</span>
+					<span>
+						@person?.Interests
+					</span>
+				</div>
+			</div>
+		</div>
+		<div></div>
+	</div>
+	<div class="readmore">
+		<button class="button" onclick="history.back()">&#8592; tillbaka</button>
+	</div>
+</section>

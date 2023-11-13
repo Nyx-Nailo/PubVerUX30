@@ -1,0 +1,53 @@
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = null;
+
+    var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+    .Children()
+    .Where(x => x.IsVisible());
+
+    var homePage = Model.AncestorOrSelf<Home>();
+}
+<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("~/Views/Partials/HeadPartial.cshtml")
+
+<body style="background: url(@homePage.HeaderBackground.Url()); background-attachment: fixed;">
+
+    <nav>
+        <div id="Nav">
+            <div class="image">
+                <a href="@Model.AncestorOrSelf(1).Url()">
+                    <img src="@homePage.HeaderImage.Url()" alt="@homePage.AltImage" />
+                </a>
+            </div>
+            <div class="menu">
+                <a href="@Model.AncestorOrSelf(1).Url()" @(Model.Name == @Model.AncestorOrSelf(1).Name ? "class=active"
+                    : null)>
+@Model.AncestorOrSelf(1).Name
+                </a>
+@foreach (var item in selection)
+{
+    if (Model.IsDescendantOrSelf(item))
+    {
+                        <a href="@item.Url()" class="active">@item.Name()</a>
+    }
+    else
+    {
+                        <a href="@item.Url()">@item.Name()</a>
+    }
+}
+            </div>
+        </div>
+    </nav>
+
+    <main>
+@RenderBody()
+    </main>
+
+@await Html.PartialAsync("~/Views/Partials/footer.cshtml")
+</body>
+
+</html>

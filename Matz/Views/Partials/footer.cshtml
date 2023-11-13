@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var root = Model.AncestorOrSelf<Home>();
+    var companyName = root?.CompanyName ?? "Company name is missing";
+    var phoneNumber = root?.PhoneNumber ?? "Phone number is missing";
+    var email = root?.EMail ?? "E-Mail is missing";
+    var socials = root?.Socials ?? new List<SocialLink>();
+}
+
+<footer>
+    <div id="Footer">
+        <div class="contacts">
+            <div class="socials">
+                @foreach (var social in socials)
+                {
+                <a href="@social.Url" aria-label="@social.Name">
+                    <div class="@social.Name">
+                        @Html.Raw(social.GetIconSvgString())
+                    </div>
+                </a>
+                }
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; @companyName @DateTime.Now.Year
+        </div>
+    </div>
+</footer>

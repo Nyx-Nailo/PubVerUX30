@@ -1,0 +1,40 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsBinder>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+
+    var newsSelection = Umbraco?.Content(Guid.Parse("705b6e51-061f-47d1-a345-40e5d8d5b79f"))?
+    .ChildrenOfType("newsItem")?
+    .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate);
+
+}
+
+<section id="News">
+    <div class="topic">
+        @Model.Name
+    </div>
+    <div class="items">
+        @{
+            if (newsSelection.Count() > 0)
+            {
+                foreach (var item in newsSelection)
+                {
+                    <div class="news">
+                        <div class="subtopic">@item.Name()</div>
+                        <div class="date">@item.CreateDate.ToString("yyyy-MM-dd HH:mm")</div>
+                        <div class="text">@Html.Truncate(item.Value("newsContent").ToString(), 220, true)</div>
+                        <div class="readmore"><a href="@item.Url()"><button class="button">Läs mer...</button></a></div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="noNews">
+                    Inga nyheter ännu...
+                </div>
+            }
+        }
+    </div>
+</section>

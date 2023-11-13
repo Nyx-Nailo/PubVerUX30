@@ -1,0 +1,15 @@
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Gigs>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+}
+
+<section id="Gigs">
+    <div class="topic">
+        @Model.Name
+    </div>
+    <div class="content">
+        @await Html.PartialAsync("CalenderPartial")
+    </div>
+</section>

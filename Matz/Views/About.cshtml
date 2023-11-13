@@ -1,0 +1,37 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.About>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+	var aboutPage = Model.AncestorOrSelf<About>();
+	var members = Model.Children<Person>();
+}
+
+<section id="AboutUs">
+	<div class="topic">
+		@Model.Name
+	</div>
+	<div class="content">
+		@Model.Value("description")
+	</div>
+	<div class="topic">
+		Medlemmar
+	</div>
+	<div class="members">
+		@foreach (var person in members ?? new List<Person>())
+		{
+			<div class="member">
+				<div class="image">
+					<div class="img"
+						style="background-image: url('/media/empty-profile.png');background-position: center;">
+						<a href="@person.Url()" alt="@person.Name">
+							<img src="@person?.Portrait?.Url()" alt="@person?.AltPortrait" />
+						</a>
+					</div>
+				</div>
+				<div class="subtopic">@person?.PersonName</div>
+				<div class="readmore"><a href="@person?.Url()"><button class="button">Läs mer...</button></a></div>
+			</div>
+		}
+	</div>
+</section>
