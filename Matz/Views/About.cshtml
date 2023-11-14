@@ -9,24 +9,21 @@
 
 <section id="AboutUs">
 	<div class="topic">
-		@Model.Name
+		<h1>@Model.Name</h1>
 	</div>
 	<div class="content">
 		@Model.Value("description")
 	</div>
 	<div class="topic">
-		Medlemmar
+		<h1>Medlemmar</h1>
 	</div>
 	<div class="members">
 		@foreach (var person in members ?? new List<Person>())
 		{
 			<div class="member">
 				<div class="image">
-					<div class="img"
-						style="background-image: url('/media/empty-profile.png');background-position: center;">
-						<a href="@person.Url()" alt="@person.Name">
-							<img src="@person?.Portrait?.Url()" alt="@person?.AltPortrait" />
-						</a>
+					<div class="img" style="background-image: url('/media/empty-profile.png');background-position: center;">
+						<img src="@person?.Portrait?.Url()" alt="@person?.AltPortrait" />
 					</div>
 				</div>
 				<div class="subtopic">@person?.PersonName</div>

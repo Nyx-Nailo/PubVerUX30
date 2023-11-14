@@ -4,7 +4,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  text-shadow: 0px 1px #000;
+  text-shadow: 1px 1px #000;
 }
 body {
   font-family: "Roboto";
@@ -12,16 +12,21 @@ body {
   background-image: linear-gradient(180deg, #1c4e99 30%, rgba(233, 233, 233, 0.75) 90%);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: #fff1f8;
+  min-height: 100vh;
+}
+div#mainContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 0.25rem;
-  color: #fff1f8;
+  gap: 1rem;
+  width: 100%;
+  min-height: 100vh;
   padding: 2rem;
+  backdrop-filter: blur(7px);
 }
 @media (max-width: 991px) {
-  body {
+  div#mainContainer {
     padding: 0.2rem;
   }
 }
@@ -36,18 +41,20 @@ nav {
   font-weight: 400;
   font-size: 1.1rem;
   padding: 0;
-  margin-bottom: 0.25rem;
 }
 main {
   width: 100%;
+  height: 100%;
   max-width: 80rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.25rem;
+  gap: 1rem;
 }
 main section {
+  display: grid;
+  gap: 0rem;
   width: 100%;
   max-width: 80rem;
   margin-bottom: 1rem;
@@ -55,10 +62,15 @@ main section {
 main section div.topic {
   background-color: rgba(0, 31, 63, 0.95);
   padding: 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  box-shadow: 0px 5px 10px #00000050;
   font-size: 1.4rem;
-  margin-bottom: 0.25rem;
   text-shadow: 1px 1px #000;
+  z-index: 2;
+  overflow: hidden;
+}
+footer {
+  margin-top: auto;
 }
 a {
   color: #e7dfd2;
@@ -72,7 +84,6 @@ nav div#Nav {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: baseline;
-  font-weight: 300;
 }
 @media (max-width: 991px) {
   nav div#Nav {
@@ -105,7 +116,7 @@ nav div#Nav div.image {
   }
 }
 nav div#Nav div.image img {
-  width: 250px;
+  width: 350px;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.75));
 }
 @media (max-width: 991px) {
@@ -128,7 +139,7 @@ nav div#Nav div.menu {
   text-align: right;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.2rem;
   justify-content: right;
   padding: 1rem 1.5rem;
   border-top-right-radius: 0.5rem;
@@ -136,6 +147,7 @@ nav div#Nav div.menu {
   text-shadow: 1px 1px #000000;
 }
 nav div#Nav div.menu a {
+  word-spacing: -0.25rem;
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
@@ -174,6 +186,7 @@ main section#StartpageGigs div.gig {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   font-size: 2rem;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -216,6 +229,7 @@ main section#StartpageNews div.items {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   display: grid;
   gap: 0.8rem;
   grid-auto-flow: dense;
@@ -226,6 +240,7 @@ main section#StartpageNews div.items {
 main section#StartpageNews div.items div.news {
   background-color: rgba(33, 71, 109, 0.95);
   padding: 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   border-radius: 0.5rem;
   display: grid;
   gap: 0.2rem;
@@ -280,6 +295,7 @@ main section#News div.items {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   display: grid;
   gap: 0.8rem;
   grid-auto-flow: dense;
@@ -300,6 +316,7 @@ main section#News div.items div.noNews {
 main section#News div.items div.news {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   border-radius: 0.5rem;
   display: grid;
   gap: 0.2rem;
@@ -355,12 +372,14 @@ main section#NewsItem div.item {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   margin-bottom: 0.25rem;
+  padding: 2rem 0;
 }
 main section#NewsItem div.item div.subtopic {
   font-size: 2rem;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 main section#NewsItem div.item div.subtopic p:not(:last-child) {
   padding-bottom: 1rem;
@@ -375,8 +394,8 @@ main section#NewsItem div.item div.date {
   font-size: 0.75rem;
   color: #ccc;
   padding: 0.5rem 0;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 main section#NewsItem div.item div.date p:not(:last-child) {
   padding-bottom: 1rem;
@@ -389,8 +408,8 @@ main section#NewsItem div.item div.date p:not(:last-child) {
 }
 main section#NewsItem div.item div.text {
   font-size: 1.2rem;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 main section#NewsItem div.item div.text p:not(:last-child) {
   padding-bottom: 1rem;
@@ -404,7 +423,9 @@ main section#NewsItem div.item div.text p:not(:last-child) {
 main section#NewsItem div.readmore {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   border-radius: 0.5rem;
+  margin-top: 1rem;
 }
 main section#NewsItem div.readmore button {
   background-color: rgba(0, 31, 63, 0.95);
@@ -433,9 +454,9 @@ main section#AboutUs div.content {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   font-size: 1.2rem;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 2rem 25%;
   margin-bottom: 1.5rem;
 }
 main section#AboutUs div.content p:not(:last-child) {
@@ -451,6 +472,7 @@ main section#AboutUs div.members {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   display: grid;
   gap: 1rem;
   grid-auto-flow: dense;
@@ -465,7 +487,10 @@ main section#AboutUs div.members div.member:hover div.image div.img img {
 main section#AboutUs div.members div.member {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   border-radius: 0.5rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
 }
 main section#AboutUs div.members div.member div.image {
   display: grid;
@@ -503,6 +528,9 @@ main section#AboutUs div.members div.member div.col span.text {
   font-size: 0.9rem;
 }
 main section#AboutUs div.members div.member div.readmore {
+  display: flex;
+  align-items: end;
+  justify-content: center;
   padding-top: 1rem;
   text-align: center;
 }
@@ -543,6 +571,8 @@ main section#AboutMe div.content {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 2rem 2rem;
   margin-bottom: 0.25rem;
 }
 main section#AboutMe div.content div.center {
@@ -572,21 +602,18 @@ main section#AboutMe div.content div.center div.image div.img img {
   height: 200px;
   object-fit: cover;
 }
+main section#AboutMe div.content div.center div.information {
+  margin-top: 0.5rem;
+}
 main section#AboutMe div.content div.center div.information div.temp {
   display: grid;
-  grid-template: auto;
+  grid-template-columns: auto 1fr;
   column-gap: 0.5rem;
+  row-gap: 0.25rem;
   justify-content: center;
 }
-main section#AboutMe div.content div.center div.information div.temp span.name {
-  font-size: 2rem;
-  grid-column: 1/3;
-  grid-row: 1/2;
-}
-@media (max-width: 991px) {
-  main section#AboutMe div.content div.center div.information div.temp span.name {
-    text-align: center;
-  }
+main section#AboutMe div.content div.center div.information div.temp span:nth-child(odd) {
+  text-align: right;
 }
 main section#AboutMe div.content div.center div.information div.temp span:nth-child(n + 2):nth-child(even) {
   color: #e7dfd2;
@@ -594,6 +621,8 @@ main section#AboutMe div.content div.center div.information div.temp span:nth-ch
 main section#AboutMe div.readmore {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-top: 1rem;
   border-radius: 0.5rem;
 }
 main section#AboutMe div.readmore button {
@@ -622,7 +651,7 @@ main section#AboutMe div.readmore button:hover {
 main section#Contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 0.25rem;
+  column-gap: 1rem;
 }
 @media (max-width: 790px) {
   main section#Contact {
@@ -630,13 +659,20 @@ main section#Contact {
     row-gap: 2rem;
   }
 }
+main section#Contact article#ContactUs {
+  position: relative;
+}
 main section#Contact article#ContactUs div.topic {
-  margin-bottom: 0.25rem;
+  box-shadow: 0px 5px 10px #00000050;
+  z-index: 2;
+  overflow: hidden;
+  position: inherit;
 }
 main section#Contact article#ContactUs div.content {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 main section#Contact article#ContactUs div.content fieldset {
   border: none;
@@ -700,16 +736,33 @@ main section#Contact article#ContactUs div.content input[type="submit"]:hover {
   background-color: #2670a1;
 }
 main section#Contact article#ContactUs div.content span.field-validation-error {
-  color: red;
+  color: rgba(255, 144, 26, 0.959);
   font-weight: bold;
+  padding-bottom: 1rem;
+}
+main section#Contact article#ContactUs div.content div.umbraco-forms-field {
+  padding-bottom: 0.5rem;
+}
+main section#Contact article#ContactUs div.content div.jagaerinteenrobot {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+}
+main section#Contact article#ContactAgent {
+  position: relative;
 }
 main section#Contact article#ContactAgent div.topic {
-  margin-bottom: 0.25rem;
+  box-shadow: 0px 5px 10px #00000050;
+  z-index: 2;
+  overflow: hidden;
+  position: inherit;
 }
 main section#Contact article#ContactAgent div.content {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
@@ -717,6 +770,8 @@ main section#Contact article#ContactAgent div.content {
 main section#Contact article#ContactAgent div.content div.agent img {
   width: 350px;
   margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fff;
 }
 @media (max-width: 350px) {
   main section#Contact article#ContactAgent div.content div.agent img {
@@ -731,6 +786,8 @@ main section#Gig div.gig {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 2rem 0;
   margin-bottom: 0.25rem;
 }
 main section#Gig div.gig div.center {
@@ -806,6 +863,8 @@ main section#Gig div.gig div.center div.information div.grid span:nth-child(n + 
 main section#Gig div.readmore {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-top: 1rem;
   border-radius: 0.5rem;
 }
 main section#Gig div.readmore button {
@@ -850,6 +909,7 @@ main section#back button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  text-transform: capitalize;
 }
 main section#back button:hover {
   background-color: #2670a1;
@@ -862,6 +922,8 @@ main section#Gigs div.content {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 2rem;
 }
 main section#Gigs div.content div.calendar {
   display: grid;
@@ -874,6 +936,9 @@ main section#Gigs div.content div.calendar div.monthWrap {
 main section#Gigs div.content div.calendar div.monthWrap div.topic {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: none;
 }
 main section#Gigs div.content div.calendar div.monthWrap div.topic span.month {
   font-size: 1.5rem;
@@ -890,7 +955,7 @@ main section#Gigs div.content div.calendar div.monthWrap div.dayWrap {
 }
 main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
   column-gap: 0.25rem;
 }
 @media (max-width: 280px) {
@@ -899,49 +964,61 @@ main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days {
   }
 }
 main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day {
+  width: 100%;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp {
+  display: grid;
+  grid-template-columns: 65px 1fr;
+  grid-template-rows: repeat(1fr);
+  width: 100%;
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp div.eventday {
   background-color: rgba(31, 59, 87, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
-}
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.eventday {
-  width: 35px;
+  border-radius: 0 0 0.5rem 0.5rem;
+  border-right: 1px solid rgba(31, 59, 87, 0.95);
+  border-radius: 0.5rem 0 0 0.5rem;
+  height: 100%;
   text-align: center;
   font-size: 2rem;
   text-shadow: 1px 1px #000;
 }
 @media (max-width: 280px) {
-  main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.eventday {
+  main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp div.eventday {
     font-size: 1rem;
     width: 100%;
   }
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp div.infoWrap {
   background-color: rgba(50, 94, 129, 0.95);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  grid-column: 2 / -1;
   display: grid;
   grid-template-columns: 1fr;
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap span.title {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp div.infoWrap span.title {
   font-size: 1.2rem;
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap span.city {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp div.infoWrap span.city {
   font-size: 0.8rem;
   color: #ccc;
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp div.infoWrap {
   background-color: rgba(33, 71, 109, 0.95);
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.eventsWrap div.infoWrap:hover {
-  background-color: rgba(31, 59, 87, 0.95);
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp div.infoWrap a {
+  color: #fff;
 }
-main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days:hover div.day {
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp:hover div.infoWrap {
   background-color: rgba(0, 74, 148, 0.95);
+}
+main section#Gigs div.content div.calendar div.monthWrap div.dayWrap div.days div.day div.temp:hover div.eventday {
+  background-color: rgba(0, 74, 148, 0.95);
+  border-right: 1px solid #ffffff44;
 }
 footer div#Footer {
   display: flex;
@@ -962,6 +1039,7 @@ footer div#Footer div.contacts div.socials {
 }
 footer div#Footer div.contacts div.socials a div {
   background-color: #ffffffda;
+  background-color: rgba(0, 31, 63, 0.95);
   padding-top: 0.75rem;
   padding-bottom: 0.5rem;
   padding-right: 0.75rem;
@@ -972,6 +1050,7 @@ footer div#Footer div.contacts div.socials a div svg {
   width: 24px;
   height: 24px;
   fill: #131313;
+  fill: #ffffff;
 }
 footer div#Footer div.contacts div.socials div:hover {
   cursor: pointer;

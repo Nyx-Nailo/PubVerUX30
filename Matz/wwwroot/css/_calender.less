@@ -9,6 +9,8 @@ section#Gigs {
   div.content {
     .content-style();
 
+    padding: 2rem;
+
     div.calendar {
       display: grid;
       grid-template-rows: 1fr;
@@ -20,6 +22,9 @@ section#Gigs {
         div.topic {
           display: grid;
           grid-template-columns: 1fr 1fr;
+          border-radius: 0.5rem;
+          margin-bottom: 0.5rem;
+          box-shadow: none;
 
           span.month {
             font-size: 1.5rem;
@@ -38,7 +43,7 @@ section#Gigs {
 
           div.days {
             display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 1fr;
             column-gap: 0.25rem;
 
             @media (max-width: 280px) {
@@ -46,51 +51,66 @@ section#Gigs {
             }
 
             div.day {
-              .content-style(@backgroundGridOne);
+              width: 100%;
 
-              div.eventday {
-                width: 35px;
-                text-align: center;
-
-                font-size: 2rem;
-                text-shadow: 1px 1px #000;
-
-                @media (max-width: 280px) {
-                  font-size: 1rem;
-                  width: 100%;
-                }
-              }
-            }
-
-            div.eventsWrap {
-              display: flex;
-              flex-direction: column;
-              gap: 0.4rem;
-
-              div.infoWrap {
-                .content-style();
+              div.temp {
                 display: grid;
-                grid-template-columns: 1fr;
+                grid-template-columns: 65px 1fr;
+                grid-template-rows: repeat(1fr);
+                width: 100%;
 
-                span.title {
-                  font-size: 1.2rem;
+                div.eventday {
+                  .content-style(@backgroundGridOne);
+
+                  border-right: 1px solid @backgroundGridOne;
+
+                  border-radius: 0.5rem 0 0 0.5rem;
+                  height: 100%;
+
+                  text-align: center;
+
+                  font-size: 2rem;
+                  text-shadow: 1px 1px #000;
+
+                  @media (max-width: 280px) {
+                    font-size: 1rem;
+                    width: 100%;
+                  }
                 }
-                span.city {
-                  font-size: 0.8rem;
-                  color: #ccc;
+
+                div.infoWrap {
+                  .content-style();
+                  border-radius: 0 0.5rem 0.5rem 0;
+
+                  grid-column: 2 / -1;
+
+                  display: grid;
+                  grid-template-columns: 1fr;
+
+                  span.title {
+                    font-size: 1.2rem;
+                  }
+                  span.city {
+                    font-size: 0.8rem;
+                    color: #ccc;
+                  }
+                }
+                div.infoWrap {
+                  background-color: @backgroundGridTwo;
+                  a {
+                    color: #fff;
+                  }
                 }
               }
-              div.infoWrap {
-                background-color: @backgroundGridTwo;
+              div.temp:hover {
+                div.infoWrap {
+                  background-color: @backgroundHighlightHover;
+                }
+                div.eventday {
+                  background-color: @backgroundHighlightHover;
+                  border-right: 1px solid #ffffff44;
+                }
               }
-              div.infoWrap:hover {
-                background-color: @backgroundGridOne;
-              }
-            }
-          }
-          div.days:hover {
-            div.day {
-              background-color: @backgroundHighlightHover;
             }
           }
         }

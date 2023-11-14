@@ -21,26 +21,22 @@
 }
 <section id="AboutMe">
 	<div class="topic">
-		@Model.Name
+		<h1>@person?.PersonName</h1>
 	</div>
 	<div class="content">
 		<div class="center">
 			<div></div>
 			<div class="image">
-				<div class="img"
-					style="background-image: url('/media/empty-profile.png');background-position: center;">
+				<div class="img" style="background-image: url('/media/empty-profile.png');background-position: center;">
 					<img src="@person?.Portrait?.GetCropUrl()" alt="@person?.AltPortrait" />
 				</div>
 			</div>
 			<div class="information">
 				<div class="temp">
-					<span class="name">
-						@person?.PersonName
-					</span>
 					<span>
 						Ålder:</span>
 					<span>
-						@age
+						@age år
 					</span>
 					<span>
 						Instrument:
@@ -90,6 +86,6 @@
 		<div></div>
 	</div>
 	<div class="readmore">
-		<button class="button" onclick="history.back()">&#8592; tillbaka</button>
+		<button class="button" onclick="history.back()">&#8592; Tillbaka</button>
 	</div>
 </section>

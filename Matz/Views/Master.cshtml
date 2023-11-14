@@ -10,12 +10,13 @@
     var homePage = Model.AncestorOrSelf<Home>();
 }
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 @await Html.PartialAsync("~/Views/Partials/HeadPartial.cshtml")
 
 <body style="background: url(@homePage.HeaderBackground.Url()); background-attachment: fixed;">
 
+<div id="mainContainer">
     <nav>
         <div id="Nav">
             <div class="image">
@@ -48,6 +49,9 @@
     </main>
 
 @await Html.PartialAsync("~/Views/Partials/footer.cshtml")
+
+</div>
+
 </body>
 
 </html>

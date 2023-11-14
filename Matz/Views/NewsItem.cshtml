@@ -7,7 +7,7 @@
 
 <section id="NewsItem">
     <div class="topic">
-        @Model.AncestorOrSelf(2).Name
+        <h1>@Model.AncestorOrSelf(2).Name</h1>
     </div>
     <div class="item">
         <div class="subtopic">@Model.Value("newsTitle")</div>
@@ -15,6 +15,6 @@
         <div class="text">@Model.Value("newsContent")</div>
     </div>
     <div class="readmore">
-        <button class="button" onclick="history.back()">&#8592; tillbaka</button>
+        <button class="button" onclick="history.back()">&#8592; Tillbaka</button>
     </div>
 </section>

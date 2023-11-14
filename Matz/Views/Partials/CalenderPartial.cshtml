@@ -39,25 +39,26 @@
                     {
                         <div class="days">
                             <div class="day">
-                                <div class="eventday">
-                                    @eventDays.Day
-                                </div>
-                            </div>
-                            <div class="eventsWrap">
-                                @foreach (var eventTime in Model.Children
-                               .Where(x => x.Value<DateTime>("datum") >= dateToday &&
-                               x.Value<DateTime>("datum").Month == gigDate.Month &&
-                               x.Value<DateTime>("datum").Year == gigDate.Year &&
-                               x.Value<DateTime>("datum").Day == eventDays.Day)
-                               .OrderBy(x => x.Value("datum")))
-                                {
-                                    <div class="infoWrap">
-                                        <a href="@eventTime.Url()" alt="Länk till spelning i @eventTime.Value("gigCity")">
-                                            <span class="title">@eventTime.Name</span>
-                                        </a>
-                                        <span class="city">Ort: @eventTime.Value("gigCity"), @eventTime.Value("address")</span>
+                                <div class="temp">
+                                    <div class="eventday">
+                                        @eventDays.Day
                                     </div>
-                                }
+
+                                    @foreach (var eventTime in Model.Children
+                                   .Where(x => x.Value<DateTime>("datum") >= dateToday &&
+                                   x.Value<DateTime>("datum").Month == gigDate.Month &&
+                                   x.Value<DateTime>("datum").Year == gigDate.Year &&
+                                   x.Value<DateTime>("datum").Day == eventDays.Day)
+                                   .OrderBy(x => x.Value("datum")))
+                                    {
+                                        <div class="infoWrap">
+                                            <a href="@eventTime.Url()" alt="Länk till spelning i @eventTime.Value("gigCity")">
+                                                <span class="title">@eventTime.Name</span>
+                                            </a>
+                                            <span class="city">Ort: @eventTime.Value("gigCity"), @eventTime.Value("address")</span>
+                                        </div>
+                                    }
+                                </div>
                             </div>
                         </div>
                     }

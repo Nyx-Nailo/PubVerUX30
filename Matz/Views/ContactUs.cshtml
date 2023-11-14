@@ -10,7 +10,7 @@
 <section id="Contact">
     <article id="ContactUs">
         <div class="topic">
-            @Model.Value("contactTitle")
+            <h1>@Model.Value("contactTitle")</h1>
         </div>
         <div class="content">
             @Html.Raw(Model.ContactForm)
@@ -19,16 +19,18 @@
 
     <article id="ContactAgent">
         <div class="topic">
-            Vill du boka oss?<br />
+            <h1>Boka spelning</h1>
         </div>
         <div class="content">
+            Kontakta en av våra agenturer i respektive land för att boka en spelning med oss.<br /><br />
             @foreach (var contact in contactInformation)
             {
                 <div class="agent">
                     <h3>@contact.ContactName</h3>
                     <a href="tel:@contact.ContactNumber">@contact.ContactNumber</a><br />
                     <a href="mail:@contact.ContactEmail">@contact.ContactEmail</a><br />
-                    <a href="@contact.ContactHomepage" target="_blank"><img src="@contact.ContactImage.Url()" alt="@contact.ContactName bild" /></a>
+                    <a href="@contact.ContactHomepage" target="_blank"><img src="@contact.ContactImage.Url()"
+                            alt="@contact.ContactName bild" /></a>
                 </div>
             }
         </div>
